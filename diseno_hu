@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Plantilla - Diseño de Historia de Usuario</title>
+<style>
+  body { font-family: Arial, sans-serif; margin: 20px; line-height: 1.6; }
+  h1, h2 { color: #003366; }
+  table { border-collapse: collapse; width: 100%; margin-bottom: 20px; }
+  th, td { border: 1px solid #999; padding: 8px; text-align: left; }
+  th { background-color: #f2f2f2; }
+  .nota { color: #666; font-size: 0.9em; }
+</style>
+</head>
+<body>
+<h1>Diseño de Historia de Usuario (HU)</h1>
+
+<h2>1. Información General del Proyecto</h2>
+<p><strong>¿Qué debe ir aquí?</strong> Datos administrativos clave del proyecto y la HU.</p>
+<table>
+<tr><th>Campo</th><th>Descripción</th><th>Ejemplo</th></tr>
+<tr><td>Nombre del Proyecto</td><td>Nombre oficial del proyecto asociado a la HU</td><td>HU_EP_GEO_Migración de Mahindra</td></tr>
+<tr><td>Dueño Producto Negocio</td><td>Responsable del negocio</td><td>Lady Herrera</td></tr>
+<tr><td>Dueño Producto TI</td><td>Responsable técnico</td><td>Daniel Ramírez</td></tr>
+<tr><td>Scrum Master</td><td>Responsable de la metodología</td><td>Juan Díaz</td></tr>
+<tr><td>Componente</td><td>Módulo del sistema impactado</td><td>GEOPOS</td></tr>
+<tr><td>Link Épica</td><td>URL o código de la épica asociada</td><td>EP-GEO-105</td></tr>
+<tr><td>Puntos (Estimación)</td><td>Story points asignados</td><td>5</td></tr>
+</table>
+
+<h2>2. Historial de Versiones</h2>
+<p><strong>¿Qué debe ir aquí?</strong> Control de cambios y versiones de la HU.</p>
+<table>
+<tr><th>Versión</th><th>Fecha</th><th>Descripción Modificación</th><th>Registrado por</th></tr>
+<tr><td>1</td><td>16-04-2025</td><td>Creación inicial de la HU</td><td>Daniel Ramírez</td></tr>
+</table>
+
+<h2>3. Descripción de la Historia de Usuario</h2>
+<p><strong>¿Qué debe ir aquí?</strong> Detalle funcional y técnico de la necesidad.</p>
+<ul>
+  <li><strong>Id Historia de Usuario:</strong> HU-10320</li>
+  <li><strong>Nombre HU:</strong> Actualización lógica issuerId / issuerLogin</li>
+  <li><strong>Descripción detallada:</strong><br>
+    COMO analista de integración,<br>
+    QUIERO que los campos issuerId e issuerLogin sean generados bajo nueva lógica,<br>
+    PARA migrar Pines Mahindra a Movilred garantizando compatibilidad.
+  </li>
+</ul>
+
+<h2>4. Actividades Técnicas Relevantes</h2>
+<p><strong>¿Qué debe ir aquí?</strong> Lista clara de tareas técnicas a realizar.</p>
+<ul>
+<li>Identificar transacciones donde se envían issuerId / issuerLogin</li>
+<li>Actualizar lógica de generación en los módulos</li>
+<li>Validar generación en pruebas unitarias e integración</li>
+<li>Desplegar en QA y producción</li>
+</ul>
+
+<h2>5. Definición de Terminado (DoD)</h2>
+<p><strong>¿Qué debe ir aquí?</strong> Criterios para considerar la HU como terminada.</p>
+<ul>
+<li>Código actualizado con lógica definida</li>
+<li>Validación de QA exitosa</li>
+<li>Revisión técnica aprobada</li>
+<li>Documentación técnica actualizada</li>
+<li>Evidencia de pruebas funcionales cargada</li>
+</ul>
+
+<h2>6. Elementos fuera de alcance</h2>
+<p><strong>¿Qué debe ir aquí?</strong> Lo que explícitamente no cubre la HU.</p>
+<ul>
+<li>No se modifican otros campos o canales fuera de KTINT</li>
+<li>No se alteran configuraciones de usuarios externos a Mahindra</li>
+</ul>
+
+<h2>7. Diagramas de Secuencia y Diagrama de Flujo(Si aplica)</h2>
+<table>
+<tr><th>
+
+<!-- Diagrama de flujo sencillo -->
+<style>
+.flowchart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px auto;
+}
+.flowchart-box {
+  border: 2px solid #003366;
+  border-radius: 8px;
+  padding: 10px 20px;
+  margin: 10px;
+  background-color: #f0f8ff;
+  color: #003366;
+  font-weight: bold;
+  text-align: center;
+  width: 200px;
+}
+.flowchart-line {
+  width: 2px;
+  height: 20px;
+  background-color: #003366;
+}
+</style>
+
+
+
+
+<div class="flowchart">
+  <div class="flowchart-box">Inicio</div>
+  <div class="flowchart-line"></div>
+  <div class="flowchart-box">Validar issuerId</div>
+  <div class="flowchart-line"></div>
+  <div class="flowchart-box">Generar issuerLogin</div>
+  <div class="flowchart-line"></div>
+  <div class="flowchart-box">Enviar Transacción</div>
+  <div class="flowchart-line"></div>
+  <div class="flowchart-box">Fin</div>
+</div>
+
+
+
+</body>
+</html>
+</th></tr>
+</table>
+
+<table>
+<tr><th>
+
+<!-- Diagrama de flujo sencillo -->
+<!-- Diagrama de secuencia sencillo -->
+<style>
+.sequence-diagram {
+  display: flex;
+  justify-content: space-between;
+  margin: 40px 0;
+  position: relative;
+}
+.sequence-participant {
+  text-align: center;
+  width: 150px;
+}
+.sequence-box {
+  border: 2px solid #003366;
+  border-radius: 8px;
+  padding: 5px;
+  background-color: #e6f2ff;
+  color: #003366;
+  font-weight: bold;
+}
+.sequence-line {
+  position: absolute;
+  top: 70px;
+  width: 100%;
+  border-top: 2px dashed #003366;
+}
+.sequence-message {
+  position: absolute;
+  top: 80px;
+  font-size: 0.9em;
+  color: #003366;
+}
+.sequence-arrow {
+  position: absolute;
+  top: 65px;
+  height: 10px;
+  width: 100%;
+  background: linear-gradient(to right, transparent calc(100% - 10px), #003366 100%);
+}
+</style>
+
+<div class="sequence-diagram">
+  <div class="sequence-participant">
+    <div class="sequence-box">Analista</div>
+  </div>
+  <div class="sequence-participant">
+    <div class="sequence-box">Backend</div>
+  </div>
+  <div class="sequence-participant">
+    <div class="sequence-box">Base de Datos</div>
+  </div>
+
+  <!-- Línea y mensaje -->
+  <div class="sequence-line"></div>
+  <div class="sequence-arrow"></div>
+  <div class="sequence-message" style="left: 12%; width: 76%; text-align:center;">
+    1. Solicita issuerId e issuerLogin
+  </div>
+</div>
+
+<div class="sequence-diagram">
+  <div class="sequence-participant"></div>
+  <div class="sequence-participant"></div>
+  <div class="sequence-participant">
+    <div class="sequence-box">Base de Datos</div>
+  </div>
+
+  <!-- Línea y mensaje -->
+  <div class="sequence-line"></div>
+  <div class="sequence-arrow"></div>
+  <div class="sequence-message" style="left: 52%; width: 40%; text-align:center;">
+    2. Retorna datos
+  </div>
+</div>
+
+<div class="sequence-diagram">
+  <div class="sequence-participant"></div>
+  <div class="sequence-participant">
+    <div class="sequence-box">Backend</div>
+  </div>
+  <div class="sequence-participant"></div>
+
+  <!-- Línea y mensaje -->
+  <div class="sequence-line"></div>
+  <div class="sequence-arrow"></div>
+  <div class="sequence-message" style="left: 12%; width: 76%; text-align:center;">
+    3. Responde al analista
+  </div>
+</div>
+
+
+
+</body>
+</html>
+</th></tr>
+</table>
+
+
+
+
+
+
+<h2>8. Adjuntos y Prototipos</h2>
+<table>
+<tr><th>Prototipo</th><th>Vista Propuesta de Caja en Caja</th></tr>
+<tr><td>Adjunto</td><td>Contrato Integración Arquitectura Detallada</td></tr>
+<tr><td>CA-04</td><td>Rechazo de formato incorrecto</td></tr>
+</table>
+
+<h2>9. Criterios de Aceptación</h2>
+<table>
+<tr><th>ID</th><th>Nombre</th><th>Criterio</th></tr>
+<tr><td>CA-01</td><td>Validación local KTINT</td><td>Formato COMO, QUIERO, PARA.</td></tr>
+<tr><td>CA-04</td><td>Rechazo de formato incorrecto</td><td>Formato COMO, QUIERO, PARA.</td></tr>
+</table>
+
+<h2>10. Pruebas y Consideraciones</h2>
+<ul>
+<li>Ambiente DEV: 10.181.11.98</li>
+<li>Ambiente Stage: 10.181.4.4</li>
+</ul>
+
+<h2>11. Proyección de Instalación</h2>
+<p><strong>¿Qué debe ir aquí?</strong> Fecha o periodo tentativo de despliegue.</p>
+<p><em>Ejemplo:</em> Previsto para junio 2025</p>
+
+<h2>12. Subida a Azure DevOps</h2>
+<p>Una vez completada esta documentación, la HU debe ser registrada en el <strong>backlog de Azure DevOps</strong> bajo el proyecto correspondiente, asignando responsables y etiquetas definidas.</p>
+
+</body>
+</html>
