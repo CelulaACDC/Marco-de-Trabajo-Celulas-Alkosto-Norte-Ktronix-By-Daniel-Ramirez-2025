@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Guía de Estimación Ágil - Días</title>
+<style>
+  body { font-family: Arial, sans-serif; background-color: #f4f6f9; color: #333; margin: 20px; line-height: 1.6; }
+  h1 { color: #003366; text-align: center; margin-bottom: 30px; }
+  h2 { color: #007bff; margin-top: 30px; }
+  table { border-collapse: collapse; width: 100%; background-color: #fff; box-shadow: 0 0 8px rgba(0,0,0,0.1); margin-bottom: 2em; }
+  th, td { text-align: left; padding: 12px; border: 1px solid #ddd; }
+  thead { background-color: #007bff; color: white; }
+  tbody tr:nth-child(even) { background-color: #f9f9f9; }
+  ul { margin-left: 20px; margin-bottom: 20px; }
+  ul li { margin-bottom: 8px; }
+  ol { margin-left: 20px; margin-bottom: 20px; }
+  ol li { margin-bottom: 12px; }
+  .btn-link { display: inline-block; padding: 12px 20px; background-color: #007bff; color: white; text-decoration: none; border-radius: 6px; margin-top: 20px; }
+  .btn-link:hover { background-color: #0056b3; }
+  .section { margin-bottom: 30px; }
+  .grid { display: grid; grid-template-columns: 1fr 3fr; gap: 10px; margin-bottom: 20px; }
+  .grid div { padding: 8px 0; }
+  .grid .header { font-weight: bold; }
+</style>
+</head>
+<body>
+
+<h1>🧮 Guía de Estimación Ágil por Criterios (Estimación directa en DÍAS)</h1>
+
+<div class="section">
+  <h2>🎯 Objetivo</h2>
+  <p>Transformar criterios cualitativos en una estimación cuantitativa de esfuerzo directamente en DÍAS, facilitando la planificación y carga de trabajo en el sprint.</p>
+</div>
+
+<div class="section">
+  <h2>📋 Criterios de Evaluación</h2>
+  <p>Los siguientes cinco criterios se utilizarán para evaluar la complejidad de cada historia y aproximar el tiempo estimado (en días). Cada criterio se califica del <strong>1 (Muy bajo)</strong> al <strong>5 (Muy alto)</strong>.</p>
+  <div class="grid">
+    <div class="header">Criterio</div><div class="header">Pregunta guía</div>
+    <div>1️⃣ Complejidad técnica</div><div>¿Qué tan difícil es técnicamente implementar esta historia?</div>
+    <div>2️⃣ Esfuerzo estimado</div><div>¿Cuánto trabajo implica construir esta historia?</div>
+    <div>3️⃣ Riesgo / Incertidumbre</div><div>¿Qué tanto sabemos sobre lo que se debe hacer? ¿Hay posibles bloqueos?</div>
+    <div>4️⃣ Frecuencia de uso (Impacto negocio)</div><div>¿Qué tan frecuentemente se usará esta funcionalidad? (a más uso, más valor)</div>
+    <div>5️⃣ Dependencias</div><div>¿Depende de otros equipos o procesos?</div>
+  </div>
+</div>
+
+<div class="section">
+  <h2>Detalle por criterio</h2>
+  <h3>1️⃣ Complejidad Técnica</h3>
+  <p>¿Qué tan complicado es técnicamente implementar esta historia de usuario?</p>
+  <div class="grid">
+    <div class="header">Valor</div><div class="header">Significado</div>
+    <div>1</div><div>Muy baja: Implementación directa, sin lógica compleja ni desafíos técnicos.</div>
+    <div>2</div><div>Baja: Requiere algo de lógica o configuración, pero es estándar.</div>
+    <div>3</div><div>Media: Implica lógica moderada, manejo de errores, integración interna.</div>
+    <div>4</div><div>Alta: Requiere diseño técnico, múltiples capas o nuevos componentes.</div>
+    <div>5</div><div>Muy alta: Retos grandes, nuevas tecnologías o investigación profunda.</div>
+  </div>
+
+  <h3>2️⃣ Esfuerzo Estimado</h3>
+  <p>¿Cuánto esfuerzo representa desarrollarla?</p>
+  <div class="grid">
+    <div class="header">Valor</div><div class="header">Significado</div>
+    <div>1</div><div>Muy bajo: Pocas horas, menos de medio día.</div>
+    <div>2</div><div>Bajo: Alrededor de 1 día.</div>
+    <div>3</div><div>Medio: 1 a 2 días.</div>
+    <div>4</div><div>Alto: 2 a 3 días, con revisión entre equipos.</div>
+    <div>5</div><div>Muy alto: Una semana o más, o trabajo extenso que debe dividirse.</div>
+  </div>
+
+  <h3>3️⃣ Riesgo / Incertidumbre</h3>
+  <p>¿Qué tan incierta o riesgosa es la historia por falta de información o variables desconocidas?</p>
+  <div class="grid">
+    <div class="header">Valor</div><div class="header">Significado</div>
+    <div>1</div><div>Muy bajo: Todo claro, sin ambigüedades.</div>
+    <div>2</div><div>Bajo: Una o dos dudas menores.</div>
+    <div>3</div><div>Medio: Aspectos por definir que pueden impactar.</div>
+    <div>4</div><div>Alto: Varias ambigüedades o riesgos técnicos/comerciales.</div>
+    <div>5</div><div>Muy alto: Poco conocimiento, cambios grandes o bloqueos probables.</div>
+  </div>
+
+  <h3>4️⃣ Frecuencia de Uso (Impacto Negocio)</h3>
+  <p>¿Qué tan seguido usarán los usuarios esta funcionalidad?</p>
+  <div class="grid">
+    <div class="header">Valor</div><div class="header">Significado</div>
+    <div>1</div><div>Muy baja: Usada esporádicamente o solo por usuarios internos.</div>
+    <div>2</div><div>Baja: Usada ocasionalmente por un subconjunto pequeño.</div>
+    <div>3</div><div>Media: Usada con regularidad por varios usuarios.</div>
+    <div>4</div><div>Alta: Usada frecuentemente, impacto directo.</div>
+    <div>5</div><div>Muy alta: Funcionalidad central, usada a diario por todos.</div>
+  </div>
+
+  <h3>5️⃣ Dependencias</h3>
+  <p>¿Cuántas dependencias internas o externas hay para poder completar esta historia?</p>
+  <div class="grid">
+    <div class="header">Valor</div><div class="header">Significado</div>
+    <div>1</div><div>Muy baja: Totalmente independiente.</div>
+    <div>2</div><div>Baja: Una dependencia sencilla, dentro del equipo.</div>
+    <div>3</div><div>Media: Varias dependencias menores o una externa conocida.</div>
+    <div>4</div><div>Alta: Varias dependencias importantes.</div>
+    <div>5</div><div>Muy alta: Dependencias críticas o inciertas que pueden bloquear.</div>
+  </div>
+</div>
+
+<div class="section">
+  <h2>🧠 Cálculo de Estimación (DÍAS)</h2>
+  <ol>
+    <li>Cada criterio se califica de 1 a 5</li>
+    <li>Se suman los 5 valores</li>
+    <li>Se calcula el promedio (suma / 5)</li>
+    <li>Consultamos la tabla siguiente para obtener DÍAS</li>
+  </ol>
+</div>
+
+<div class="section">
+  <h2>🗓️ Tabla de Conversión (Promedio → Días)</h2>
+  <table>
+    <thead><tr><th>Promedio</th><th>Días estimados</th><th>Rango de horas estimadas</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td>1 día</td><td>4 – 8 horas</td></tr>
+      <tr><td>2</td><td>2 – 3 días</td><td>12 – 24 horas</td></tr>
+      <tr><td>3</td><td>4 – 5 días</td><td>32 – 40 horas</td></tr>
+      <tr><td>4</td><td>6 – 7 días</td><td>48 – 56 horas</td></tr>
+      <tr><td>5</td><td>8 – 10 días</td><td>64 – 80 horas</td></tr>
+      <tr><td>>5</td><td>>>10 días (refinar o dividir)</td><td>>80 horas</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="section">
+  <h2>🧪 Ejemplos prácticos</h2>
+  <h3>Ejemplo 1</h3>
+  <div class="grid">
+    <div class="header">Criterio</div><div class="header">Valor</div>
+    <div>Complejidad</div><div>1</div>
+    <div>Esfuerzo</div><div>1</div>
+    <div>Riesgo</div><div>1</div>
+    <div>Frecuencia de uso</div><div>1</div>
+    <div>Dependencias</div><div>1</div>
+  </div>
+  <p>➡️ Total: 5 → Promedio: 1 → Estimación: 1 día (~5 horas)</p>
+  <h3>Ejemplo 2</h3>
+  <div class="grid">
+    <div class="header">Criterio</div><div class="header">Valor</div>
+    <div>Complejidad</div><div>2</div>
+    <div>Esfuerzo</div><div>2</div>
+    <div>Riesgo</div><div>2</div>
+    <div>Frecuencia de uso</div><div>3</div>
+    <div>Dependencias</div><div>2</div>
+  </div>
+  <p>➡️ Total: 11 → Promedio: 2.2 → Estimación: 2–3 días (~20 horas)</p>
+  <h3>Ejemplo 3</h3>
+  <div class="grid">
+    <div class="header">Criterio</div><div class="header">Valor</div>
+    <div>Complejidad</div><div>4</div>
+    <div>Esfuerzo</div><div>4</div>
+    <div>Riesgo</div><div>3</div>
+    <div>Frecuencia de uso</div><div>5</div>
+    <div>Dependencias</div><div>4</div>
+  </div>
+  <p>➡️ Total: 20 → Promedio: 4 → Estimación: 6–7 días (~52 horas)</p>
+</div>
+
+<div class="section">
+  <h2>📊 Métricas a monitorear</h2>
+  <table>
+    <thead><tr><th>Métrica</th><th>Definición</th><th>Meta</th></tr></thead>
+    <tbody>
+      <tr><td>Precisión en la estimación</td><td>% desviación entre estimado vs real</td><td><15%</td></tr>
+      <tr><td>Historias con desviación crítica (>25%)</td><td>% de HU con error grave</td><td><10%</td></tr>
+      <tr><td>Promedio de desviación por miembro</td><td>Sesgos sistemáticos por persona</td><td><15%</td></tr>
+      <tr><td>Distribución de puntuación por criterio</td><td>Buen uso de valores 1–5, sin sesgos</td><td>Balanceado</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="section">
+  <h2>📈 Uso de métricas históricas (velocidad y precisión)</h2>
+  <table>
+    <thead><tr><th>Acción</th><th>Descripción</th><th>Responsable</th></tr></thead>
+    <tbody>
+      <tr><td>Revisión post-sprint</td><td>Revisar precisión en HU completadas</td><td>Scrum Master / BA</td></tr>
+      <tr><td>Registro de referencias</td><td>Guardar ejemplos reales con estimación real cumplida</td><td>BA / Scrum Master</td></tr>
+      <tr><td>Uso en futuras estimaciones</td><td>Consultar referencias en Planning</td><td>Todo el equipo</td></tr>
+    </tbody>
+  </table>
+  <h3>🛠️ Herramientas sugeridas</h3>
+  <ul>
+    <li>Azure DevOps: Boards y métricas de sprint</li>
+    <li>Registro de métricas: Hoja Excel o Wiki de DevOps</li>
+  </ul>
+</div>
+
+<div class="section">
+  <h3>📚 Ejemplo práctico (Aplicación real)</h3>
+  <p>Sprint 5: HU “Integración API pagos” → Estimada en 5 días → Se completó en 5 días<br>
+  Sprint 8: HU “Integración API notificaciones” → Se consulta el histórico → Se decide 5 días (igual complejidad)</p>
+  <p>➡️ No estimamos desde cero, usamos experiencia real del equipo.</p>
+</div>
+
+<div class="section">
+  <h3>✅ Nota final</h3>
+  <p>Una vez la historia haya sido estimada en días, se registra en Azure DevOps, en la sección de Backlog, indicando claramente la estimación en días.</p>
+</div>
+
+</body>
+</html>
