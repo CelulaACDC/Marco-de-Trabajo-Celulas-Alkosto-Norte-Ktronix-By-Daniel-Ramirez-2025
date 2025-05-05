@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Procedimiento Review HU</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        h1, h2, h3 {
+            color: #003366;
+        }
+        .section {
+            background: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+        table, th, td {
+            border: 1px solid #ccc;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        select, input, textarea, button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #003366;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0055a5;
+        }
+        label {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<div class="section">
+    <h1>⭐ Procedimiento de Review de Historias de Usuario con el Stakeholder</h1>
+
+    <h2>🎯 Objetivo</h2>
+    <p>Realizar la validación formal de las Historias de Usuario (HU) desarrolladas durante el Sprint, junto con el Stakeholder, asegurando su aprobación o registrando las acciones correctivas necesarias para su completitud.</p>
+
+    <h2>🧩 Participantes</h2>
+    <ul>
+        <li>Scrum Master: Juan / Daniel.</li>
+        <li>Desarrollador responsable: Quien implementó la HU.</li>
+        <li>QA responsable: Quien validó la HU.</li>
+        <li>Business Analyst (BA): Líder funcional de la sesión.</li>
+        <li>Stakeholder: Usuario final o dueño del producto.</li>
+    </ul>
+
+    <h2>🏛️ Herramienta de gestión</h2>
+    <p>Toda la gestión y control de las HU, Bugs, y registros de la sesión se realiza en Azure DevOps.</p>
+
+    <h2>⏱️ Tiempo máximo</h2>
+    <ul>
+        <li>30 minutos por HU como máximo.</li>
+        <li>Si hay más de una HU, se administra el tiempo para que todas sean cubiertas en un máximo de 1 hora por sesión.</li>
+    </ul>
+
+    <h2>⏰ Planificación de tiempos por cantidad de HU</h2>
+
+    <h3>1 HU en Review</h3>
+    <table>
+        <tr><th>Actividad</th><th>Tiempo Estimado</th></tr>
+        <tr><td>Inicio y encuadre</td><td>2 min</td></tr>
+        <tr><td>Presentación funcional</td><td>5 min</td></tr>
+        <tr><td>Demostración técnica</td><td>10 min</td></tr>
+        <tr><td>Validación QA</td><td>5 min</td></tr>
+        <tr><td>Feedback del Stakeholder</td><td>5 min</td></tr>
+        <tr><td>Registro de comentarios y cierre</td><td>3 min</td></tr>
+        <tr><td><strong>TOTAL</strong></td><td><strong>30 min</strong></td></tr>
+    </table>
+
+    <h3>2 HUs en Review</h3>
+    <table>
+        <tr><th>Actividad</th><th>Tiempo Estimado</th></tr>
+        <tr><td>Inicio general de sesión</td><td>3 min</td></tr>
+        <tr><td>Presentación y demo HU 1</td><td>21 min</td></tr>
+        <tr><td>Feedback HU 1</td><td>5 min</td></tr>
+        <tr><td>Presentación y demo HU 2</td><td>21 min</td></tr>
+        <tr><td>Feedback HU 2</td><td>5 min</td></tr>
+        <tr><td>Registro y cierre general</td><td>5 min</td></tr>
+        <tr><td><strong>TOTAL</strong></td><td><strong>50 min</strong></td></tr>
+    </table>
+
+    <h2>📚 Procedimiento General de la Review</h2>
+    <ol>
+        <li><strong>Inicio de la sesión</strong>: El Scrum Master da la bienvenida, explica brevemente el objetivo de la sesión y presenta la HU a revisar.</li>
+        <li><strong>Presentación funcional (BA)</strong>: El BA expone la funcionalidad entregada, lo que resuelve y los criterios de aceptación implementados.</li>
+        <li><strong>Demostración funcional (Desarrollador)</strong>: El desarrollador realiza una demostración práctica en ambiente QA o pre-productivo.</li>
+        <li><strong>Confirmación de QA</strong>: El QA confirma si durante las pruebas formales se cumplieron los criterios de aceptación definidos.</li>
+        <li><strong>Validación de Stakeholder</strong>: El Stakeholder prueba la funcionalidad (si aplica) y da su feedback.</li>
+        <li><strong>Registro formal del resultado</strong>: 
+            <ul>
+                <li>HU Aprobada: Se marca en Azure DevOps como "Listo para Deploy".</li>
+                <li>HU No aprobada: Se documenta el motivo, se crea un Bug relacionado en Azure, y la HU vuelve a "En desarrollo".</li>
+            </ul>
+        </li>
+        <li><strong>Cierre</strong>: Se agradece la participación y se definen las siguientes acciones (si aplica).</li>
+    </ol>
+
+    <h2>📊 Métricas de control a registrar</h2>
+    <ul>
+        <li>% de HUs aprobadas vs total presentadas en la sesión.</li>
+        <li>Tiempo promedio invertido por HU.</li>
+        <li>Número de Bugs levantados derivados de la Review.</li>
+        <li>Número de observaciones menores que no bloquearon la aprobación.</li>
+    </ul>
+
+    <h2>📋 Registro de Motivos de Devolución</h2>
+    <form>
+        <label for="idHU">ID de Historia de Usuario (HU)</label>
+        <input type="text" id="idHU" name="idHU" placeholder="Ejemplo: HU_EP_GEO_103" required>
+
+        <label for="stakeholder">Stakeholder que realizó la validación</label>
+        <input type="text" id="stakeholder" name="stakeholder" placeholder="Nombre completo" required>
+
+        <label for="resultado">Resultado de la Validación</label>
+        <select id="resultado" name="resultado" required>
+            <option value="">-- Selecciona --</option>
+            <option value="Aprobada">Aprobada</option>
+            <option value="No Aprobada">No Aprobada</option>
+        </select>
+
+        <label for="comentarios">Comentarios</label>
+        <textarea id="comentarios" name="comentarios" rows="4" placeholder="Comentarios adicionales, sugerencias, etc."></textarea>
+
+        <label for="observaciones">Observaciones (opcional)</label>
+        <textarea id="observaciones" name="observaciones" rows="2"></textarea>
+
+        <button type="submit">Registrar resultado</button>
+    </form>
+
+    <h2>🖼️ Escenarios Prácticos</h2>
+
+    <h3>📖 Ejemplo Narrativo 1 – HU Aprobada ✅</h3>
+    <p><strong>🆔 HU: HU_EP_GEO_10500 – Implementación de filtros avanzados en Reporte de Ventas</strong></p>
+    <p><strong>Flujo de la sesión:</strong></p>
+    <ul>
+        <li><strong>Juan / Daniel (Scrum Master):</strong> "Iniciamos la Review para la HU 10500: filtros avanzados en Reporte de Ventas. Duración estimada: 30 minutos."</li>
+        <li><strong>Juan / Daniel (BA):</strong> "Se implementaron filtros por rango de fechas, región y categoría de producto."</li>
+        <li><strong>Cristian (Desarrollador):</strong> (Demuestra cómo funcionan los nuevos filtros en la plataforma.)</li>
+        <li><strong>Aura (QA):</strong> "Confirmamos en QA: los filtros funcionan correctamente en todos los casos de prueba."</li>
+        <li><strong>Laura García (Stakeholder):</strong> "Todo perfecto. Aprobado."</li>
+    </ul>
+    <p>Resultado: HU aprobada.<br>Acción: Se cierra en Azure DevOps como "Listo para Deploy".<br>Nota adicional: Se sugiere crear nueva HU para futuros filtros.</p>
+
+    <h3>📖 Ejemplo Narrativo 2 – HU No Aprobada ❌</h3>
+    <p><strong>🆔 HU: HU_EP_GEO_10400 – Actualización de trazabilidad logística</strong></p>
+    <p><strong>Flujo de la sesión:</strong></p>
+    <ul>
+        <li><strong>Juan / Daniel (Scrum Master):</strong> "Vamos a revisar la HU 10400: actualización automática de estados de entrega en OMS."</li>
+        <li><strong>Juan / Daniel (BA):</strong> "La HU permite actualización automática del estado de entrega basado en cambios de sistema logístico."</li>
+        <li><strong>Cristian (Desarrollador):</strong> (Muestra actualización automática de estados.)</li>
+        <li><strong>Aura (QA):</strong> "Encontramos un error: no refleja cambios manuales en estados."</li>
+        <li><strong>Laura García (Stakeholder):</strong> "Necesitamos que también refleje cambios manuales. No podemos aprobarla así."</li>
+    </ul>
+    <p>Resultado: HU rechazada.<br>Acción: Se crea un Bug ("HU_EP_GEO_10400-B01") en Azure DevOps.<br>La HU vuelve a "En desarrollo".<br>Se prioriza la corrección en el siguiente Sprint.</p>
+
+    <h2>🔥 Resumen de decisiones</h2>
+    <table>
+        <tr><th>Escenario</th><th>Resultado</th><th>Acción en Azure DevOps</th></tr>
+        <tr><td>HU_APROBADA</td><td>Se cierra</td><td>"Listo para Deploy"</td></tr>
+        <tr><td>HU_RECHAZADA</td><td>Se regresa a "En desarrollo" + Bug creado</td><td>Corrección agendada</td></tr>
+    </table>
+
+    <h2>🚀 Notas adicionales</h2>
+    <ul>
+        <li>Se sugiere preparar con antelación la sesión de Review, probando las HU antes con el BA y QA.</li>
+        <li>Evitar llevar a Review HU que ya se sabe que tienen errores o están incompletas.</li>
+        <li>En caso de no poder completar la demostración en 30 minutos, reagendar la HU para la próxima sesión.</li>
+    </ul>
+
+</div>
+
+</body>
+</html>
