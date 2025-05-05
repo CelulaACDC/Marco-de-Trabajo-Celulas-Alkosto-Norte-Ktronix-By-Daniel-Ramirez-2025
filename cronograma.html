@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Dispersión de Actividades por Célula</title>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f6f9;
+      color: #333;
+      margin: 40px;
+      line-height: 1.6;
+    }
+    h1 {
+      color: #003366;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 40px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+      background: #fff;
+    }
+    th, td {
+      padding: 12px;
+      border: 1px solid #ddd;
+      text-align: left;
+    }
+    th {
+      background-color: #007bff;
+      color: white;
+    }
+    tbody tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+    #chart_div {
+      width: 100%;
+      height: 500px;
+      margin-bottom: 40px;
+    }
+  </style>
+  <script type="text/javascript">
+    google.charts.load('current', {'packages':['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+    function drawChart() {
+      var data = google.visualization.arrayToDataTable([
+        ['Día', 'Actividad', { role: 'style' }, { role: 'annotation' }],
+        // Célula 1 - Sprint Actual
+        [2,  'Desarrollo Feature A', 'color:#1f77b4', 'Célula 1 (Actual)'],
+        [5,  'Desarrollo Feature B', 'color:#1f77b4', ''],
+        [8,  'QA Testing',           'color:#1f77b4', ''],
+        [1,  'Sprint Planning',      'color:#1f77b4', ''],
+        [14, 'Sprint Review',        'color:#1f77b4', ''],
+        [15, 'Sprint Retrospective', 'color:#1f77b4', ''],
+        // Célula 2 - Sprint Siguiente
+        [16, 'Desarrollo Feature A', 'color:#ff7f0e', 'Célula 2 (Siguiente)'],
+        [19, 'Desarrollo Feature B', 'color:#ff7f0e', ''],
+        [22, 'QA Testing',           'color:#ff7f0e', ''],
+        [16, 'Sprint Planning',      'color:#ff7f0e', ''],
+        [29, 'Sprint Review',        'color:#ff7f0e', ''],
+        [30, 'Sprint Retrospective', 'color:#ff7f0e', '']
+      ]);
+
+      var options = {
+        title: 'Dispersión de Actividades en Sprint Actual vs Siguiente',
+        hAxis: { title: 'Día del Sprint', viewWindow: { min: 0 } },
+        vAxis: { title: 'Actividad' },
+        legend: 'none',
+        pointSize: 10,
+        tooltip: { isHtml: true }
+      };
+
+      var chart = new google.visualization.ScatterChart(document.getElementById('chart_div'));
+      chart.draw(data, options);
+    }
+  </script>
+</head>
+<body>
+  <h1>📊 Cronograma de Actividades por Célula</h1>
+
+  <div id="chart_div"></div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Célula</th>
+        <th>Actividad</th>
+        <th>Sprint</th>
+        <th>Día</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>Célula 1</td><td>Desarrollo Feature A</td><td>Actual</td><td>2</td></tr>
+      <tr><td>Célula 1</td><td>Desarrollo Feature B</td><td>Actual</td><td>5</td></tr>
+      <tr><td>Célula 1</td><td>QA Testing</td><td>Actual</td><td>8</td></tr>
+      <tr><td>Célula 1</td><td>Sprint Planning</td><td>Actual</td><td>1</td></tr>
+      <tr><td>Célula 1</td><td>Sprint Review</td><td>Actual</td><td>14</td></tr>
+      <tr><td>Célula 1</td><td>Sprint Retrospective</td><td>Actual</td><td>15</td></tr>
+
+      <tr><td>Célula 2</td><td>Desarrollo Feature A</td><td>Siguiente</td><td>16</td></tr>
+      <tr><td>Célula 2</td><td>Desarrollo Feature B</td><td>Siguiente</td><td>19</td></tr>
+      <tr><td>Célula 2</td><td>QA Testing</td><td>Siguiente</td><td>22</td></tr>
+      <tr><td>Célula 2</td><td>Sprint Planning</td><td>Siguiente</td><td>16</td></tr>
+      <tr><td>Célula 2</td><td>Sprint Review</td><td>Siguiente</td><td>29</td></tr>
+      <tr><td>Célula 2</td><td>Sprint Retrospective</td><td>Siguiente</td><td>30</td></tr>
+    </tbody>
+  </table>
+</body>
+</html>
