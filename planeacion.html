@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>📋 Procedimiento de Planning de Sprint</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: #f4f6f9;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background: #003870;
+      color: #fff;
+      padding: 1rem 2rem;
+      text-align: center;
+    }
+    main {
+      max-width: 960px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    h1, h2, h3 {
+      color: #003870;
+      margin-top: 1.5rem;
+      margin-bottom: .5rem;
+    }
+    p, ul, ol {
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+    ul { padding-left: 1.2rem; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0 2rem;
+      background: #fff;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      border-radius: 6px;
+      overflow: hidden;
+    }
+    th, td {
+      padding: .75rem 1rem;
+      border-bottom: 1px solid #ddd;
+      text-align: left;
+    }
+    th {
+      background: #007bff;
+      color: #fff;
+      font-weight: 500;
+    }
+    tbody tr:nth-child(even) {
+      background: #f9f9f9;
+    }
+    .section-title {
+      margin-top: 2rem;
+      border-bottom: 2px solid #ddd;
+      padding-bottom: .25rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>📋 Procedimiento de Planning de Sprint</h1>
+  </header>
+
+  <main>
+    <h2 class="section-title">🎯 Objetivo</h2>
+    <p>Definir y comprometer el trabajo que el equipo realizará durante el próximo sprint, asegurando alineación con los objetivos de negocio y capacidad real del equipo.</p>
+
+    <h2 class="section-title">👥 Participantes</h2>
+    <ul>
+      <li><strong>Scrum Master (SM):</strong> Presenta y prioriza las Historias de Usuario (HUs) del backlog. Facilita la sesión, vela por el timebox y el cumplimiento de la agenda.</li>
+      <li><strong>Equipo de Desarrollo (DEV + QA + LT):</strong> Evalúa capacidad, discute detalles y se compromete a entregar las HUs seleccionadas.</li>
+      <li><strong>Business Analyst (BA):</strong> Aclara criterios de aceptación y dependencias.</li>
+    </ul>
+
+    <h2 class="section-title">🗓️ Cuándo</h2>
+    <p>Día 15 de cada sprint, inmediatamente después de la Retrospectiva.</p>
+    <p><strong>Duración total:</strong> 2 horas (0.25 días), timeboxed.</p>
+
+    <h2 class="section-title">📑 Agenda / Paso a Paso</h2>
+    <ol>
+      <li><strong>Apertura (5 min):</strong> SM da la bienvenida, recuerda el objetivo y repasa la agenda. Se confirma la duración y el timebox.</li>
+      <li><strong>Revisión de la Capacidad del Equipo (10 min):</strong>
+        <ul>
+          <li>SM o BA presenta la velocidad histórica (media últimos 3 sprints).</li>
+          <li>Revisión de ausencias o vacaciones previstas.</li>
+          <li>Cálculo de la capacidad total en días-hombre.</li>
+        </ul>
+      </li>
+      <li><strong>Presentación del Backlog Priorizado (15 min):</strong> SM expone HUs en orden de prioridad con título, descripción corta, criterios de aceptación y estimación en días.</li>
+      <li><strong>Selección Colaborativa de HUs (20 min):</strong>
+        <ul>
+          <li>Equipo aclara dudas técnicas/funcionales con BA.</li>
+          <li>Identifica dependencias o bloqueos.</li>
+          <li>Ajusta estimaciones según refinamiento y puntuación previos.</li>
+          <li>SM marca HUs hasta completar la capacidad disponible.</li>
+        </ul>
+      </li>
+      <li><strong>Desglose de Tareas Principales (20 min):</strong>
+        <ul>
+          <li>Para cada HU comprometida, se identifican tareas (Desarrollo, QA, Handoff, Deploy, Review).</li>
+          <li>Se asignan responsables y estiman días/horas.</li>
+          <li>Se registran en la herramienta de gestión (Azure DevOps / Monday).</li>
+        </ul>
+      </li>
+      <li><strong>Riesgos y Dependencias (10 min):</strong> BA y DEV listan riesgos conocidos y dependencias; SM anota acciones de mitigación y responsables.</li>
+      <li><strong>Confirmación del Objetivo de Sprint (10 min):</strong> PO formula el Sprint Goal; el equipo confirma su factibilidad.</li>
+      <li><strong>Compromiso Formal (5 min):</strong> Cada miembro confirma su compromiso; SM cierra la sesión y deja el tablero listo.</li>
+    </ol>
+
+    <h2 class="section-title">📏 Timebox</h2>
+    <table>
+      <thead>
+        <tr><th>Sección</th><th>Duración</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Apertura</td><td>5 min</td></tr>
+        <tr><td>Capacidad del equipo</td><td>10 min</td></tr>
+        <tr><td>Presentación del Backlog</td><td>15 min</td></tr>
+        <tr><td>Selección de HUs</td><td>20 min</td></tr>
+        <tr><td>Desglose de tareas Fijas</td><td>10 min</td></tr>
+        <tr><td>Desglose de tareas por HU</td><td>20 min</td></tr>
+        <tr><td>Riesgos y dependencias</td><td>10 min</td></tr>
+        <tr><td>Confirmación del Sprint Goal</td><td>10 min</td></tr>
+        <tr><td>Compromiso formal</td><td>5 min</td></tr>
+        <tr><th>Total</th><th>2 h</th></tr>
+      </tbody>
+    </table>
+
+    <h2 class="section-title">✅ Buenas Prácticas</h2>
+    <ul>
+      <li>Preparación previa: El backlog debe estar refinado y estimado.</li>
+      <li>Visualizar tablero: Tener Azure DevOps abierto y actualizado.</li>
+      <li>Timebox estricto: SM vigila cada bloque.</li>
+      <li>Registro inmediato: Documentar al instante cada decisión.</li>
+      <li>Sprint Goal claro: Objetivo simple y orientador.</li>
+    </ul>
+
+    <h2 class="section-title">📊 Métricas a Registrar</h2>
+    <ul>
+      <li>Cumplimiento de compromiso: % de HUs completadas vs comprometidas.</li>
+      <li>Precisión de estimación: desviación promedio en días.</li>
+      <li>Número de bloqueos identificados y % resueltos.</li>
+    </ul>
+
+    <h2 class="section-title">3. Sección A: Actividades Fijas del Sprint</h2>
+    <table>
+      <thead>
+        <tr><th>#</th><th>Actividad</th><th>Día(s)</th><th>Duración estimada</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td>Declaración de inicio de sprint</td><td>Día 1</td><td>0.125 día (1 h)</td></tr>
+        <tr><td>2</td><td>Daily Scrum × 15</td><td>Días 1–15</td><td>0.375 días (20 m × 15)</td></tr>
+        <tr><td>3</td><td>Refinamiento 1</td><td>Día 6</td><td>0.125 día (1 h)</td></tr>
+        <tr><td>4</td><td>Puntuación 1</td><td>Día 9</td><td>0.125 día (1 h)</td></tr>
+        <tr><td>5</td><td>Refinamiento 2</td><td>Día 11</td><td>0.125 día (1 h)</td></tr>
+        <tr><td>6</td><td>Puntuación 2</td><td>Día 13</td><td>0.125 día (1 h)</td></tr>
+        <tr><td>7</td><td>Retrospectiva Sprint Actual</td><td>Día 15</td><td>0.125 día (1 h)</td></tr>
+        <tr><td>8</td><td>Planning Nuevo Sprint</td><td>Día 15</td><td>0.25 día (2 h)</td></tr>
+        <tr><th colspan="3">Total Actividades Fijas</th><th>1.375 días</th></tr>
+      </tbody>
+    </table>
+
+    <h2 class="section-title">3. Sección B: Actividades Propias de Cada HU</h2>
+    <table>
+      <thead>
+        <tr><th>#</th><th>Actividad</th><th>Cuándo / Nota</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>A1</td><td>Desarrollo</td><td>Tras planning, según la estimación</td></tr>
+        <tr><td>A2</td><td>Diseño de casos de prueba (en paralelo al desarrollo)</td><td>Durante y tras A1</td></tr>
+        <tr><td>A3</td><td>Handoff Técnico</td><td>Al completar el desarrollo (15–30 min máximo por HU.)</td></tr>
+        <tr><td>A4</td><td>Liberación a ambiente Dev (Deploy inicial)</td><td>Inmediatamente tras A3</td></tr>
+        <tr><td>A5</td><td>Ejecución y documentación de casos de prueba</td><td>Tras A4</td></tr>
+        <tr><td>A6</td><td>Validación QA</td><td>Tras A5</td></tr>
+        <tr><td>A7</td><td>Validación funcional del BA</td><td>Tras A6</td></tr>
+        <tr><td>A8</td><td>Review con el Stakeholder</td><td>Tras A7 (30 min)</td></tr>
+        <tr><td>A9</td><td>Corrección de Bugs (si aplica)</td><td>Inmediatamente tras A8</td></tr>
+        <tr><td>A10</td><td>Liberación a Producción (si aplica)</td><td>Al cierre exitoso de A9</td></tr>
+      </tbody>
+    </table>
+
+  </main>
+
+</body>
+</html>
