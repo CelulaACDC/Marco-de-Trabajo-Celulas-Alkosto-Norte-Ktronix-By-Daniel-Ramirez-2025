@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🔍 Proceso de Refinamiento de HU</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <style>
+    body { font-family: 'Roboto', sans-serif; background-color: #f4f4f4; color: #333; margin: 0; padding: 20px; }
+    h1, h2, h3 { color: #003870; }
+    h1 { text-align: center; margin-bottom: 1rem; }
+    section { background: #fff; border-radius: 8px; padding: 20px; margin-bottom: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+    .step-title { font-size: 1.1rem; font-weight: 500; margin-top: 1rem; }
+    ul, ol { margin-left: 1.5rem; margin-bottom: 1rem; }
+    li { margin-bottom: 0.5rem; }
+    table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
+    th, td { border: 1px solid #ddd; padding: 12px; }
+    th { background-color: #007bff; color: #fff; }
+    .metrics th { background-color: #0056b3; }
+    .icon { margin-right: 8px; color: #007bff; }
+    code { background: #eef1f5; padding: 2px 4px; border-radius: 4px; }
+  </style>
+</head>
+<body>
+  <h1><i class="fas fa-tags icon"></i>🔍 Proceso de Refinamiento de HU</h1>
+
+  <section>
+    <h2>1. Planificación de sesiones</h2>
+    <p>El <strong>Scrum Master</strong> (SM) programa <strong>dos sesiones de refinamiento</strong> por sprint, de <strong>1 hora</strong> cada una, <strong>en los días 6 y 11</strong> del sprint. Estos encuentros se realizan en <strong>Microsoft Teams</strong>, aprovechando canales dedicados para registro automático de asistencia y grabación.</p>
+
+    <h2>2. Convocatoria y preparación</h2>
+    <p><strong>48 h antes</strong> de cada sesión, el <strong>BA</strong> envía la invitación de Teams con:</p>
+    <ul>
+      <li>Lista de HU a refinar.</li>
+      <li>Objetivos de la reunión.</li>
+      <li>Enlace al tablero (Monday/Azure DevOps).</li>
+      <li>Canal de Teams donde quedarán las grabaciones y documentos.</li>
+    </ul>
+
+    <h2>3. Inicio de la sesión</h2>
+    <p><strong>Duración:</strong> 1 h<br>
+    El <strong>BA</strong> da la bienvenida desde el canal de Teams, recuerda el objetivo y el alcance del refinamiento. El <strong>SM</strong>, como anfitrión, controla el tiempo y la asistencia (sin intervenir en la discusión técnica).</p>
+
+    <h2>4. Refinamiento de cada HU</h2>
+    <ol>
+      <li><strong>BA</strong> presenta la HU: nombre, descripción y criterios actuales.</li>
+      <li><strong>Equipo</strong> aporta:
+        <ul>
+          <li><strong>Devs</strong>: dudas técnicas y dependencias.</li>
+          <li><strong>QA</strong>: condiciones de prueba y casos límite.</li>
+          <li><strong>Stakeholder / LT</strong>: validación de valor de negocio y prioridades.</li>
+        </ul>
+      </li>
+      <li>Se requiere la aprobación de al menos un representante de cada rol (<strong>Stakeholder, LT, QA, DEV</strong>) para considerar la HU “refinada”.</li>
+      <li><strong>BA</strong> documenta en la HU los acuerdos: descripciones, criterios de aceptación ajustados, dependencias.</li>
+      <li>Tiempo medio: <strong>10–15 min por historia</strong> (para cubrir 4–5 HU en la hora).</li>
+    </ol>
+
+    <h2>5. Cierre y validación</h2>
+    <ul>
+      <li><strong>BA</strong> anuncia que las historias han obtenido las aprobaciones necesarias y están refinadas.</li>
+      <li>Cambia el estado de cada HU en Monday a <strong>“En cola de desarrollo”</strong>.</li>
+      <li>Entrega al <strong>SM</strong> la lista definitiva para la sesión de puntuación.</li>
+    </ul>
+
+    <h2>6. Micro-refinamiento “grab & go”</h2>
+    <p>Si surge una duda puntual después de la sesión, el <strong>BA</strong> convoca un micro-refinamiento de <strong>15 min</strong> en Teams.<br>
+    <strong>Ejemplo:</strong> Tras la puntuación, Cristian pregunta si la HU-10512 debe incluir un correo CC adicional. Se reúne el BA, un DEV y QA durante 10 min en Teams, aclara el criterio, actualiza la HU y cierra la consulta sin una nueva sesión formal.</p>
+
+    <h2>7. HU no refinada</h2>
+    <p>Si una HU no obtiene aprobación multidisciplinar durante la sesión (Stakeholder, LT, QA o DEV), el BA la marca como “En Refinamiento” en Monday, documenta los puntos pendientes en Azure y programa su revisión en la siguiente sesión de refinamiento o mediante un micro-refinamiento ágil.</p>
+  </section>
+
+  <section>
+    <h2><i class="fas fa-users icon"></i>🎭 Ejemplo narrado (Sesión en Día 6)</h2>
+    <p><em>Contexto:</em> Sprint 1, Día 6, 10:00–11:00 en Teams. Invitados: Aura (BA), Daniel (SM), Cristian y Belén (Devs), Wilmer (QA), Alison (Stakeholder), Luciana (LT).</p>
+    <ol>
+      <li><strong>10:00</strong> – Aura inicia en Teams: “Hoy refinamos HU-10510, 10511 y 10512 para la próxima estimación.”</li>
+      <li><strong>10:02</strong> – <strong>HU-10510</strong>: Devs aclaran lógica de filtros. QA añade caso de prueba para datos nulos. Stakeholder confirma valor de negocio. LT valida viabilidad técnica. Aura anota en Monday: nuevos criterios y dependencias.</li>
+      <li><strong>10:17</strong> – <strong>HU-10511</strong> refinada con aportes similares (12 min).</li>
+      <li><strong>10:30</strong> – <strong>HU-10512</strong>: falta definir plantilla; Stakeholder y LT validan offline.</li>
+      <li><strong>10:45</strong> – Aura verifica aprobaciones multidisciplinares, cambia estado de HU-10510 y 10511 a “En cola de desarrollo”; marca HU-10512 como “Refinamiento parcial”.</li>
+      <li><strong>10:48</strong> – Daniel (SM) recuerda sesión de puntuación en Día 9 y cierra la reunión.</li>
+      <li><strong>11:00</strong> – Fin de sesión; grabación en el canal de Teams.</li>
+    </ol>
+
+    <h3>🔑 Puntos de buenas prácticas</h3>
+    <ul>
+      <li>Uso de Teams para grabación y documentación automática.</li>
+      <li>Roles claros: BA dirige, SM gestiona tiempo, equipo + Stakeholder + LT + QA aprueban.</li>
+      <li>Aprobación multidisciplinar para considerar una HU refinada.</li>
+      <li>Duración equilibrada (4 HU en 1 h; ~15 min/ HU).</li>
+      <li>Micro-refinamiento ágil (“grab & go”).</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2><i class="fas fa-chart-line icon"></i>📏 Métricas de seguimiento</h2>
+    <table class="metrics">
+      <thead>
+        <tr>
+          <th>Métrica</th>
+          <th>Qué mide</th>
+          <th>Meta</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>% de asistencia</td>
+          <td>Participantes clave presentes vs invitados</td>
+          <td>≥ 90%</td>
+        </tr>
+        <tr>
+          <td># de HU refinadas vs planificadas</td>
+          <td>Historias listas vs programadas</td>
+          <td>≥ 80%</td>
+        </tr>
+        <tr>
+          <td>Duración promedio por HU</td>
+          <td>Tiempo real invertido / HU</td>
+          <td>10–15 min</td>
+        </tr>
+        <tr>
+          <td>% de HU con grab & go</td>
+          <td>Historias que requirieron micro-refinamiento</td>
+          <td>≤ 20%</td>
+        </tr>
+        <tr>
+          <td>Tasa de aprobación multidisciplinar</td>
+          <td>HU aprobadas por todos los roles</td>
+          <td>100%</td>
+        </tr>
+        <tr>
+          <td>Retrabajo post-refinamiento</td>
+          <td>Cambios en HU tras sesión formal</td>
+          <td>≤ 1 por sprint</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+</body>
+</html>
