@@ -208,6 +208,7 @@
 
     <div style="text-align:center;">
         <button id="guardar-planeacion-btn" class="submit-btn">Guardar Planeación</button>
+        <button id="limpiar-resumen-btn" class="clear-btn">Limpiar Resumen</button>
     </div>
 
     <!-- XLSX.js -->
@@ -309,6 +310,11 @@
       document.getElementById('limpiar-planeacion-btn').onclick = () => {
         document.querySelector('#tabla-resultados tbody').innerHTML='';
       };
+        // Limpiar resúmenes
+document.getElementById('limpiar-resumen-btn').addEventListener('click', () => {
+  document.querySelector('#tabla-resumen-agregada tbody').innerHTML = '';
+  document.querySelector('#tabla-resumen-fijas tbody').innerHTML = '';
+});
 
       // Exportar Excel
       document.getElementById('exportar-excel-btn').addEventListener('click', () => {
