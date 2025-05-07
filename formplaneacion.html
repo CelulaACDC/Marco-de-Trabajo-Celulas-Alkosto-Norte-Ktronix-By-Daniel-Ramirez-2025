@@ -36,14 +36,13 @@
         .clear-btn:hover { background-color: #5a6268; }
 
         /* Tablas de resumen */
-        #tabla-resumen-agregada th, #tabla-resumen-fijas th { background-color: #28a745; color: #fff; }
+        #tabla-resumen-agregada th, #tabla-resumen-fijas th, #tabla-resumen-otras th { background-color: #28a745; color: #fff; }
     </style>
 </head>
 <body>
 
     <h1>📋 Planeación de Sprint</h1>
 
-    <!-- Sección 1 -->
     <div class="section">
         <h2>Sección 1: Actividades por Historia de Usuario (HU)</h2>
 
@@ -119,7 +118,6 @@
         <button id="agregar-a-planeacion-btn">AGREGAR A PLANEACIÓN</button>
     </div>
 
-    <!-- Resultados parciales -->
     <div id="resultados-planeacion" class="section">
         <h2>Planeación Agregada</h2>
         <table id="tabla-resultados">
@@ -134,7 +132,6 @@
         <button id="limpiar-planeacion-btn" class="clear-btn">Limpiar Planeación</button>
     </div>
 
-    <!-- Sección 2 -->
     <div class="section">
         <h2>Sección 2: Actividades Fijas del Sprint</h2>
         <table id="tabla-fijas-form">
@@ -177,11 +174,55 @@
                 <td>9</td><td>Cierre de Sprint</td><td>Día 15 (PM)</td><td>0.125</td>
                 <td><input type="date" name="fechaCierre"></td>
             </tr>
+             <tr>
+                <td>10</td><td>Análisis Exploratorio de HU (16 horas)</td><td>Varía</td><td>2</td>
+                <td><input type="date" name="fechaAnalisisExploratorio"></td>
+            </tr>
         </table>
     </div>
 
-    <!-- Resumen final -->
-    <div id="resumen-planeacion" class="section">
+	    </div>  <div class="section">
+    <h2>Sección 3: Otras Actividades</h2>
+
+    <div class="form-row">
+      <label for="otraActividad">Actividad:</label>
+      <input type="text" id="otraActividad" name="otraActividad">
+    </div>
+    <div class="form-row">
+      <label for="otraInicio">Fecha Inicio:</label>
+      <input type="date" id="otraInicio" name="otraInicio">
+    </div>
+    <div class="form-row">
+      <label for="otraFin">Fecha Fin:</label>
+      <input type="date" id="otraFin" name="otraFin">
+    </div>
+    <div class="form-row">
+      <label for="otraHoras">Horas/Días:</label>
+      <input type="number" id="otraHoras" name="otraHoras">
+    </div>
+    <div class="form-row">
+      <label for="otraResp">Responsable:</label>
+      <input type="text" id="otraResp" name="otraResp">
+    </div>
+
+    <button id="agregar-otra-btn" class="submit-btn">Agregar Otra Actividad</button>
+
+    <h3>Resumen de Otras Actividades Añadidas</h3>
+    <table id="tabla-otras-actividades">
+      <thead>
+        <tr>
+          <th>Actividad</th>
+          <th>Inicio</th>
+          <th>Fin</th>
+          <th>Horas/Días</th>
+          <th>Responsable</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+  <div id="resumen-planeacion" class="section">
         <h2>Resumen de Planeación Agregada</h2>
         <table id="tabla-resumen-agregada">
             <thead>
@@ -203,15 +244,30 @@
             <tbody></tbody>
         </table>
 
+        <h2>Resumen de Otras Actividades</h2>
+        <table id="tabla-resumen-otras">
+            <thead>
+                <tr>
+                    <th>Actividad</th>
+                    <th>Inicio</th>
+                    <th>Fin</th>
+                    <th>Horas/Días</th>
+                    <th>Responsable</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+
+
         <button id="exportar-excel-btn" class="submit-btn">Exportar a Excel</button>
     </div>
+
 
     <div style="text-align:center;">
         <button id="guardar-planeacion-btn" class="submit-btn">Guardar Planeación</button>
         <button id="limpiar-resumen-btn" class="clear-btn">Limpiar Resumen</button>
     </div>
 
-    <!-- XLSX.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
     <script>
       // Añadir a Planeación
@@ -224,15 +280,16 @@
 
         const actividades = [
           { act:'Desarrollo',      inicio:'fechaDesarrolloInicio', fin:'fechaDesarrolloFin', horas:'horasDesarrollo' },
-          { act:'Diseño QA',       inicio:'fechaDisenoQAInicio',  fin:'fechaDisenoQAFin',  horas:'horasDisenoQA'  },
+          { act:'Diseño de casos de prueba (en paralelo con desarrollo)',       inicio:'fechaDisenoQAInicio',  fin:'fechaDisenoQAFin',  horas:'horasDisenoQA'  },
           { act:'Handoff técnico',  inicio:'fechaHandoffInicio',   fin:'fechaHandoffFin',   horas:'horasHandoff'   },
-          { act:'Deploy Dev',       inicio:'fechaDeployInicio',    fin:'fechaDeployFin',    horas:'horasDeploy'    },
-          { act:'Validación QA',    inicio:'fechaQAInicio',        fin:'fechaQAFin',        horas:'horasQA'        },
-          { act:'Corrección Bugs',  inicio:'fechaBugsInicio',      fin:'fechaBugsFin',      horas:'horasBugs'      },
-          { act:'Review Stakeholder', inicio:'fechaReviewInicio',  fin:'fechaReviewFin',    horas:'horasReview'    }
+          { act:'Liberación a ambiente Dev (Deploy inicial)',       inicio:'fechaDeployInicio',    fin:'fechaDeployFin',    horas:'horasDeploy'    },
+          { act:'Validación QA (Ejecución formal de pruebas)',    inicio:'fechaQAInicio',        fin:'fechaQAFin',        horas:'horasQA'        },
+          { act:'Corrección de Bugs (si aplica)',  inicio:'fechaBugsInicio',      fin:'fechaBugsFin',      horas:'horasBugs'      },
+          { act:'Review con Stakeholder', inicio:'fechaReviewInicio',  fin:'fechaReviewFin',    horas:'horasReview'    }
         ];
 
         const body = document.querySelector('#tabla-resultados tbody');
+
         actividades.forEach(a => {
           const r = body.insertRow();
           r.insertCell().textContent = nroSprint;
@@ -245,21 +302,61 @@
           r.insertCell().textContent = devAsignado;
           r.insertCell().textContent = qaAsignado;
           const cellAcc = r.insertCell();
-          const eBtn = document.createElement('button'); eBtn.textContent='Editar'; eBtn.className='edit-btn';
-          const dBtn = document.createElement('button'); dBtn.textContent='Eliminar'; dBtn.className='delete-btn';
-          cellAcc.append(eBtn,dBtn);
+
+          // Botón Editar para Planeación Agregada
+          const eBtn = document.createElement('button');
+          eBtn.textContent = 'Editar';
+          eBtn.className = 'edit-btn';
+          eBtn.addEventListener('click', () => {
+              // Cargar datos de la fila al formulario de la Sección 1
+              document.getElementById('nroSprint').value = r.cells[0].textContent;
+              document.getElementById('huId').value = r.cells[1].textContent;
+              document.getElementById('huName').value = r.cells[2].textContent;
+              document.getElementById('devAsignado').value = r.cells[7].textContent;
+              document.getElementById('qaAsignado').value = r.cells[8].textContent;
+
+              // Nota: Cargar fechas y horas a los inputs correctos requiere mapeo por nombre de actividad.
+              // Esto es una implementación básica. Para una edición completa, deberías identificar qué actividad es
+              // la de esta fila (ej: "Desarrollo", "Diseño QA", etc.) y cargar los valores en los inputs correspondientes.
+              // Aquí solo cargamos los campos generales de la HU.
+
+              alert('Datos cargados al formulario de la Sección 1. Modifica y agrega nuevamente. Deberás eliminar la fila original.');
+          });
+          cellAcc.append(eBtn);
+
+          // Botón Eliminar para Planeación Agregada
+          const dBtn = document.createElement('button');
+          dBtn.textContent = 'Eliminar';
+          dBtn.className = 'delete-btn';
+          dBtn.addEventListener('click', () => {
+              r.remove(); // Eliminar la fila
+          });
+          cellAcc.append(dBtn);
+
         });
 
-        // Reset formulario
+        // Reset formulario Sección 1
         ['nroSprint','huId','huName','devAsignado','qaAsignado'].forEach(id=>document.getElementById(id).value='');
         actividades.forEach(a=>{
-          document.querySelector(`input[name="${a.inicio}"]`).value='';
-          document.querySelector(`input[name="${a.fin}"]`).value='';
-          document.querySelector(`input[name="${a.horas}"]`).value=a.horas==='horasDesarrollo'?16:
-                                                                  a.horas==='horasDisenoQA'?8:
-                                                                  a.horas==='horasHandoff'?2:
-                                                                  a.horas==='horasDeploy'?2:
-                                                                  a.horas==='horasQA'?8:4;
+          // También resetear los campos de fecha y hora
+          const inicioInput = document.querySelector(`input[name="${a.inicio}"]`);
+          if(inicioInput) inicioInput.value = '';
+          const finInput = document.querySelector(`input[name="${a.fin}"]`);
+          if(finInput) finInput.value = '';
+          const horasInput = document.querySelector(`input[name="${a.horas}"]`);
+           if(horasInput) {
+             // Resetear horas a sus valores por defecto si es posible
+             const defaultHours = {
+               'horasDesarrollo': 16,
+               'horasDisenoQA': 8,
+               'horasHandoff': 2,
+               'horasDeploy': 2,
+               'horasQA': 8,
+               'horasBugs': 4,
+               'horasReview': 2
+             };
+             horasInput.value = defaultHours[a.horas] || ''; // Usa el valor por defecto o vacío
+           }
         });
       });
 
@@ -278,54 +375,155 @@
 
         // 2) Actividades Fijas
         const fij = [];
+        // Itera sobre todas las filas de la tabla de actividades fijas (excluyendo el encabezado)
         document.querySelectorAll('#tabla-fijas-form tr:not(:first-child)').forEach(r=> {
           const c=r.children;
           fij.push({
-            numero:c[0].textContent, actividad:c[1].textContent, dias:c[2].textContent,
+            numero:c[0].textContent,
+            actividad:c[1].textContent,
+            dias:c[2].textContent,
             duracion:c[3].textContent,
-            fecha:r.querySelector('input')? r.querySelector('input').value : ''
+            // Intenta obtener el valor del input de fecha, si existe
+            fecha: r.querySelector('input[type="date"]') ? r.querySelector('input[type="date"]').value : ''
           });
         });
 
-        // 3) Volcar a resumen
+        // 3) Otras Actividades
+        const otrasActs = [];
+        document.querySelectorAll('#tabla-otras-actividades tbody tr').forEach(r => {
+            const c = r.children;
+            // Asegurarse de tomar solo las celdas de datos, no la de acciones para el resumen/guardado
+            otrasActs.push({
+                actividad: c[0].textContent,
+                inicio: c[1].textContent,
+                fin: c[2].textContent,
+                horas: c[3].textContent,
+                responsable: c[4].textContent
+            });
+        });
+
+
+        // 4) Volcar a resumen
         const ra=document.querySelector('#tabla-resumen-agregada tbody');
         const rf=document.querySelector('#tabla-resumen-fijas tbody');
-        ra.innerHTML=''; rf.innerHTML='';
+        const ro = document.querySelector('#tabla-resumen-otras tbody'); // Resumen Otras Actividades
+        ra.innerHTML=''; rf.innerHTML=''; ro.innerHTML=''; // Limpiar las tablas de resumen
+
         planeAg.forEach(i=> {
           const r=ra.insertRow();
           Object.values(i).forEach(v=>r.insertCell().textContent=v);
         });
         fij.forEach(i=> {
           const r=rf.insertRow();
-          Object.values(i).forEach(v=>r.insertCell().textContent=v);
+          // Asegurarse de que el orden de las celdas coincida con el thead del resumen
+          r.insertCell().textContent = i.numero;
+          r.insertCell().textContent = i.actividad;
+          r.insertCell().textContent = i.dias;
+          r.insertCell().textContent = i.duracion;
+          r.insertCell().textContent = i.fecha;
+        });
+        // Volcar otras actividades al resumen
+        otrasActs.forEach(i => {
+            const r = ro.insertRow();
+            Object.values(i).forEach(v => r.insertCell().textContent = v);
         });
 
-        // 4) LocalStorage
-        localStorage.setItem('planeAg',JSON.stringify(planeAg));
-        localStorage.setItem('fijas',JSON.stringify(fij));
-        alert('Planeación guardada');
+
+        // 5) LocalStorage - Puedes guardar estos arrays si necesitas persistencia
+        // localStorage.setItem('planeAg',JSON.stringify(planeAg));
+        // localStorage.setItem('fijas',JSON.stringify(fij));
+        // localStorage.setItem('otrasActs',JSON.stringify(otrasActs));
+        alert('Resúmenes generados. Los datos están listos para exportar a Excel.');
       });
 
-      // Limpiar tabla resultados
+      // Limpiar tabla resultados (Planeación Agregada)
       document.getElementById('limpiar-planeacion-btn').onclick = () => {
         document.querySelector('#tabla-resultados tbody').innerHTML='';
       };
-        // Limpiar resúmenes
-document.getElementById('limpiar-resumen-btn').addEventListener('click', () => {
-  document.querySelector('#tabla-resumen-agregada tbody').innerHTML = '';
-  document.querySelector('#tabla-resumen-fijas tbody').innerHTML = '';
-});
 
-      // Exportar Excel
-      document.getElementById('exportar-excel-btn').addEventListener('click', () => {
-        const wb = XLSX.utils.book_new();
-        wb.Props = { Title:"Planeación Sprint", Author:"Equipo" };
-        const ws1 = XLSX.utils.table_to_sheet(document.getElementById('tabla-resumen-agregada'));
-        const ws2 = XLSX.utils.table_to_sheet(document.getElementById('tabla-resumen-fijas'));
-        XLSX.utils.book_append_sheet(wb, ws1, "PlaneAg");
-        XLSX.utils.book_append_sheet(wb, ws2, "ActFijas");
-        XLSX.writeFile(wb, "planeacion_sprint.xlsx");
+      // Limpiar resúmenes
+      document.getElementById('limpiar-resumen-btn').addEventListener('click', () => {
+        document.querySelector('#tabla-resumen-agregada tbody').innerHTML = '';
+        document.querySelector('#tabla-resumen-fijas tbody').innerHTML = '';
+        document.querySelector('#tabla-resumen-otras tbody').innerHTML = '';
       });
+
+      // === Lógica Sección 3: Otras Actividades ===
+      document.addEventListener('DOMContentLoaded', () => {
+        const btnAgregarOtra = document.getElementById('agregar-otra-btn');
+        const tablaOtrasBody = document.querySelector('#tabla-otras-actividades tbody');
+
+        btnAgregarOtra.addEventListener('click', () => {
+          const act  = document.getElementById('otraActividad').value.trim();
+          const ini  = document.getElementById('otraInicio').value;
+          const fin  = document.getElementById('otraFin').value;
+          const hrs  = document.getElementById('otraHoras').value;
+          const resp = document.getElementById('otraResp').value.trim();
+
+          if (!act || !ini || !fin || !hrs || !resp) {
+            alert('Por favor completa todos los campos de Otras Actividades.');
+            return;
+          }
+
+          // Inserta la fila en la tabla de Sección 3
+          const fila = tablaOtrasBody.insertRow();
+          fila.insertCell().textContent = act;
+          fila.insertCell().textContent = ini;
+          fila.insertCell().textContent = fin;
+          fila.insertCell().textContent = hrs;
+          fila.insertCell().textContent = resp;
+
+          // Botones de Acción para Otras Actividades
+          const cellAcc = fila.insertCell();
+          const btnEdit = document.createElement('button');
+          btnEdit.textContent = 'Editar';
+          btnEdit.className = 'edit-btn';
+           btnEdit.addEventListener('click', () => {
+                // Cargar datos de la fila al formulario de Otras Actividades
+                document.getElementById('otraActividad').value = fila.cells[0].textContent;
+                document.getElementById('otraInicio').value = fila.cells[1].textContent;
+                document.getElementById('otraFin').value = fila.cells[2].textContent;
+                document.getElementById('otraHoras').value = fila.cells[3].textContent;
+                document.getElementById('otraResp').value = fila.cells[4].textContent;
+                // Eliminar la fila original después de cargar los datos
+                fila.remove();
+           });
+
+          const btnDel = document.createElement('button');
+          btnDel.textContent = 'Eliminar';
+          btnDel.className = 'delete-btn';
+          btnDel.addEventListener('click', () => fila.remove());
+
+          cellAcc.append(btnEdit, btnDel);
+
+          // Limpia el formulario de Otras Actividades
+          ['otraActividad','otraInicio','otraFin','otraHoras','otraResp']
+            .forEach(id => document.getElementById(id).value = '');
+        });
+
+        // Exportar a Excel
+        document.getElementById('exportar-excel-btn').addEventListener('click', () => {
+          const wb = XLSX.utils.book_new();
+          wb.Props = { Title: "Planeación Sprint", Author: "Equipo" };
+
+          // Asegurarse de que las tablas de resumen tengan contenido antes de exportar
+          // Puedes llamar a guardar planeación primero si quieres asegurar que los resúmenes estén actualizados
+          // document.getElementById('guardar-planeacion-btn').click(); // Descomentar si quieres forzar el guardado antes de exportar
+
+          const wsAg  = XLSX.utils.table_to_sheet(document.getElementById('tabla-resumen-agregada'));
+          const wsFi  = XLSX.utils.table_to_sheet(document.getElementById('tabla-resumen-fijas'));
+          const wsOtr = XLSX.utils.table_to_sheet(document.getElementById('tabla-resumen-otras')); // Exportar la tabla de resumen de Otras Actividades
+
+          XLSX.utils.book_append_sheet(wb, wsAg, "PlaneAg");
+          XLSX.utils.book_append_sheet(wb, wsFi, "ActFijas");
+          XLSX.utils.book_append_sheet(wb, wsOtr, "OtrasActs"); // Añadir la nueva hoja al Excel
+
+          XLSX.writeFile(wb, "planeacion_sprint.xlsx");
+        });
+      });
+      // === Fin Lógica Sección 3 ===
+
+
     </script>
 </body>
 </html>
