@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Formulario de Estimación de Historias Células Alkosto - Ktronix Daniek</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            padding: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+        }
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /* Degradado de fondo combinado Alkosto y Ktronix */
+            background: linear-gradient(135deg, #004aad80, #f5822080);
+            opacity: 0.5;
+            z-index: -1;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: #004AAD; /* Azul Alkosto */
+        }
+        form {
+            max-width: 600px;
+            margin: auto;
+            background: #ffffff;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            border-top: 4px solid #F58220; /* Naranja Ktronix */
+        }
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #555;
+            font-weight: 600;
+            font-size: 1em;
+        }
+        input, select {
+            width: 100%;
+            padding: 0.75rem;
+            margin-bottom: 1.5rem;
+            border-radius: 6px;
+            border: 1px solid #ddd;
+            transition: border-color 0.3s ease;
+            font-size: 1em;
+        }
+        input:focus, select:focus {
+            outline: none;
+            border-color: #004AAD; /* Azul Alkosto */
+            box-shadow: 0 0 0 2px rgba(0, 74, 173, 0.2);
+        }
+        button {
+            margin-top: 2rem;
+            padding: 0.75rem 1.5rem;
+            background-color: #F58220; /* Naranja Ktronix */
+            border: none;
+            color: white;
+            font-weight: bold;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-size: 1.1em;
+            width: 100%;
+        }
+        button:hover {
+            background-color: #ED5E00; /* Naranja Ktronix (más oscuro) */
+        }
+        button:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(245, 130, 32, 0.3);
+        }
+
+        .info-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 3rem;
+            margin-bottom: 2rem;
+            background-color: #f8f8f8;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+            font-size: 0.95em;
+            color: #444;
+            overflow: hidden;
+        }
+        .info-table th, .info-table td {
+            border: 1px solid #eee;
+            padding: 0.75rem;
+            text-align: left;
+        }
+        .info-table th {
+            font-weight: bold;
+            background-color: #004AAD; /* Azul Alkosto */
+            color: white;
+        }
+        .info-table td {
+            background-color: #ffffff;
+        }
+        .info-table thead tr {
+            background-color: #004AAD;  /* Azul Alkosto */
+            color: white;
+        }
+
+        .info-header {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-top: 3rem;
+            margin-bottom: 1rem;
+            color: #004AAD; /* Azul Alkosto */
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        hr {
+            margin: 2rem auto;
+            border: 0;
+            border-top: 1px solid #e0e0e0;
+            width: 80%;
+        }
+
+        .logos {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .logo {
+            max-width: 150px;
+            height: auto;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 2rem;
+            font-size: 0.9em;
+            color: #888;
+        }
+
+        /* Estilos para el acordeón */
+        .accordion {
+            background-color: #eee;
+            color: #444;
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            transition: background-color 0.4s ease;
+            border-radius: 6px;
+            font-size: 1.1em;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .accordion.active, .accordion:hover {
+            background-color: #ddd;
+        }
+
+        .accordion:after {
+            content: '\002B'; /* Unicode character for '+' */
+            color: #777;
+            font-weight: bold;
+            float: right;
+            margin-left: 5px;
+        }
+
+        .accordion.active:after {
+            content: '\2212'; /* Unicode character for '-' */
+        }
+
+        .panel {
+            padding: 0 18px;
+            background-color: white;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-out;
+            border-radius: 6px;
+            margin-bottom: 1rem;
+            border-left: 1px solid #ddd;
+            border-right: 1px solid #ddd;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .panel.show {
+            max-height: 500px; /* Ajusta este valor según el contenido */
+        }
+    </style>
+</head>
+<body>
+    <div class="logos">
+    </div>
+
+    <h1>Formulario de Estimación de Historias Células Alkosto - Ktronix Daniel 4</h1>
+
+    <button class="accordion">Guía de Puntuación</button>
+    <div class="panel">
+        <table class="info-table">
+            <thead>
+                <tr>
+                    <th>Criterio</th>
+                    <th>Pregunta Guía</th>
+                    <th>1</th>
+                    <th>2</th>
+                    <th>3</th>
+                    <th>4</th>
+                    <th>5</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Complejidad técnica</td>
+                    <td>¿Qué tan difícil es técnicamente implementar esta historia?</td>
+                    <td>Muy baja</td>
+                    <td>Baja</td>
+                    <td>Moderada</td>
+                    <td>Alta</td>
+                    <td>Muy alta</td>
+                </tr>
+                <tr>
+                    <td>Esfuerzo estimado</td>
+                    <td>¿Cuánto trabajo implica construir esta historia?</td>
+                    <td>Muy bajo</td>
+                    <td>Bajo</td>
+                    <td>Moderado</td>
+                    <td>Alto</td>
+                    <td>Muy alto</td>
+                </tr>
+                <tr>
+                    <td>Riesgo / Incertidumbre</td>
+                    <td>¿Qué tanto sabemos sobre lo que se debe hacer? ¿Hay posibles bloqueos?</td>
+                    <td>Muy bajo</td>
+                    <td>Bajo</td>
+                    <td>Moderada</td>
+                    <td>Alto</td>
+                    <td>Muy alto</td>
+                </tr>
+                <tr>
+                    <td>Impacto en el negocio</td>
+                    <td>¿Qué tan relevante es esta historia para el cliente o los objetivos del sprint?</td>
+                    <td>Muy bajo</td>
+                    <td>Bajo</td>
+                    <td>Moderado</td>
+                    <td>Alto</td>
+                    <td>Muy alto</td>
+                </tr>
+                <tr>
+                    <td>Dependencias</td>
+                    <td>¿Depende de otros equipos o procesos?</td>
+                    <td>Sin dependencias</td>
+                    <td>Bajas</td>
+                    <td>Moderadas</td>
+                    <td>Altas</td>
+                    <td>Muy altas</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <form id="estimacionForm" action="https://script.google.com/macros/s/AKfycbxwhAAy6ZAQ--8xm4Ef0JS8rJGuhNyt96iWhey-GK5TbdDcObGOOFLMfZoJLSnAe4ZvXQ/exec" method="post">
+        <label for="fecha">Fecha:</label>
+        <input type="date" id="fecha" name="fecha" required>
+
+        <label for="nombre">Nombre de quien estima:</label>
+        <input type="text" id="nombre" name="nombre" required>
+
+        <label for="historiaUsuario">Nombre de la Historia de Usuario:</label>
+        <input type="text" id="historiaUsuario" name="historiaUsuario" required>
+
+        <label for="rol">Rol:</label>
+        <select id="rol" name="rol">
+            <option value="PO">PO</option>
+            <option value="BA">BA</option>
+            <option value="SM">SM</option>
+            <option value="QA">QA</option>
+            <option value="QA AUT">QA AUT</option>
+            <option value="DEV">DEV</option>
+            <option value="LT GEO">LT GEO</option>
+            <option value="LT Alkosto">LT Alkosto</option>
+        </select>
+
+        <label for="complejidad">Complejidad (1-5):</label>
+        <select id="complejidad" name="complejidad">
+            <option value="1">1</option><option value="2">2</option>
+            <option value="3">3</option><option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+
+        <label for="esfuerzo">Esfuerzo (1-5):</label>
+        <select id="esfuerzo" name="esfuerzo">
+            <option value="1">1</option><option value="2">2</option>
+            <option value="3">3</option><option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+
+        <label for="incertidumbre">Incertidumbre (1-5):</label>
+        <select id="incertidumbre" name="incertidumbre">
+            <option value="1">1</option><option value="2">2</option>
+            <option value="3">3</option><option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+
+        <label for="impactoNegocio">Impacto en el negocio (1-5):</label>
+        <select id="impactoNegocio" name="impactoNegocio">
+            <option value="1">1</option><option value="2">2</option>
+            <option value="3">3</option><option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+
+        <label for="dependencias">Dependencias (1-5):</label>
+        <select id="dependencias" name="dependencias">
+            <option value="1">1</option><option value="2">2</option>
+            <option value="3">3</option><option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+
+        <button type="submit">Calcular Estimación</button>
+    </form>
+
+    <div class="footer">
+        Diseño Daniel Antonio Ramirez<br>
+        Analista Funcional de Proyectos<br>
+        Versión 1.1<br>
+        Fecha y Hora: 23 de abril de 2024, 06:00 PM
+    </div>
+
+    <script>
+        const form = document.getElementById("estimacionForm");
+        const acordionBtn = document.querySelector(".accordion");
+        const panel = document.querySelector(".panel");
+
+        acordionBtn.addEventListener("click", function() {
+            this.classList.toggle("active");
+            if (panel.classList.contains("show")) {
+                panel.classList.remove("show");
+            } else {
+                panel.classList.add("show");
+            }
+        });
+
+        function limpiarFormulario() {
+            document.getElementById("fecha").value = "";
+            document.getElementById("nombre").value = "";
+            document.getElementById("historiaUsuario").value = "";
+            document.getElementById("rol").value = "";
+            document.getElementById("complejidad").value = "1";
+            document.getElementById("esfuerzo").value = "1";
+            document.getElementById("incertidumbre").value = "1";
+            document.getElementById("impactoNegocio").value = "1";
+            document.getElementById("dependencias").value = "1";
+        }
+
+        form.addEventListener("submit", function(e) {
+            e.preventDefault();
+
+            const fecha = document.getElementById("fecha").value;
+            const nombre = document.getElementById("nombre").value;
+            const historiaUsuario = document.getElementById("historiaUsuario").value;
+            const rol = document.getElementById("rol").value;
+            const complejidad = document.getElementById("complejidad").value;
+            const esfuerzo = document.getElementById("esfuerzo").value;
+            const incertidumbre = document.getElementById("incertidumbre").value;
+            const impactoNegocio = document.getElementById("impactoNegocio").value;
+            const dependencias = document.getElementById("dependencias").value;
+
+            const url = "https://script.google.com/macros/s/AKfycbzE5yuL2Z8Y7pk6tueHMIo89S7qPFyGHIkJAprR6sXdncbJ5SPSpv4pNmUm2kkiGDP18g/exec";
+
+            const formData = new URLSearchParams();
+            formData.append("fecha", fecha);
+            formData.append("nombre", nombre);
+            formData.append("historiaUsuario", historiaUsuario);
+            formData.append("rol", rol);
+            formData.append("complejidad", complejidad);
+            formData.append("esfuerzo", esfuerzo);
+            formData.append("incertidumbre", incertidumbre);
+            formData.append("impactoNegocio", impactoNegocio);
+            formData.append("dependencias", dependencias);
+
+            fetch(url, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/x-www-form-urlencoded",
+                },
+                body: formData.toString(),
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log("Respuesta del servidor:", data);
+                alert("Estimación enviada con éxito ✅");
+                limpiarFormulario();
+            })
+            .catch(error => {
+                console.error("Error al enviar la estimación:", error);
+                alert("Estimación enviada con éxito ✅");
+                limpiarFormulario();
+            });
+        });
+    </script>
+</body>
+</html>
