@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Guía de Retrospectiva de Sprint</title>
+<style>
+  body { font-family: Arial, sans-serif; background-color: #f4f6f9; color: #333; margin: 20px; line-height: 1.6; }
+  h1, h2, h3 { color: #003366; margin-bottom: 12px; }
+  p { margin-bottom: 12px; }
+  .section { background-color: #fff; padding: 24px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); margin-bottom: 40px; }
+  ul, ol { margin-left: 25px; margin-bottom: 16px; }
+  ul li, ol li { margin-bottom: 8px; }
+  table { width: 100%; border-collapse: collapse; margin-top: 15px; margin-bottom: 20px; }
+  th, td { border: 1px solid #ddd; padding: 10px; text-align: left; }
+  tr:nth-child(even) td { background-color: #f9f9f9; }
+  th { background-color: #007bff; color: #fff; }
+  code { background-color: #eef; padding: 2px 4px; border-radius: 4px; }
+  hr { border: none; border-top: 2px solid #007bff; margin: 30px 0; }
+  .highlight-box { background:#eef; border:1px solid #99c; padding:12px; border-radius:6px; margin:14px 0; line-height:1.5; }
+</style>
+</head>
+<body>
+
+<h1>📋 Guía Completa de Retrospectiva de Sprint</h1>
+
+<div class="section">
+
+  <h2>🎯 Objetivo</h2>
+  <p>Reflexionar sobre el último sprint para identificar qué funcionó, qué no, y generar Action Items concretos que impulsen mejoras continuas en el equipo.</p>
+
+  <hr>
+
+  <h2>👥 Participantes</h2>
+  <ul>
+    <li><strong>Scrum Master (SM)</strong>: Facilita la sesión, vela por el timebox y el cumplimiento de la agenda.</li>
+    <li><strong>Equipo de Desarrollo (DEV + QA + LT)</strong>: Contribuye con su perspectiva, comparte experiencias y asume Action Items.</li>
+    <li><strong>Business Analyst (BA)</strong>: Aporta el punto de vista funcional y de negocio.</li>
+    <li><em>(Opcional) Stakeholder Interno</em>: Si aporta valor directo al análisis de entregas.</li>
+  </ul>
+
+  <hr>
+
+  <h2>🗓️ Cuándo y Tiempo Total</h2>
+  <p><strong>Momento:</strong> Último día del sprint, inmediatamente antes del Planning del siguiente.</p>
+  <p><strong>Duración:</strong> 1 hora total (timeboxed)</p>
+
+  <table>
+    <thead>
+      <tr><th>Sección</th><th>Duración estimada</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>1. Apertura y contexto</td><td>5 min</td></tr>
+      <tr><td>2. Recoger datos (hechos)</td><td>10 min</td></tr>
+      <tr><td>3. Análisis de lo que ✔️ y ❌</td><td>20 min</td></tr>
+      <tr><td>4. Definición de Action Items</td><td>20 min</td></tr>
+      <tr><td>5. Cierre y compromisos</td><td>5 min</td></tr>
+      <tr><th>Total</th><th>60 min</th></tr>
+    </tbody>
+  </table>
+
+  <hr>
+
+  <h2>📝 Agenda Paso a Paso</h2>
+  <ol>
+    <li><strong>Apertura (5 min)</strong>
+      <ul>
+        <li>SM da la bienvenida y recuerda el objetivo de la retrospectiva.</li>
+        <li>Confirma la timebox y presenta la agenda.</li>
+      </ul>
+    </li>
+
+    <li><strong>Recoger datos: “Hechos & Sentimientos” (10 min)</strong>
+      <ul>
+        <li>Cada miembro comparte:
+          <ul>
+            <li><strong>✔️</strong> Lo que salió bien (fortalezas)</li>
+            <li><strong>❌</strong> Lo que no salió bien (bloqueos, sorpresas)</li>
+          </ul>
+        </li>
+        <li>Registrar en un tablero de Azure DevOps o Wiki Retro</li>
+      </ul>
+    </li>
+
+    <li><strong>Análisis colaborativo (20 min)</strong>
+      <ul>
+        <li>Agrupar por categorías (comunicación, estimaciones, calidad…)</li>
+        <li>Buscar causas raíz (ej: “5 Porqués”)</li>
+        <li>Votar para priorizar temas</li>
+      </ul>
+    </li>
+
+    <li><strong>Definición de Action Items (20 min)</strong>
+      <ul>
+        <li>Generar un Action Item por tema priorizado:</li>
+      </ul>
+      <div class="highlight-box">
+        <strong>Plantilla:</strong><br><br>
+        [PREGUNTA] ¿Cómo se comporta [X] cuando ocurre [Y]?<br><br>
+        [IMPACTO] Esta información es necesaria para definir [Z] en la implementación.<br><br>
+        [RESPONSABLE] Nombre del Dev o LT<br><br>
+        [PLAZO] Antes del próximo Daily o Día N
+      </div>
+      <ul>
+        <li>Asegurar que cada ítem sea concreto, acotado y tenga dueño.</li>
+        <li>Registrar cada Action Item como Task en Azure con etiqueta <code>#retro</code></li>
+      </ul>
+    </li>
+
+    <li><strong>Cierre (5 min)</strong>
+      <ul>
+        <li>Revisar la lista de Action Items.</li>
+        <li>Confirmar responsables y plazos.</li>
+        <li>Agradecer y cerrar la sesión.</li>
+      </ul>
+    </li>
+  </ol>
+
+  <hr>
+
+  <h2>📊 Métricas de Retrospectiva</h2>
+  <ul>
+    <li>% de Action Items completados vs generados en la retro anterior.</li>
+    <li>Tiempo medio de cierre de cada Action Item.</li>
+    <li>Número de temas recurrentes detectados (tendencia)</li>
+  </ul>
+
+  <hr>
+
+  <h2>📚 Ejemplo práctico</h2>
+  <p><strong>Contexto:</strong> Sprint 8 – Retrasos en estimaciones de QA</p>
+
+  <table>
+    <thead>
+      <tr><th>Pregunta</th><th>Impacto</th><th>Responsable</th><th>Plazo</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>¿Cómo avisar cuando HU entra a QA sin checklist?</td><td>Asegurar cobertura de criterios</td><td>Aura (QA)</td><td>Día 2</td></tr>
+      <tr><td>¿Qué falta en el README para release notes?</td><td>Evitar omisiones en liberaciones</td><td>Joaco (DEV)</td><td>Día 5</td></tr>
+      <tr><td>¿Qué flujo falla en Teams durante UAT?</td><td>Acelerar resolución de bugs</td><td>Luciana (LT)</td><td>Antes de UAT</td></tr>
+    </tbody>
+  </table>
+
+  <p><strong>Seguimiento:</strong> Task etiquetado <code>#retro</code> en Azure + Widget de seguimiento en Dashboard</p>
+
+  <hr>
+
+  <h2>🔄 Integración de Action Items en la Planning</h2>
+  <ol>
+    <li><strong>Pre-Planning (antes Día 15)</strong>
+      <ul>
+        <li>SM exporta los <code>#retro</code> pendientes desde Azure</li>
+        <li>BA revisa con PO prioridades</li>
+      </ul>
+    </li>
+
+    <li><strong>Planning (Día 15)</strong>
+      <ul>
+        <li>Nuevo punto: Revisión de Action Items Retro (10 min)</li>
+        <li>SM presenta cada ítem (descripción, dueño, estado)</li>
+        <li>Equipo decide qué Action Items van al sprint (como tareas)</li>
+        <li>Se estiman y se marcan “Committed in Sprint” en Azure</li>
+      </ul>
+    </li>
+
+    <li><strong>Durante el Sprint</strong>
+      <ul>
+        <li>Action Items aparecen junto a las tareas del sprint</li>
+        <li>Avances se revisan en los Dailys como cualquier HU</li>
+      </ul>
+    </li>
+
+    <li><strong>Cierre Sprint</strong>
+      <ul>
+        <li>Revisión de estado en la próxima retro:
+          <ul>
+            <li><strong>✔️ Completado</strong></li>
+            <li><strong>❌ Incompleto</strong> → se reinscribe o replanifica</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ol>
+
+</div>
+
+</body>
+</html>
