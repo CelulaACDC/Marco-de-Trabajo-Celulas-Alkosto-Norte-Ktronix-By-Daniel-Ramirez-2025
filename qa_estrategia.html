@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Guía de Actividades QA - Sprint</title>
+<style>
+body { font-family: Arial, sans-serif; background-color: #f4f6f9; color: #333; margin: 20px; line-height: 1.6; }
+h1, h2, h3 { color: #003366; }
+.section { background-color: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); margin-bottom: 40px; }
+.section h2 { border-bottom: 2px solid #007bff; padding-bottom: 5px; margin-bottom: 15px; }
+ul { margin-left: 20px; margin-bottom: 20px; }
+table { width: 100%; border-collapse: collapse; margin-bottom: 20px; }
+th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+th { background-color: #007bff; color: white; }
+.timeline { border-left: 3px solid #007bff; padding-left: 15px; margin-bottom: 25px; }
+.timeline h3 { color: #007bff; margin-top: 0; }
+.badge { background-color: #28a745; color: white; padding: 2px 6px; border-radius: 4px; font-size: 0.8em; }
+</style>
+</head>
+<body>
+
+<h1>📋 Guía Afinada de Actividades QA dentro de un Sprint</h1>
+
+<div class="section">
+<h2>1️⃣ Análisis Exploratorio de Historias de Usuario (HU)</h2>
+<p><strong>🎯 Objetivo:</strong> Comprender a fondo la HU para anticipar escenarios de validación y riesgos.</p>
+
+<p><strong>🗓️ Cronograma sugerido (Sprint 15 días hábiles)</strong></p>
+<ul>
+<li>Día 2 a Día 5 → Análisis Exploratorio (antes del refinamiento y puntuación del Día 6 y 9)</li>
+<li>Día 6 a Día 10 → Análisis Exploratorio (antes del refinamiento y puntuación del Día 11 y 13)</li>
+</ul>
+
+<p><strong>🔹 Actividades:</strong></p>
+<ul>
+<li>Revisión de HU en Azure DevOps (criterios, dependencias).</li>
+<li>Levantamiento de dudas, escenarios, riesgos.</li>
+<li>Registro de preguntas y hallazgos en Azure DevOps.</li>
+<li>Coordinación con BA para aclaración total de dudas.</li>
+</ul>
+
+<p><strong>📝 Entregable esperado (Prototipo)</strong></p>
+<table>
+<tr><th>Elemento</th><th>Detalle</th></tr>
+<tr><td>ID HU</td><td>HU-10567</td></tr>
+<tr><td>Nombre HU</td><td>Integración API Pagos</td></tr>
+<tr><td>QA Asignado</td><td>Aura P.</td></tr>
+<tr><td>Escenarios Identificados</td><td>1. Pago simple<br>2. Pago con error<br>3. Pago sin red</td></tr>
+<tr><td>Riesgos detectados</td><td>Validación de códigos de error<br>Timeout con API externa</td></tr>
+<tr><td>Dudas consignadas</td><td>¿Cuál es el timeout oficial del API?<br>¿Validar error 500?</td></tr>
+<tr><td>Puntuación sugerida QA</td><td>3 días</td></tr>
+<tr><td>Fecha análisis</td><td>Día 5 del Sprint</td></tr>
+<tr><td>👤 Responsable</td><td>QA Asignado</td></tr>
+</table>
+</div>
+
+<div class="section">
+<h2>2️⃣ Diseño de Escenarios de Prueba</h2>
+<p><strong>🎯 Objetivo:</strong> Definir claramente los casos de prueba completos para la HU.</p>
+
+<p><strong>🗓️ Cronograma sugerido:</strong></p>
+<ul>
+<li>Día 6 a Día 8 (después de cerrar análisis exploratorio)</li>
+<li>Después de la HU Refinada</li>
+</ul>
+
+<p><strong>🔹 Actividades:</strong></p>
+<ul>
+<li>Diseño de casos de prueba (escenarios felices, alternos, errores).</li>
+<li>Revisión técnica (con LT / DEV si aplica).</li>
+<li>Registro en Azure DevOps (Test Plans o Wiki QA).</li>
+</ul>
+
+<p><strong>📝 Entregable esperado (Prototipo)</strong></p>
+<table>
+<tr><th>ID Caso</th><th>Descripción</th><th>Tipo</th><th>Criterio cubierto</th><th>Validado por</th></tr>
+<tr><td>CP-01</td><td>Pago exitoso</td><td>Positivo</td><td>CA-01, CA-02</td><td>Aura / Joaco</td></tr>
+<tr><td>CP-02</td><td>Pago con saldo insuficiente</td><td>Negativo</td><td>CA-03</td><td>Aura</td></tr>
+<tr><td>CP-03</td><td>Timeout API</td><td>Error</td><td>CA-04</td><td>Aura / Luciana</td></tr>
+</table>
+<p><strong>👤 Responsable:</strong> QA Asignado</p>
+</div>
+
+<div class="section">
+<h2>3️⃣ Ejecución y Documentación de Escenarios de Prueba</h2>
+<p><strong>🎯 Objetivo:</strong> Validar la HU ejecutando los casos de prueba.</p>
+
+<p><strong>🗓️ Cronograma sugerido:</strong></p>
+<ul>
+<li>Día 9 a Día 12 (Una vez se haga el Handoff técnico y Deploy inicial)</li>
+</ul>
+
+<p><strong>🔹 Actividades:</strong></p>
+<ul>
+<li>Ejecutar cada caso de prueba (en Dev o QA).</li>
+<li>Documentar resultados en Azure DevOps.</li>
+<li>Registrar evidencia (screenshots, logs).</li>
+<li>Reportar bugs (si aplica).</li>
+</ul>
+
+<p><strong>📝 Entregable esperado (Prototipo)</strong></p>
+<table>
+<tr><th>Caso</th><th>Resultado</th><th>Evidencia</th><th>Bugs relacionados</th></tr>
+<tr><td>CP-01</td><td>Pasó</td><td>Screenshot #1</td><td>Ninguno</td></tr>
+<tr><td>CP-02</td><td>Falló</td><td>Log error</td><td>BUG-4512</td></tr>
+<tr><td>CP-03</td><td>Pasó</td><td>Screenshot #2</td><td>Ninguno</td></tr>
+</table>
+<p><strong>👤 Responsable:</strong> QA Asignado</p>
+</div>
+
+<div class="section">
+<h2>🔄 Ejemplo práctico — Ciclo de vida de QA de una HU</h2>
+
+<div class="timeline">
+<h3>📌 Día 2 — Inicio de Sprint</h3>
+<ul>
+<li>Se asigna la HU como compromiso de sprint (Planning).</li>
+<li>QA Aura revisa la HU y agenda análisis exploratorio.</li>
+</ul>
+</div>
+
+<div class="timeline">
+<h3>📌 Día 3-5 — Análisis Exploratorio</h3>
+<ul>
+<li>Aura revisa criterios y levanta 3 dudas.</li>
+<li>Registra riesgos y escenarios preliminares.</li>
+<li>Puntuación sugerida QA: 3 días</li>
+<li>BA resuelve dudas en Azure DevOps.</li>
+<li>Análisis exploratorio se cierra y se comparte.</li>
+</ul>
+</div>
+
+<div class="timeline">
+<h3>📌 Día 6-8 — Diseño Casos de Prueba</h3>
+<ul>
+<li>Aura diseña 5 casos de prueba.</li>
+<li>Revisión con Joaco (DEV) para validar cobertura.</li>
+<li>Se registra checklist de cobertura en Azure.</li>
+</ul>
+</div>
+
+<div class="timeline">
+<h3>📌 Día 9-12 — Ejecución de Pruebas</h3>
+<ul>
+<li>DEV entrega HU (Handoff).</li>
+<li>Aura ejecuta casos en ambiente QA.</li>
+<li>Encuentra 1 bug crítico y lo reporta (BUG-4512).</li>
+<li>Bug es corregido y retesteado.</li>
+<li>Todos los casos pasan.</li>
+</ul>
+</div>
+
+<div class="timeline">
+<h3>📌 Día 13 — Declaración de Pruebas Finalizadas</h3>
+<ul>
+<li>Aura marca la HU como “QA Validado” en Azure.</li>
+<li>Informa al equipo que está lista para Review.</li>
+</ul>
+</div>
+
+<p class="badge">🟢 Resultado final: HU-10567 validada y lista para Review de Sprint</p>
+
+</div>
+
+</body>
+</html>
