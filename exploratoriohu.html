@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Guía de Análisis Exploratorio de Historias de Usuario</title>
+<style>
+  body { font-family: Arial, sans-serif; background-color: #f9f9f9; margin: 20px; line-height: 1.6; color: #333; }
+  h1, h2, h3 { color: #003366; }
+  h1 { text-align: center; margin-bottom: 30px; }
+  table { border-collapse: collapse; width: 100%; margin-bottom: 20px; }
+  th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+  th { background-color: #007bff; color: white; }
+  .note { background-color: #e7f3ff; padding: 10px; border-left: 4px solid #007bff; margin-bottom: 20px; }
+  .good-practice { background-color: #f0f9f0; padding: 10px; border-left: 4px solid #28a745; margin-bottom: 20px; }
+  ul { margin-top: 0; }
+</style>
+</head>
+<body>
+
+<h1>🛠️ Guía de Análisis Exploratorio de Historias de Usuario (HU)</h1>
+
+<h2>🎯 Objetivo de la actividad</h2>
+<p>Brindar un espacio de análisis exploratorio previo a la ceremonia de refinamiento, que permita al equipo de desarrollo identificar dudas, riesgos y aspectos técnicos clave de cada HU antes de estimarla y comprometerla en el sprint.</p>
+
+<h2>⏱️ Tiempo asignado por rol</h2>
+<table>
+<tr><th>Rol</th><th>Tiempo asignado por sprint</th><th>Detalles</th></tr>
+<tr><td>Cada Desarrollador (DEV)</td><td>4 horas por sprint (equivalente al 3% redondeado)</td><td>Usado de forma flexible para análisis individual o grupal</td></tr>
+<tr><td>Líder Técnico (LT)</td><td>Participación plena</td><td>Acompaña de forma continua todo el análisis exploratorio</td></tr>
+</table>
+
+<div class="note">
+<strong>Nota:</strong> La forma en que se distribuye y consume este tiempo es <strong>definición interna del equipo</strong>, según sus necesidades y dinámica. Puede realizarse individual o colectivamente, pero debe completarse <strong>antes de la sesión de refinamiento y la estimación de las HU</strong>.
+</div>
+
+<h2>📝 Mecanismo de registro y comunicación de dudas (obligatorio)</h2>
+<p>Toda pregunta, inquietud o hallazgo relevante durante el análisis exploratorio <strong>debe registrarse y resolverse obligatoriamente en Azure DevOps</strong>, en la sección de comentarios o notas de la HU correspondiente.</p>
+<p>Aunque las conversaciones pueden gestionarse inicialmente por Teams u otros canales, su <strong>registro formal debe quedar en Azure</strong>, asegurando trazabilidad y visibilidad para todo el equipo.</p>
+
+<h3>🖋️ Estructura para documentar las preguntas en Azure</h3>
+<ul>
+<li><strong>[PREGUNTA]</strong> ¿Cómo se comporta [X] cuando ocurre [Y]?</li>
+<li><strong>[IMPACTO]</strong> Esta información es necesaria para definir [Z] en la implementación.</li>
+<li><strong>[RESPONSABLE]</strong> [Nombre del dev que plantea la pregunta]</li>
+</ul>
+
+<p><strong>Ejemplo:</strong></p>
+<ul>
+<li><strong>[PREGUNTA]</strong> ¿Cómo se comporta el flujo de pagos cuando falla la validación del token?</li>
+<li><strong>[IMPACTO]</strong> Esta información es necesaria para definir los escenarios alternativos en el módulo de checkout.</li>
+<li><strong>[RESPONSABLE]</strong> Bri</li>
+</ul>
+
+<h2>✅ Buenas prácticas para el análisis exploratorio</h2>
+<div class="good-practice">
+<ul>
+<li>Revisar HU con criterio técnico: Validar dependencias, restricciones, integraciones y consideraciones técnicas.</li>
+<li>Identificar riesgos tempranos: Detectar posibles cuellos de botella o áreas de incertidumbre.</li>
+<li>Plantear dudas concretas: Formular preguntas claras y con contexto suficiente.</li>
+<li>Registrar siempre en Azure: Asegurar que todo hallazgo o duda quede documentado.</li>
+<li>Consultar con el BA / PO si aplica: Escalar las dudas que no puedan resolverse en el equipo técnico.</li>
+<li>Cerrar el análisis antes del refinamiento: Asegurar que al llegar a la sesión de refinamiento las HU estén completamente entendidas.</li>
+</ul>
+</div>
+
+<h2>📌 Cierre</h2>
+<p>Este análisis exploratorio es un mecanismo <strong>preventivo</strong>, que aumenta la calidad de la estimación y disminuye los riesgos de ambigüedad en las HU.<br> Su uso disciplinado permite que las sesiones de refinamiento y planificación sean más fluidas y productivas.</p>
+
+</body>
+</html>
