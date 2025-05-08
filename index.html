@@ -9,14 +9,14 @@
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       display: flex;
       margin: 0;
-      height: 100vh;
+      min-height: 100vh; /* Usar min-height para que el body crezca con el contenido */
       color: #333;
       background: #f0f2f5;
     }
 
     /* Barra de navegación */
     nav {
-      width: 800px; /* Ancho ligeramente aumentado para los iconos */
+      width: 1000px; /* Ajusté el ancho para que quepa en la pantalla */
       background-color: #fff;
       border-right: 1px solid #e1e4e8;
       padding: 20px;
@@ -81,7 +81,7 @@
       border-radius: 5px;
     }
 
-    main h1 {
+    main h2 {
       font-size: 2.4em;
       color: #003366;
       margin-bottom: 20px;
@@ -99,22 +99,36 @@
       color: #007bff; /* Color акцент para 강조 */
     }
 
+    /* Estilos para la imagen */
+    .image-container {
+      text-align: center;
+      margin-top: 20px; /* Espacio entre el texto y la imagen */
+    }
+
+    .image-container img {
+      max-width: 50%;
+      height: auto;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
     /* Estilos adicionales */
     a {
-        text-decoration: none;
+      text-decoration: none;
     }
 
     a:hover {
-        text-decoration: underline;
+      text-decoration: underline;
     }
   </style>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0Hhonpy AIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyQD1IBUSgBMgpJmUYHFxnHXBdFDhVXxw6gZyQObLJMko+sbNzKIhlHxRGGvRGMGjVnCzA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
 
 <nav>
   <h2>Índice</h2>
-  
+
   <div class="group">
     <h3><i class="fas fa-users"></i> Equipo de Trabajo</h3>
     <a href="equipo.html">Equipo de Trabajo</a>
@@ -166,6 +180,10 @@
   <h2>Bienvenido a la Guía Scrum del equipo para <strong>las celulas de Facturación POS Alkosto y Ktronix para el Labolatorio Digital</h2></strong>
   <p>Esta guía ha sido especialmente diseñada y es de aplicación para los equipos Scrum que trabajan en el desarrollo y mejora continua de las plataformas de facturación de <strong>Alkosto</strong> y <strong>Ktronix</strong>.</p>
   <p>Explora las diferentes secciones para obtener información detallada sobre los procesos, roles y reglas que seguimos para asegurar la eficiencia y la calidad en nuestros proyectos.  Esta guía te ayudará a entender nuestro flujo de trabajo y a colaborar eficazmente en la construcción de experiencias excepcionales para nuestros clientes. ¡Comencemos a construir el futuro de <strong>Alkosto</strong> y <strong>Ktronix</strong> juntos!</p>
+
+  <div class="image-container">
+    <img src="https://github.com/CelulaACDC/Marco-De-Trabajo-Celulas-Alkosto-Norte-Ktronix-By-Daniel-Ramirez-2025/blob/main/Logo%20Celulas.jpg?raw=true" alt="Logo de Células Alkosto Norte Ktronix">
+  </div>
 </main>
 
 </body>
