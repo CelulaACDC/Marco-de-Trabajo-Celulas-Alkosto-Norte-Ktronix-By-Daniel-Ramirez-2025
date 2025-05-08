@@ -2,121 +2,170 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Guía Scrum - Reglas del Equipo</title>
+  <title>Guía Scrum - Reglas del Equipo Alkosto.com & Ktronix.com</title>
   <style>
+    /* Estilos generales */
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       display: flex;
       margin: 0;
       height: 100vh;
+      color: #333;
+      background: #f0f2f5;
     }
+
+    /* Barra de navegación */
     nav {
-      width: 320px;
-      background-color: #f8f9fa;
-      border-right: 1px solid #ddd;
+      width: 800px; /* Ancho ligeramente aumentado para los iconos */
+      background-color: #fff;
+      border-right: 1px solid #e1e4e8;
       padding: 20px;
       overflow-y: auto;
+      box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.05);
     }
+
     nav h2 {
-      font-size: 16px;
-      margin-bottom: 10px;
-      border-bottom: 1px solid #ccc;
-      padding-bottom: 5px;
-    }
-    .group {
+      font-size: 1.6em;
       margin-bottom: 15px;
-    }
-    .group h3 {
-      font-size: 14px;
-      margin-bottom: 5px;
+      border-bottom: 2px solid #007bff;
+      padding-bottom: 8px;
       color: #333;
     }
+
+    .group {
+      margin-bottom: 20px;
+    }
+
+    .group h3 {
+      font-size: 1.2em;
+      margin-bottom: 8px;
+      color: #555;
+      font-weight: 600;
+      display: flex; /* Para alinear icono y texto */
+      align-items: center; /* Centrar verticalmente */
+    }
+
+    .group h3 i {
+      margin-right: 8px; /* Espacio entre el icono y el texto */
+      color: #007bff; /* Color del icono */
+    }
+
     .subgroup {
       margin-left: 15px;
       margin-bottom: 8px;
     }
+
     nav a {
       display: block;
       color: #007bff;
       text-decoration: none;
-      margin: 4px 0;
-      font-size: 13px;
+      margin: 8px 0;
+      padding: 8px 12px;
+      font-size: 1em;
+      border-radius: 5px;
+      transition: background-color 0.2s ease;
     }
+
     nav a:hover {
-      text-decoration: underline;
+      background-color: #e9f5ff;
+      color: #0056b3;
+      text-decoration: none;
     }
+
+    /* Contenido principal */
     main {
       flex-grow: 1;
-      padding: 20px;
+      padding: 30px;
+      background: #fff;
+      box-shadow: -2px 0px 5px rgba(0, 0, 0, 0.05);
+      border-radius: 5px;
+    }
+
+    main h1 {
+      font-size: 2.4em;
+      color: #003366;
+      margin-bottom: 20px;
+    }
+
+    main p {
+      font-size: 1.1em;
+      color: #666;
+      line-height: 1.6;
+      margin-bottom: 15px; /* Más espacio inferior */
+    }
+
+    main strong {
+      font-weight: bold;
+      color: #007bff; /* Color акцент para 강조 */
+    }
+
+    /* Estilos adicionales */
+    a {
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: underline;
     }
   </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0Hhonpy AIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
 
 <nav>
   <h2>Índice</h2>
+  
+  <div class="group">
+    <h3><i class="fas fa-users"></i> Equipo de Trabajo</h3>
+    <a href="equipo.html">Equipo de Trabajo</a>
+    <a href="funciones.html">Funciones Generales</a>
+  </div>
 
   <div class="group">
-    <h3>0️⃣ Diseño</h3>
+    <h3><i class="fas fa-pencil-ruler"></i> Diseño</h3>
     <a href="diseno_hu.html">Diseño de las HU</a>
   </div>
 
   <div class="group">
-    <h3>1️⃣ Planeación</h3>
-    <a href="equipo.html">Equipo de Trabajo</a>
-    <div class="subgroup">
-       <a href="exploratoriohu.html">Análisis Exploratorio de HU</a>
-      <a href="puntuacion.html">Cómo puntuamos las HU</a>
-      <a href="formpuntuacion.html">Formulario de Puntuación</a>
-      <a href="refinamiento.html">Guía Refinamiento</a>
-      <a href="planeacion.html">Guía Planeación del Sprint</a>
-      <a href="formplaneacion.html">Formulario de Planeación del Sprint</a>
-    </div>
+    <h3><i class="fas fa-tasks"></i> Planeación</h3>
+    <a href="exploratoriohu.html">Análisis Exploratorio de HU</a>
+    <a href="puntuacion.html">Cómo puntuamos las HU</a>
+    <a href="formpuntuacion.html">Formulario de Puntuación</a>
+    <a href="refinamiento.html">Guía Refinamiento</a>
+    <a href="planeacion.html">Guía Planeación del Sprint</a>
+    <a href="formplaneacion.html">Formulario de Planeación del Sprint</a>
   </div>
 
   <div class="group">
-    <h3>2️⃣ Ejecución</h3>
-    <div class="subgroup">
-      <a href="daily.html">Guía Daily Scrum</a>
-    </div>
-    <h4>QA</h4>
-    <div class="subgroup">
-      <a href="qa_criterios.html">Guía QA: Criterios de Aceptación</a>
-      <a href="qa_estrategia.html">Guía QA: Estrategia de Pruebas</a>
-    </div>
-    <h4>Gestión de Tablero</h4>
-    <div class="subgroup">
-      <a href="azure_tareas.html">Guía para Crear Tareas en Azure DevOps</a>
-      <a href="azure_tablero.html">Guía para Gestionar el Tablero Azure DevOps</a>
-      <a href="azure_bugs.html">Guía para Gestión de Bugs y Defectos</a>
-    </div>
+    <h3><i class="fas fa-play"></i> Ejecución</h3>
+    <a href="daily.html">Guía Daily Scrum</a>
   </div>
 
   <div class="group">
-    <h3>3️⃣ Entrega</h3>
+    <h3><i class="fas fa-box-open"></i> Entrega</h3>
     <a href="handoff.html">Handoff Técnico</a>
-    <div class="subgroup">
-      <a href="qa_uat.html">Guía QA: Validación en UAT</a>
-    </div>
+    <a href="liberacion.html">Liberacion a DEV</a>
+    <a href="qa_estrategia.html">Guía QA: Estrategia de Pruebas</a>
+    <a href="qa_entrgega.html">Entrega de Aseguramiento de Calidad</a>
   </div>
 
   <div class="group">
-    <h3>4️⃣ Cierre</h3>
+    <h3><i class="fas fa-check-double"></i> Cierre</h3>
     <a href="review.html">Guía Sprint Review</a>
     <a href="retrospectiva.html">Guía Sprint Retrospectiva</a>
   </div>
 
   <div class="group">
-    <h3>5️⃣ Seguimiento</h3>
+    <h3><i class="fas fa-chart-line"></i> Seguimiento</h3>
     <a href="metricas.html">Métricas y Seguimiento Ágil</a>
-    <a href="cronograma.html">Cronograma</a>
   </div>
 
 </nav>
 
 <main>
-  <h1>Bienvenido a la Guía Scrum del equipo</h1>
-  <p>Selecciona una sección del índice para ver su contenido.</p>
+  <h2>Bienvenido a la Guía Scrum del equipo para <strong>las celulas de Facturación POS Alkosto y Ktronix para el Labolatorio Digital</h2></strong>
+  <p>Esta guía ha sido especialmente diseñada y es de aplicación para los equipos Scrum que trabajan en el desarrollo y mejora continua de las plataformas de facturación de <strong>Alkosto</strong> y <strong>Ktronix</strong>.</p>
+  <p>Explora las diferentes secciones para obtener información detallada sobre los procesos, roles y reglas que seguimos para asegurar la eficiencia y la calidad en nuestros proyectos.  Esta guía te ayudará a entender nuestro flujo de trabajo y a colaborar eficazmente en la construcción de experiencias excepcionales para nuestros clientes. ¡Comencemos a construir el futuro de <strong>Alkosto</strong> y <strong>Ktronix</strong> juntos!</p>
 </main>
 
 </body>
