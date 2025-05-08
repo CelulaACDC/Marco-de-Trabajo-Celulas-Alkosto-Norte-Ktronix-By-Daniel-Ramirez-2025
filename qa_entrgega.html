@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Procedimiento Entrega QA - BA</title>
+<style>
+  body { font-family: Arial, sans-serif; background-color: #f4f6f9; color: #333; margin: 20px; line-height: 1.6; }
+  h1, h2, h3 { color: #003366; }
+  .section { background-color: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); margin-bottom: 30px; }
+  ul { margin-bottom: 15px; }
+  table { width: 100%; border-collapse: collapse; margin-top: 10px; margin-bottom: 20px; }
+  th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+  th { background-color: #007bff; color: white; }
+  tr:nth-child(even) { background-color: #f9f9f9; }
+  .tag { background-color: #28a745; color: white; padding: 2px 6px; border-radius: 12px; font-size: 0.8em; margin-left: 6px; }
+  .banner {
+  background-color: #f0f8ff;       /* Un azul muy claro de fondo */
+  color: #007bff;                  /* Azul principal para el texto */
+  text-align: center;              /* Centrar el texto horizontalmente */
+  padding: 10px;                   /* Espacio alrededor del texto */
+  margin-bottom: 20px;            /* Espacio debajo del banner */
+  border-radius: 5px;             /* Bordes redondeados */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+</style>
+</head>
+<body>
+<div class="banner">
+  ¡Comencemos a construir el futuro de Alkosto y Ktronix juntos!
+</div>
+<h1>📋 Procedimiento de Entrega de Aseguramiento de Calidad (QA ↔ BA)</h1>
+
+<div class="section">
+<h2>🎯 Objetivo</h2>
+<p>Facilitar una <strong>ceremonia (ceremony)</strong> conjunta donde QA (Aseguramiento de Calidad) y BA (Analista de Negocio) revisan en vivo el “Paquete (Package) de Validación” de la HU, toman la decisión inmediata de avanzar a <strong>Review (Revisión)</strong> o regresar al desarrollo, y registran mejoras detectadas.</p>
+</div>
+
+<div class="section">
+<h2>👥 Participantes</h2>
+<ul>
+  <li><strong>QA (Quality Assurance – Aseguramiento de Calidad)</strong> (Manual & Automatizador) – Gestiona la <strong>sesión (session)</strong>, expone resultados.</li>
+  <li><strong>BA (Business Analyst – Analista de Negocio)</strong> – Aporta contexto funcional, valida criterios de aceptación.</li>
+  <li><strong>LT (Lead Technician – Líder Técnico)</strong> – Opcional. Brinda soporte técnico si hay dudas.</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>1️⃣ Preparación del Paquete (Package) de Validación</h2>
+<ul>
+<li>Informe de Ejecución (Execution Report) de todos los casos con evidencia.</li>
+<li>Listado de Bugs (Errores) (abiertos, cerrados, retesteados).</li>
+<li>Conjunto de “Known Issues (Problemas Conocidos)” menores.</li>
+<li>Declaración de QA: “Paquete listo para revisión conjunta”.</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>2️⃣ Ceremonia (Ceremony) QA ↔ BA (30 min)</h2>
+<ul>
+<li><strong>Convoca QA</strong>, agenda con BA y opcionalmente LT.</li>
+</ul>
+<ol>
+<li><strong>Presentación del paquete (Package)</strong> (5 min) — QA expone resultados.</li>
+<li><strong>Discusión de “Known Issues (Problemas Conocidos)”</strong> (10 min) — BA decide avance o devolución.</li>
+<li><strong>Decisión sobre la HU</strong> (10 min)
+  <ul>
+    <li><span class="tag">Accepted (Aceptada)</span> → Listo para Review (Revisión)</li>
+    <li><span class="tag">Rejected (Rechazada)</span> → Se crea Bug/Tarea, HU regresa a desarrollo</li>
+    <li><span class="tag">Conditional (Condicional)</span> → BA define entregables mínimos</li>
+  </ul>
+</li>
+<li><strong>Registro en Azure DevOps</strong> (5 min)
+  <ul>
+    <li>QA documenta la decisión.</li>
+    <li>QA crea Work Items de “Mejora (Improvement)” con etiqueta <code>#mejoraQA</code></li>
+  </ul>
+</li>
+</ol>
+</div>
+
+<div class="section">
+<h2>3️⃣ Reporte de Mejoras (Opcional)</h2>
+<ul>
+<li>Crear título y descripción breve en Work Item <code>#mejoraQA</code>.</li>
+<li>Asignar responsable inicial (QA).</li>
+<li>Notificar al BA/PO para priorización.</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>4️⃣ Métricas del Proceso</h2>
+<table>
+<tr><th>Métrica (Metric)</th><th>Cálculo / Fuente</th><th>Meta (Goal)</th></tr>
+<tr><td>% HU aprobadas en ceremonia</td><td>Aprobadas / total presentadas</td><td>≥ 90 %</td></tr>
+<tr><td>Duración media de la sesión</td><td>Tiempo real (minutos)</td><td>≤ 30 min</td></tr>
+<tr><td>% de Aprobaciones Condicionales</td><td>“Conditional” / total decisiones</td><td>≤ 10 %</td></tr>
+<tr><td>Nº de mejoras registradas</td><td>Work Items <code>#mejoraQA</code> creados</td><td>≥ 1/sprint</td></tr>
+</table>
+</div>
+
+<div class="section">
+<h2>5️⃣ Ejemplo Práctico</h2>
+<p><strong>HU – 10888 “Dashboard móvil”</strong></p>
+<ul>
+<li>Día 10, 11:00 – QA Aura convoca sesión con BA Daniel.</li>
+<li>11:00–11:05 – Aura expone 8 casos ejecutados, 1 bug crítico.</li>
+<li>11:05–11:15 – Discusión de 2 “Known Issues”; BA acepta como “Conditional”.</li>
+<li>11:15–11:25 – Decisión: HU marcada “Listo para Review”; se crea <code>#mejoraQA-30</code>.</li>
+<li>11:25–11:30 – QA documenta en Azure DevOps; sesión cerrada.</li>
+</ul>
+</div>
+
+</body>
+</html>
