@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Marco de Trabajo Células – Etapa1</title>
+<style>
+  body { font-family: Arial, sans-serif; background: #f4f6f9; color: #333; padding: 20px; line-height: 1.6; }
+  h1 { color: #003366; text-align: center; margin-bottom: 30px; }
+  h2 { color: #003366; margin-top: 40px; }
+  h3 { color: #0056b3; margin-top: 25px; }
+  table { border-collapse: collapse; width: 100%; margin: 15px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+  th, td { border: 1px solid #ccc; padding: 10px; text-align: left; }
+  th { background-color: #007bff; color: white; }
+  tr:nth-child(even) td { background-color: #f9f9f9; }
+  ul { margin-left: 20px; }
+</style>
+</head>
+<body>
+
+<h1>📋 Marco de Trabajo Células – Etapa1 (Duración 3 Sprint)</h1>
+
+<h2>🎯 Objetivo</h2>
+<p>Establecer un flujo mínimo viable, claro y práctico para que las células puedan operar bajo prácticas ágiles, garantizando entregas predecibles y de calidad sin sobrecargar al equipo en la adopción inicial.</p>
+
+<h2>I. Roles y Responsabilidades</h2>
+<table>
+<tr><th>Rol</th><th>Responsabilidad Principal</th></tr>
+<tr><td>Scrum Master (SM)</td><td>Facilitar las ceremonias, remover impedimentos, asegurar cumplimiento del marco, llevar métricas de seguimiento del equipo de trabajo.</td></tr>
+<tr><td>Product Owner (PO)</td><td>Definir prioridades de negocio, mantener backlog priorizado.</td></tr>
+<tr><td>Business Analyst (BA)</td><td>Refinar las historias, asegurar entendimiento del negocio y criterios de aceptación.</td></tr>
+<tr><td>Líder Técnico (LT)</td><td>Validar viabilidad técnica, apoyar decisiones arquitectónicas.</td></tr>
+<tr><td>Desarrollador (DEV)</td><td>Implementar la solución, estimar esfuerzo, corregir bugs, actualización de documentación.</td></tr>
+<tr><td>QA Manual (QA-Man)</td><td>Diseñar y ejecutar pruebas manuales, validar criterios de aceptación, informar métricas de seguimiento de aseguramiento de calidad.</td></tr>
+<tr><td>QA Automatizador (QA-Auto)</td><td>Diseñar y mantener pruebas automáticas, validar cobertura automática.</td></tr>
+<tr><td>Stakeholder</td><td>Validar entregables, proveer feedback de negocio, diligenciar encuesta de satisfacción.</td></tr>
+</table>
+
+<h2>II. Ceremonias Básicas</h2>
+<table>
+<tr><th>Ceremonia</th><th>Participantes</th><th>Frecuencia</th><th>Objetivo</th></tr>
+<tr><td>Daily Scrum (15 min)</td><td>SM, LT, DEV, QA-Man, QA-Auto</td><td>Diario</td><td>Alinear avances y bloqueos.</td></tr>
+<tr><td>Análisis Exploratorio de HU</td><td>LT, QA, DEV</td><td>Día 6-7 y Día 11-12</td><td>Analizar HU + Entrega de Artefacto.</td></tr>
+<tr><td>Refinamiento (1h ×2)</td><td>BA (dirige), LT, DEV, QA, SM (agenda)</td><td>Día 6 y Día 11</td><td>Preparar HUs para Planning.</td></tr>
+<tr><td>Puntuación (45min ×2)</td><td>BA, LT, DEV, QA</td><td>Día 9 y Día 13</td><td>Estimar esfuerzo de HUs listas.</td></tr>
+<tr><td>Sprint Planning (2h)</td><td>Todos</td><td>Día 15 (PM)</td><td>Definir Sprint Goal y compromisos.</td></tr>
+<tr><td>Handoff Técnico</td><td>DEV-QA-BA</td><td>Acordada en Planning</td><td>Entrega de DEV a QA.</td></tr>
+<tr><td>Review (1h ×2)</td><td>Todos + Stakeholder</td><td>Día 15 (PM)</td><td>Demostrar lo completado y obtener feedback.</td></tr>
+<tr><td>Retrospectiva (1h)</td><td>Todos</td><td>Día 15 (AM)</td><td>Reflexionar y mejorar el proceso.</td></tr>
+</table>
+
+<h2>III. Ciclo de Vida de una Historia de Usuario (HU)</h2>
+<table>
+<tr><th>Fase</th><th>Responsable(s)</th><th>Entregable(s)</th></tr>
+<tr><td>Diseño de HU</td><td>Negocio, BA</td><td>Documentación de HU</td></tr>
+<tr><td>Análisis Exploratorio</td><td>QA, DEV, BA</td><td>Registro de dudas, escenarios y riesgos en Azure.</td></tr>
+<tr><td>Puntuación</td><td>Equipo</td><td>Estimación en días y confianza del equipo.</td></tr>
+<tr><td>Refinamiento</td><td>BA (dirige), equipo</td><td>HU clara, dudas resueltas, criterios listos.</td></tr>
+<tr><td>Desarrollo</td><td>DEV, LT</td><td>Código implementado y mergeado.</td></tr>
+<tr><td>Handoff Técnico</td><td>DEV, LT</td><td>Entregable listo para QA y/o Review.</td></tr>
+<tr><td>QA</td><td>QA-Man, QA-Auto</td><td>Casos ejecutados y validados. Bugs resueltos.</td></tr>
+<tr><td>QA - Entrega</td><td>QA-BA</td><td>Entrega de QA a BA y BA define listo para Review.</td></tr>
+<tr><td>Review</td><td>Equipo + Stakeholder</td><td>Feedback y aprobación.</td></tr>
+<tr><td>Inclusion en Release</td><td>SM, BA, LT</td><td>Adición de HU a release calendar.</td></tr>
+<tr><td>Entrega a Negocio</td><td>SM</td><td>Entrega formal de HU a negocio.</td></tr>
+<tr><td>Finalización Garantía</td><td>SM</td><td>Cierre formal de HU a negocio.</td></tr>
+</table>
+
+<h2>IV. Definiciones de Estado de las HUs</h2>
+<table>
+<tr><th>Estado</th><th>Significado</th><th>Requisitos</th></tr>
+<tr><td>Backlog</td><td>HU pendiente por trabajar</td><td>Solo creada.</td></tr>
+<tr><td>Ready</td><td>Lista para Planning</td><td>Refinada, dudas resueltas, aprobaciones mínimas, estimada.</td></tr>
+<tr><td>In Progress</td><td>En desarrollo</td><td>Asignada en sprint.</td></tr>
+<tr><td>QA</td><td>En validación QA</td><td>Desarrollo terminado, entregado por DEV.</td></tr>
+<tr><td>Review</td><td>Lista para demo</td><td>Validación QA exitosa.</td></tr>
+<tr><td>Done</td><td>Completada</td><td>Revisada, aprobada, deploy lista.</td></tr>
+</table>
+
+<h2>V. Artefactos y Plantillas Clave</h2>
+<table>
+<tr><th>Artefacto</th><th>Ubicación</th><th>Responsable</th></tr>
+<tr><td>Plantilla HU</td><td>Azure DevOps</td><td>BA</td></tr>
+<tr><td>Registro Análisis Exploratorio QA-DEV</td><td>Azure DevOps</td><td>QA-DEV</td></tr>
+<tr><td>Registro de Puntuación de HU</td><td>Azure DevOps</td><td>SM</td></tr>
+<tr><td>Checklist y Casos de Prueba QA</td><td>Azure DevOps</td><td>QA</td></tr>
+<tr><td>Reporte Ejecución QA</td><td>Azure DevOps</td><td>QA</td></tr>
+<tr><td>Acta de Review</td><td>Teams</td><td>BA</td></tr>
+<tr><td>Acta de Retro</td><td>Azure DevOps</td><td>SM</td></tr>
+<tr><td>Registro Action Items Retro</td><td>Azure DevOps (#retro)</td><td>Todo equipo</td></tr>
+<tr><td>Plantilla Estimación Nivel Medio</td><td>Azure DevOps</td><td>LT</td></tr>
+</table>
+
+<h2>VI. Precondiciones (Gateways)</h2>
+<table>
+<tr><th>Precondición</th><th>Responsable</th><th>Requisitos Mínimos</th></tr>
+<tr><td>Antes Refinamiento</td><td>BA</td><td>HU versión 1.0, dudas registradas, LT/BA revisaron, Registro Análisis Exploratorio QA-DEV</td></tr>
+<tr><td>Antes Planning</td><td>BA, SM</td><td>HU en estado Ready, aprobaciones LT + QA + DEV.</td></tr>
+<tr><td>Antes Review</td><td>QA, BA</td><td>HU validada QA, criterios OK, entregable documentado.</td></tr>
+</table>
+
+<h2>VII. Métricas Básicas a Medir</h2>
+<h3>Métricas de Entrega / Cumplimiento</h3>
+<table>
+<tr><th>Métrica</th><th>¿Qué mide?</th><th>¿Cómo se calcula?</th><th>Frecuencia</th><th>Fuente sugerida</th></tr>
+<tr><td>Velocidad del equipo</td><td>Cuánto trabajo entrega el equipo</td><td>Total HUs finalizadas (en días estimados)</td><td>Cada sprint</td><td>Azure DevOps</td></tr>
+<tr><td>Compromisos cumplidos vs comprometidos</td><td>Porcentaje trabajo terminado vs planeado</td><td>HUs completadas / comprometidas × 100</td><td>Cada sprint</td><td>Azure DevOps</td></tr>
+<tr><td>Historias replanificadas</td><td>HUs movidas al siguiente sprint</td><td>Conteo</td><td>Cada sprint</td><td>Azure DevOps</td></tr>
+</table>
+
+<h3>Métricas de Calidad</h3>
+<table>
+<tr><th>Métrica</th><th>¿Qué mide?</th><th>¿Cómo se calcula?</th><th>Frecuencia</th><th>Fuente sugerida</th></tr>
+<tr><td>Tasa de bugs post-dev</td><td>Qué tanto QA detecta fallos</td><td>Bugs QA / Total HUs validadas</td><td>Cada sprint</td><td>Azure DevOps</td></tr>
+<tr><td>% retrabajo (Bug retesteo)</td><td>Correcciones/retesteos</td><td>HUs con bug crítico / Total HUs validadas × 100</td><td>Cada sprint</td><td>Azure DevOps</td></tr>
+</table>
+
+<h3>Métricas de Colaboración</h3>
+<table>
+<tr><th>Métrica</th><th>¿Qué mide?</th><th>¿Cómo se calcula?</th><th>Frecuencia</th><th>Fuente sugerida</th></tr>
+<tr><td>Participación ceremonias</td><td>Involucramiento del equipo</td><td>Asistencia promedio</td><td>Cada ceremonia</td><td>Teams</td></tr>
+<tr><td>Dudas resueltas análisis</td><td>Eficiencia en análisis exploratorio</td><td>Preguntas resueltas / levantadas × 100</td><td>Cada sprint</td><td>Azure DevOps</td></tr>
+</table>
+
+<h3>Métricas de Mejora Continua</h3>
+<table>
+<tr><th>Métrica</th><th>¿Qué mide?</th><th>¿Cómo se calcula?</th></tr>
+<tr><td>% Action Items completados (Retro)</td><td>Cumplimiento de mejoras</td><td>Action Items completados / creados × 100</td></tr>
+</table>
+
+</body>
+</html>
