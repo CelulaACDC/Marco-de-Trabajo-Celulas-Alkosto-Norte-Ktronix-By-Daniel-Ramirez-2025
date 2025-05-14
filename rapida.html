@@ -122,23 +122,23 @@
 
 <h3>Métricas de Calidad</h3>
 <table>
-<tr><th>Métrica</th><th>¿Qué mide?</th><th>¿Cómo se calcula?</th><th>Frecuencia</th><th>Fuente sugerida</th></tr>
-<tr><td>Tasa de bugs post-dev</td><td>Qué tanto QA detecta fallos</td><td>Bugs QA / Total HUs validadas</td><td>Cada sprint</td><td>Azure DevOps</td></tr>
-  <tr><td>Tasa de bugs en Stage</td><td>Qué tanto QA detecta fallos en Stage</td><td>Bugs Stage / Total HUs validadas</td><td>Cada Release</td><td>Azure DevOps</td></tr>
-  <tr><td>Tasa de bugs en Producción</td><td>Qué tanto detecta fallos en Producción</td><td>Bugs PDR / Total HUs validadas</td><td>Cada Release</td><td>Azure DevOps</td></tr>
+<tr><th>Métrica</th><th>¿Qué mide?</th><th>¿Cómo se calcula?</th><th>Frecuencia</th><th>Fuente sugerida</th><th>Valor Referencia</th></tr>
+<tr><td>Tasa de bugs post-dev</td><td>Qué tanto QA detecta fallos</td><td>Bugs QA / Total HUs validadas</td><td>Cada sprint</td><td>Azure DevOps</td><td>⚠️ Ideal: < 0.3 bugs/HU</td></tr>
+  <tr><td>Tasa de bugs en Stage</td><td>Qué tanto QA detecta fallos en Stage</td><td>Bugs Stage / Total HUs validadas</td><td>Cada Release</td><td>Azure DevOps</td><td>⚠️ Ideal: < 0.2 bugs/HU</td></tr>
+  <tr><td>Tasa de bugs en Producción</td><td>Qué tanto detecta fallos en Producción</td><td>Bugs PDR / Total HUs validadas</td><td>Cada Release</td><td>Azure DevOps</td><td>🚨 Ideal: 0, aceptable: < 0.1 bugs/HU</td></tr>
 </table>
 
 <h3>Métricas de Colaboración</h3>
 <table>
-<tr><th>Métrica</th><th>¿Qué mide?</th><th>¿Cómo se calcula?</th><th>Frecuencia</th><th>Fuente sugerida</th></tr>
-<tr><td>Participación ceremonias</td><td>Involucramiento del equipo</td><td>Asistencia promedio</td><td>Cada ceremonia</td><td>Teams</td></tr>
-<tr><td>Dudas resueltas análisis</td><td>Eficiencia en análisis exploratorio</td><td>Preguntas resueltas / levantadas × 100</td><td>Cada sprint</td><td>Azure DevOps</td></tr>
+<tr><th>Métrica</th><th>¿Qué mide?</th><th>¿Cómo se calcula?</th><th>Frecuencia</th><th>Fuente sugerida</th><th>Valor Referencia</th></tr>
+<tr><td>Participación ceremonias</td><td>Involucramiento del equipo</td><td>Asistencia promedio</td><td>Cada ceremonia</td><td>Teams</td><td>✅ >90% de asistencia promedio</td></tr>
+<tr><td>Dudas resueltas análisis</td><td>Eficiencia en análisis exploratorio</td><td>Preguntas resueltas / levantadas × 100</td><td>Cada sprint</td><td>Azure DevOps</td><td>✅ Ideal: >95% de resolución antes del refinamiento final</td></tr>
 </table>
 
 <h3>Métricas de Mejora Continua</h3>
 <table>
-<tr><th>Métrica</th><th>¿Qué mide?</th><th>¿Cómo se calcula?</th></tr>
-<tr><td>% Action Items completados (Retro)</td><td>Cumplimiento de mejoras</td><td>Action Items completados / creados × 100</td></tr>
+<tr><th>Métrica</th><th>¿Qué mide?</th><th>¿Cómo se calcula?</th><th>Valor Referencia</th></tr>
+<tr><td>% Action Items completados (Retro)</td><td>Cumplimiento de mejoras</td><td>Action Items completados / creados × 100</td><td>✅ >85% de cumplimiento por sprint</td></tr>
 </table>
 
 </body>
