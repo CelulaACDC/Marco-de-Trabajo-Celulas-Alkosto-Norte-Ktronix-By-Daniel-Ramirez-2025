@@ -66,11 +66,10 @@
 <tr><td>Planeación</td><td>Equipo</td><td>Una vez Refinada y Puntuada la HU se agrega en Sprint Goal, 🧠 Incluye Análisis Exploratorio de HU: validación de entendimiento por parte del equipo DEV y QA </td></tr> 
 <tr><td>Desarrollo</td><td>DEV, LT</td><td>Código implementado y mergeado.</td></tr>
 <tr><td>Pre- Review Técnico</td><td>DEV, LT</td><td>Entregable listo para QA y/o Review.</td></tr>
-<tr><td>QA</td><td>QA-Man, QA-Auto</td><td>Casos ejecutados y validados. Bugs resueltos.</td></tr>
+<tr><td>Ejecución QA</td><td>QA-Man, QA-Auto</td><td>Casos ejecutados y validados. Bugs resueltos.</td></tr>
 <tr><td>QA - Entrega</td><td>QA-BA</td><td>Entrega de QA a BA y BA define listo para Review.</td></tr>
 <tr><td>Review</td><td>Equipo + Stakeholder</td><td>Feedback y aprobación.</td></tr>
-<tr><td>Inclusion en Release</td><td>SM, BA, LT</td><td>Adición de HU a release calendar.</td></tr>
-<tr><td>actividad 1</td><td>JP</td><td>Revisión de requisitos iniciales.</td></tr>
+<tr><td>Inclusion en Release</td><td>SM, BA, LT</td><td>Adición de HU a release calendar,  Documento de Entrega tecnica a Soporte (BA), Manual de Usuario (BA)</td></tr>
 <tr><td>Entrega a Negocio</td><td>SM</td><td>Entrega formal de HU a negocio.</td></tr>
 <tr><td>Finalización Garantía</td><td>SM</td><td>Cierre formal de HU a negocio.</td></tr>
 
@@ -94,6 +93,7 @@
 <table>
 <tr><th>Artefacto</th><th>Ubicación</th><th>Responsable</th></tr>
 <tr><td>Plantilla HU</td><td>Azure DevOps</td><td>BA</td></tr>
+<tr><td>Analisis de  HU</td><td>Azure DevOps,   Read & Confirm HU (ejemplo: “Leída, sin dudas” o “Leída, pendiente aclaración X”) </td><td>BA</td></tr> 
 <tr><td>Registro Análisis Exploratorio QA-DEV</td><td>Azure DevOps</td><td>QA-DEV</td></tr>
 <tr><td>Registro de Puntuación de HU</td><td>Azure DevOps</td><td>SM</td></tr>
 <tr><td>Checklist y Casos de Prueba QA</td><td>Azure DevOps</td><td>QA</td></tr>
@@ -115,17 +115,13 @@
 <h2>VII. Métricas Básicas a Medir</h2>
 <h3>Métricas de Entrega / Cumplimiento</h3>
 <table>
-<tr><th>Métrica</th><th>¿Qué mide?</th><th>¿Cómo se calcula?</th><th>Frecuencia</th><th>Fuente sugerida</th></tr>
-<tr><td>Velocidad del equipo</td><td>Cuánto trabajo entrega el equipo</td><td>Total HUs finalizadas (en días estimados)</td><td>Cada sprint</td><td>Azure DevOps</td></tr>
 <tr><td>Compromisos cumplidos vs comprometidos</td><td>Porcentaje trabajo terminado vs planeado</td><td>HUs completadas / comprometidas × 100</td><td>Cada sprint</td><td>Azure DevOps</td></tr>
-<tr><td>Historias replanificadas</td><td>HUs movidas al siguiente sprint</td><td>Conteo</td><td>Cada sprint</td><td>Azure DevOps</td></tr>
 </table>
 
 <h3>Métricas de Calidad</h3>
 <table>
 <tr><th>Métrica</th><th>¿Qué mide?</th><th>¿Cómo se calcula?</th><th>Frecuencia</th><th>Fuente sugerida</th></tr>
 <tr><td>Tasa de bugs post-dev</td><td>Qué tanto QA detecta fallos</td><td>Bugs QA / Total HUs validadas</td><td>Cada sprint</td><td>Azure DevOps</td></tr>
-<tr><td>% retrabajo (Bug retesteo)</td><td>Correcciones/retesteos</td><td>HUs con bug crítico / Total HUs validadas × 100</td><td>Cada sprint</td><td>Azure DevOps</td></tr>
 </table>
 
 <h3>Métricas de Colaboración</h3>
