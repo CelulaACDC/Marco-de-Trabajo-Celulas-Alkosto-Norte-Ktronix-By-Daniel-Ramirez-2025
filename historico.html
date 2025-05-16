@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visor de Hojas de Sprint</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; background-color: #f4f4f4; }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+        h1 { text-align: center; color: #333; }
+        form {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        label { margin-right: 10px; font-size: 1.1em; }
+        input[type="text"], input[type="number"] { /* Cambiado a text para mayor flexibilidad con nombres de hoja */
+            padding: 10px;
+            margin-right: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1em;
+        }
+        button {
+            padding: 10px 20px;
+            cursor: pointer;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 1em;
+        }
+        button:hover { background-color: #0056b3; }
+        #infoHoja { margin-top: 20px; overflow-x: auto; /* Para tablas anchas */ }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 15px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.05);
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px 12px; /* Aumentado padding */
+            text-align: left;
+            font-size: 0.95em;
+        }
+        th {
+            background-color: #007bff; /* Azul para encabezados */
+            color: white; /* Texto blanco para encabezados */
+            font-weight: bold;
+        }
+        tr:nth-child(even) { background-color: #f9f9f9; }
+        tr:hover { background-color: #f1f1f1; }
+        #errorMensaje, #cargandoMensaje {
+            text-align: center;
+            margin-top: 15px;
+            padding: 10px;
+            border-radius: 4px;
+        }
+        #errorMensaje { color: #D8000C; background-color: #FFD2D2; }
+        #cargandoMensaje { color: #00529B; background-color: #BDE5F8; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Visor de Hojas de Sprint</h1>
+        <form id="formularioBusqueda">
+            <label for="nombreHoja">Número/Nombre de la Hoja:</label>
+            <input type="text" id="nombreHoja" placeholder="Ej: 100, 200, NombreHoja">
+            <button type="submit">Cargar Hoja</button>
+        </form>
+
+        <div id="cargandoMensaje" style="display: none;">Cargando datos...</div>
+        <div id="errorMensaje"></div>
+        <div id="infoHoja">
+            </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
