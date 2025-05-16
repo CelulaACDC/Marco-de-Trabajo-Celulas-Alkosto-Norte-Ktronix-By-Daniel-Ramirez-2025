@@ -4,16 +4,13 @@ document.addEventListener('DOMContentLoaded', function() {
     const errorMensajeDiv = document.getElementById('errorMensaje');
     const cargandoMensajeDiv = document.getElementById('cargandoMensaje');
 
-    // ¡¡¡REEMPLAZA ESTO CON EL ID DE TU HOJA DE CÁLCULO!!!
-    // Ejemplo: const SPREADSHEET_ID = '1qA2bC3dE4fG5hI6jK7lM8nO9pQ0rS1tU2vW3xY4zZ5A';
-    const SPREADSHEET_ID = '1JiAGHdUCLHW4GCnGJSvV05irhsKYYXUCg5VcYPsAwKU'; // Reemplaza con tu ID real
+    const SPREADSHEET_ID = '1JiAGHdUCLHW4GCnGJSvV05irhsKYYXUCg5VcYPsAwKU'; // Tu ID de la hoja de cálculo
 
     if (SPREADSHEET_ID === 'TU_SPREADSHEET_ID_AQUI' || SPREADSHEET_ID === '') {
         errorMensajeDiv.textContent = 'ERROR CRÍTICO: El SPREADSHEET_ID no ha sido configurado en script.js. Por favor, edita el archivo.';
         errorMensajeDiv.style.display = 'block';
         return; // Detener la ejecución si el ID no está configurado
     }
-
 
     formulario.addEventListener('submit', function(event) {
         event.preventDefault();
@@ -33,9 +30,7 @@ document.addEventListener('DOMContentLoaded', function() {
         cargandoMensajeDiv.style.display = 'block';
 
         const encodedSheetName = encodeURIComponent(nombreHojaBuscada);
-        //const url = `https://docs.google.com/spreadsheets/d/${SPREADSHEET_ID}/gviz/tq?tqx=out:json&sheet=${encodedSheetName}`;
-          const url = `https://spreadsheets.google.com/tq?key=${SPREADSHEET_ID}&tqx=out:json&sheet=${encodedSheetName}`;
-          //const url = `https://docs.google.com/spreadsheets/d/<span class="math-inline">\{SPREADSHEET\_ID\}/gviz/tq?tqx\=out\:json&sheet\=</span>{encodedSheetName}`;
+        const url = `https://docs.google.com/spreadsheets/d/${SPREADSHEET_ID}/gviz/tq?tqx=out:json&sheet=${encodedSheetName}`;
 
         fetch(url)
             .then(response => {
@@ -46,8 +41,6 @@ document.addEventListener('DOMContentLoaded', function() {
             })
             .then(data => {
                 cargandoMensajeDiv.style.display = 'none';
-                // La API de Google Sheets (gviz) envuelve la respuesta JSONP.
-                // Extraemos el objeto JSON.
                 const jsonString = data.substring(data.indexOf('(') + 1, data.lastIndexOf(')'));
                 let jsonData;
                 try {
@@ -83,9 +76,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 const cols = jsonData.table.cols;
                 const rows = jsonData.table.rows;
-console.log("Datos JSON:", jsonData);
-console.log("Columnas:", cols);
-console.log("Filas:", rows);
+
+                console.log("Datos JSON:", jsonData);
+                console.log("Columnas:", cols);
+                console.log("Filas:", rows);
+
                 const table = document.createElement('table');
                 const thead = document.createElement('thead');
                 const tbody = document.createElement('tbody');
@@ -93,7 +88,7 @@ console.log("Filas:", rows);
 
                 cols.forEach(col => {
                     const th = document.createElement('th');
-                    th.textContent = col.label || ''; // Usar label, o vacío si no hay label
+                    th.textContent = col.label || '';
                     headerRow.appendChild(th);
                 });
                 thead.appendChild(headerRow);
@@ -101,14 +96,13 @@ console.log("Filas:", rows);
 
                 rows.forEach(rowData => {
                     const tr = document.createElement('tr');
-                    // Asegurarse de que se crean celdas para todas las columnas, incluso si faltan datos en la fila
-                    for (let i = 0; i < cols.length; i++) {
-                        const cellData = rowData.c[i]; // 'c' es el array de celdas
-                        const td = document.createElement('td');
-                        // cellData puede ser null si la celda está vacía
-                        // cellData.f es el valor formateado (preferido), cellData.v es el valor crudo
-                        td.textContent = cellData ? (cellData.f || (cellData.v !== null && cellData.v !== undefined ? cellData.v.toString() : '')) : '';
-                        tr.appendChild(td);
+                    if (rowData.c) {
+                        for (let i = 0; i < cols.length; i++) {
+                            const cellData = rowData.c[i];
+                            const td = document.createElement('td');
+                            td.textContent = cellData ? (cellData.f !== undefined ? cellData.f : (cellData.v !== undefined ? cellData.v : '')) : '';
+                            tr.appendChild(td);
+                        }
                     }
                     tbody.appendChild(tr);
                 });
@@ -124,5 +118,3 @@ console.log("Filas:", rows);
             });
     });
 });
-
-
