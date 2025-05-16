@@ -82,7 +82,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 const cols = jsonData.table.cols;
                 const rows = jsonData.table.rows;
-
+console.log("Datos JSON:", jsonData);
+console.log("Columnas:", cols);
+console.log("Filas:", rows);
                 const table = document.createElement('table');
                 const thead = document.createElement('thead');
                 const tbody = document.createElement('tbody');
@@ -121,3 +123,5 @@ document.addEventListener('DOMContentLoaded', function() {
             });
     });
 });
+
+
