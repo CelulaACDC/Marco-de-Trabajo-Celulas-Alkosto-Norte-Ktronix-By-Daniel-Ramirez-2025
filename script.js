@@ -34,7 +34,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
         const encodedSheetName = encodeURIComponent(nombreHojaBuscada);
         //const url = `https://docs.google.com/spreadsheets/d/${SPREADSHEET_ID}/gviz/tq?tqx=out:json&sheet=${encodedSheetName}`;
-          const url = `https://spreadsheets.google.com/tq?key=${SPREADSHEET_ID}&tqx=out:json&sheet=${encodedSheetName}`;
+          //const url = `https://spreadsheets.google.com/tq?key=${SPREADSHEET_ID}&tqx=out:json&sheet=${encodedSheetName}`;
+          const url = `https://docs.google.com/spreadsheets/d/<span class="math-inline">\{SPREADSHEET\_ID\}/gviz/tq?tqx\=out\:json&sheet\=</span>{encodedSheetName}`;
 
         fetch(url)
             .then(response => {
