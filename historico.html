@@ -15,6 +15,15 @@
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
             border-radius: 8px;
         }
+         .banner {
+  background-color: #f0f8ff;       /* Un azul muy claro de fondo */
+  color: #007bff;                  /* Azul principal para el texto */
+  text-align: center;              /* Centrar el texto horizontalmente */
+  padding: 10px;                   /* Espacio alrededor del texto */
+  margin-bottom: 20px;            /* Espacio debajo del banner */
+  border-radius: 5px;             /* Bordes redondeados */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
         h1 { text-align: center; color: #333; }
         form {
             display: flex;
@@ -71,12 +80,16 @@
     </style>
 </head>
 <body>
+
+    <div class="banner">
+  ¡Comencemos a construir el futuro de Alkosto y Ktronix juntos!
+</div> 
     <div class="container">
-        <h1>Visor de Hojas de Sprint</h1>
+        <h1>Visor Historico de Sprint</h1>
         <form id="formularioBusqueda">
-            <label for="nombreHoja">Número/Nombre de la Hoja:</label>
-            <input type="text" id="nombreHoja" placeholder="Ej: 100, 200, NombreHoja">
-            <button type="submit">Cargar Hoja</button>
+            <label for="nombreHoja">Número de Sprint:</label>
+            <input type="text" id="nombreHoja" placeholder="Ej: 100, 200, Nombre Sprint">
+            <button type="submit">Cargar Sprint</button>
         </form>
 
         <div id="cargandoMensaje" style="display: none;">Cargando datos...</div>
