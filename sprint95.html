@@ -24,13 +24,14 @@
             --bg-nro-sprint: #e0f2f7;
             --bg-carryover: #f3e5f5; /* Light purple */
             --bg-other-activities: #e8f5e9; /* Light green for other activities */
+            --bg-spike: #f0f8ff; /* Muy ligero azul para Spike, ajustado de nuevo si es necesario */
         }
 
         body {
             font-family: 'Inter', sans-serif; /* Usamos Inter de Google Fonts */
             background-color: var(--light-blue-bg);
             margin: 0;
-            padding: 20px; /* Reducimos el padding para pantallas más pequeñas */
+            padding: 30px; /* Incrementado para más espacio */
             color: var(--text-dark);
             line-height: 1.6;
         }
@@ -38,21 +39,25 @@
         h1 {
             text-align: center;
             color: var(--text-dark);
-            font-size: 2.2em; /* Más grande y prominente */
+            font-size: 2.5em; /* Más grande y prominente */
             margin-bottom: 30px;
             font-weight: 700; /* Más audaz */
-            letter-spacing: -0.5px;
+            letter-spacing: -0.8px; /* Ajuste para mejor lectura */
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.05); /* Sombra suave para el título */
         }
-		
-		.banner {
-  background-color: #f0f8ff;       /* Un azul muy claro de fondo */
-  color: #007bff;                  /* Azul principal para el texto */
-  text-align: center;              /* Centrar el texto horizontalmente */
-  padding: 10px;                   /* Espacio alrededor del texto */
-  margin-bottom: 20px;            /* Espacio debajo del banner */
-  border-radius: 5px;             /* Bordes redondeados */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave */
-}
+        
+        .banner {
+            background-color: #f0f8ff; /* Un azul muy claro de fondo */
+            color: #007bff; /* Azul principal para el texto */
+            text-align: center; /* Centrar el texto horizontalmente */
+            padding: 15px; /* Espacio alrededor del texto */
+            margin-bottom: 30px; /* Espacio debajo del banner */
+            border-radius: 8px; /* Bordes más redondeados */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra más pronunciada */
+            font-size: 1.1em; /* Texto un poco más grande */
+            font-weight: 600; /* Semibold */
+            border: 1px solid #cceeff; /* Borde sutil para definirlo */
+        }
 
         .sprint-table-container {
             overflow-x: auto; /* Permite scroll horizontal en pantallas pequeñas */
@@ -64,18 +69,18 @@
 
         .sprint-table {
             width: 100%;
-            border-collapse: separate;
+            border-collapse: separate; /* Permite border-radius en las esquinas */
             border-spacing: 0;
             background-color: var(--white-bg);
             border-radius: 12px;
-            overflow: hidden;
-            min-width: 800px; /* Ancho mínimo para la tabla */
+            overflow: hidden; /* Asegura que el contenido respete el border-radius */
+            min-width: 1200px; /* Ancho mínimo ajustado para la tabla con más columnas */
         }
 
         .sprint-table th {
             background: linear-gradient(90deg, var(--primary-blue) 0%, var(--dark-blue) 100%);
             color: #fff;
-            text-align: left;
+            text-align: left; /* Por defecto a la izquierda, se centrarán algunos con clases específicas */
             padding: 16px 20px; /* Más padding para mayor espacio */
             font-size: 0.95em; /* Ligeramente más grande */
             font-weight: 600; /* Semibold */
@@ -92,9 +97,14 @@
         .sprint-table td {
             padding: 12px 20px; /* Ajuste de padding */
             border-bottom: 1px solid var(--border-light);
+            border-right: 1px solid var(--border-light); /* Borde derecho para crear una cuadrícula */
             font-size: 0.9em; /* Ligeramente más pequeño para el contenido */
             color: var(--text-gray);
-            vertical-align: top; /* Alineación superior para el texto */
+            vertical-align: middle; /* Alineación media para el texto */
+        }
+        
+        .sprint-table td:last-child {
+            border-right: none; /* Eliminar el borde derecho de la última columna */
         }
 
         .sprint-table tbody tr:last-child td {
@@ -103,7 +113,7 @@
 
         /* Colores de fila alternos */
         .sprint-table tr:nth-child(even) td {
-            background-color: #fcfdfe; /* Blanco muy suave */
+            background-color: #f8fbfd; /* Blanco ligeramente más visible */
         }
 
         /* Efecto hover en filas */
@@ -115,14 +125,15 @@
         /* Estilos para encabezados de sección */
         .sprint-table th.section-header {
             background: linear-gradient(90deg, var(--orange-section) 0%, #ff8c00 100%); /* Degradado naranja */
-            color: var(--text-dark);
-            font-weight: 600;
-            font-size: 1.1em;
+            color: var(--text-dark); /* Color de texto que contraste bien */
+            font-weight: 700; /* Más audaz */
+            font-size: 1.15em; /* Un poco más grande */
             text-align: center;
             padding: 14px 20px;
             border-top: 2px solid #e0a300;
             border-bottom: 2px solid #e0a300;
             text-transform: none; /* No mayúsculas para los títulos de sección */
+            letter-spacing: 0.2px; /* Espaciado de letras sutil */
         }
 
         /* Estilos específicos para Nro Sprint */
@@ -140,12 +151,12 @@
         .sprint-table td.sub-category {
             background-color: var(--bg-carryover);
             font-weight: 600;
-            text-align: center;
+            text-align: left; /* Alineación a la izquierda para el texto de la subcategoría */
             vertical-align: middle;
             border-right: 1px solid #eccdfb;
             color: var(--text-dark);
         }
-
+        
         /* **TODAS LAS PRIORIDADES STRETCH EN ROJO FUERTE** */
         td[class*="priority-strong-"] { /* Selecciona cualquier celda con una clase que contenga "priority-strong-" */
             background-color: var(--priority-stretch-bg);
@@ -154,7 +165,7 @@
             text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
             text-align: center; /* Centrar el texto en las celdas de prioridad */
         }
-        
+            
         /* **Las demás prioridades sin color de fondo** */
         td.priority-0,
         td.priority-1,
@@ -165,47 +176,91 @@
             color: var(--text-gray); /* Mantenemos el color de texto normal */
             text-align: center; /* Centrar el texto en las celdas de prioridad */
         }
-
+        
+        /* Color para texto "Finalizado" */
+        .status-finalizado {
+            color: #28a745; /* Verde de Bootstrap */
+            font-weight: 700; /* Más fuerte */
+        }
+        .status-en-proceso { /* Nuevo estilo para "En Proceso" */
+            color: #ff8c00; /* Naranja */
+            font-weight: 600;
+        }
+        .status-pendiente { /* Nuevo estilo para "Pendiente" */
+            color: #6c757d; /* Gris */
+            font-weight: 500;
+        }
 
         /* Estilos para "Otras Actividades" */
         th.other-activities-header {
             background: linear-gradient(90deg, #6aa84f 0%, #4d8234 100%); /* Degradado verde más suave */
             color: white;
-            font-size: 1.2em;
-            padding: 15px;
+            font-size: 1.25em; /* Un poco más grande */
+            padding: 18px; /* Más padding */
             text-align: center;
             border-top: 2px solid #3c6d26;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.8px; /* Más espaciado */
         }
         td.other-activity-row {
             background-color: var(--bg-other-activities);
             font-weight: 500;
             color: var(--text-dark);
+            vertical-align: middle;
+            text-align: left; /* Alineación a la izquierda para el contenido de otras actividades */
         }
+
+        /* Estilos para CELDAS DE FECHAS y REVISIÓN */
+        .sprint-table td:nth-child(7), /* Columna 'Fecha Sprint Goal' */
+        .sprint-table td:nth-child(9), /* Columna 'Revision Par QA - BA' */
+        .sprint-table td:nth-child(10), /* Columna 'Pre Review Tecnica' */
+        .sprint-table td:nth-child(11), /* Columna 'Liberación QA' */
+        .sprint-table td:nth-child(12) { /* Columna 'Entrega QA - BA' */
+            white-space: nowrap; /* Evita el salto de línea */
+            font-size: 0.8em; /* Tamaño de fuente ligeramente más pequeño */
+            text-align: center; /* Asegura que el texto esté centrado */
+        }
+
         /* Para celdas vacías o con 'nan' que no se quieren mostrar */
-        td:empty, td:contains("nan") {
-             /* Puedes agregar un estilo sutil para celdas vacías si quieres, o dejarlas como están */
+        td:empty::before, td:contains("nan")::before {
+            content: "—"; /* Un guion para celdas vacías o 'nan' */
+            color: #bbb; /* Color gris para el guion */
+            font-size: 0.8em;
+        }
+        td:contains("nan") {
+            color: transparent; /* Hace que el texto "nan" original sea transparente */
+        }
+
+        /* Clase general para centrar texto, si se necesita en otros lugares */
+        .text-center {
+            text-align: center;
         }
     </style>
 </head>
 <body>
-     <div class="banner">
-  ¡Comencemos a construir el futuro de Alkosto y Ktronix juntos!
-</div>
-	<h1>CELULA 6 AC DC - SPRINT 95 - Sprint Goal 26-05-2025 Al 13-06-2025</h1>
+    <div class="banner">
+        ¡Comencemos a construir el futuro de Alkosto y Ktronix juntos!
+    </div>
+    <h1>CELULA 6 AC DC - SPRINT 95 - Sprint Goal 26-05-2025 Al 13-06-2025</h1>
     <div class="sprint-table-container">
         <table class="sprint-table">
             <thead>
                 <tr>
                     <th rowspan="2">Nro Sprint</th>
-                    <th colspan="2">Iniciativas</th> <th>DEV</th>
-                    <th>QA</th>
-                    <th>Prioridad</th>
-                    <th>Fecha Sprint Goal</th>
+                    <th colspan="2">Iniciativas</th>
+                    <th class="center-text">DEV</th>
+                    <th class="center-text">QA</th>
+                    <th class="center-text">Prioridad</th>
+                    <th class="center-text">Fecha Sprint Goal</th>
+                    <th class="center-text">Estado</th>
+                    <th class="center-text">Revision Par QA - BA</th>
+                    <th class="center-text">Pre Review Tecnica</th>
+                    <th class="center-text">Liberación QA</th>
+                    <th class="center-text">Entrega QA - BA</th>
+                    <th class="center-text">Review</th>
                 </tr>
                 <tr>
-                    <th class="section-header" colspan="6">Iniciativas Carry Over</th>
+                    <th class="section-header" colspan="12">Iniciativas</th>
                 </tr>
             </thead>
             <tbody>
@@ -213,207 +268,435 @@
                     <td class="sprint-col" rowspan="12">95</td> <td class="sub-category" rowspan="12">CarryOver</td> <td>Stage Alterno</td>
                     <td></td>
                     <td>Wilmer</td>
-                    <td class="priority-0">0</td> <td>28-05-2025</td>
+                    <td class="priority-0">0</td>
+                    <td>28-05-2025</td>
+                    <td class="status-finalizado">Finalizado 26052025</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
                 </tr>
                 <tr>
                     <td>REPORTE GEOHUB MEDIOS DE PAGO</td>
                     <td>Rodrigo</td>
                     <td>Vladimir</td>
-                    <td class="priority-0">0</td> <td>13-06-2025</td>
+                    <td class="priority-0">0</td>
+                    <td>09-06-2025</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
                 </tr>
                 <tr>
                     <td>HU_EP_GEO_10261- Retiro de Claves de Supervisor en Proceso de RMA</td>
                     <td>Brian</td>
                     <td>Vladimir</td>
-                    <td class="priority-strong-2">Strech</td> <td></td>
+                    <td class="priority-strong-2">Strech</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
                 </tr>
                 <tr>
                     <td>HU_EP_GEO_10310 - Envió de trama de geo referenciación de OMS a GEO y a People</td>
                     <td>Belen</td>
                     <td>Duban</td>
-                    <td class="priority-0">0</td> <td>13-06-2025</td>
+                    <td class="priority-0">0</td>
+                    <td>28-05-2025</td>
+                    <td class="status-finalizado">Finalizado 27052025</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
                 </tr>
                 <tr>
                     <td>HU_EP_GEO_10069 - Causal de Devolucion en Bonos Cambio Digital</td>
                     <td>Braian</td>
                     <td>Vladimir</td>
-                      <td class="priority-strong-2">Strech</td> <td></td>
+                    <td class="priority-strong-2">Strech</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
                 </tr>
                 <tr>
                     <td>EP_GEO_9999_Envio Mensaje de WhatSapp Venta de Pines en .com (Posa y Manuales)- Mail</td>
                     <td>Rodrigo</td>
                     <td>Vladimir</td>
-                    <td class="priority-2">3</td> <td>13-06-2025</td>
+                    <td class="priority-2">3</td>
+                    <td>13-06-2025</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
                 </tr>
                 <tr>
                     <td>HU_EP_GEO_9530_Migracion Informe licode de la geo consola a el informe licode de people soft</td>
                     <td>Braian y Joaquin</td>
                     <td>Vladimir</td>
-                    <td class="priority-2">2</td> <td>13-06-2025</td>
+                    <td class="priority-2">2</td>
+                    <td>13-06-2025</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
                 </tr>
                 <tr>
                     <td>HU_EP_GEO_9858_Devolucion Transacción Automatica Trae la Mercancia 3.7</td>
                     <td>Rodrigo</td>
                     <td>Vladimir</td>
-                     <td class="priority-strong-2">Strech</td> <td></td>
+                    <td class="priority-strong-2">Strech</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
                 </tr>
                 <tr>
                     <td>EP_GEO_9592_Migración Mahindra de Pines Virtuales</td>
                     <td>Rodrigo</td>
                     <td>Vladimir</td>
-                    <td class="priority-1">1</td> <td>13-06-2025</td>
+                    <td class="priority-1">1</td>
+                    <td>13-06-2025</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
                 </tr>
                 <tr>
                     <td>EP_GEO_9592_Migración Mahindra de Pines Virtuales_Fase 2 (Token)</td>
                     <td>Rodrigo</td>
                     <td>Vladimir</td>
-                    <td class="priority-1">1</td> <td>13-06-2025</td>
+                    <td class="priority-1">1</td>
+                    <td>13-06-2025</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
                 </tr>
                 <tr>
                     <td>EP_GEO_9592_Migración Mahindra de Pines Virtuales_Fase 2 (Mensajes de error)</td>
                     <td>Rodrigo</td>
                     <td>Vladimir</td>
-                    <td class="priority-1">1</td> <td>13-06-2025</td>
+                    <td class="priority-1">1</td>
+                    <td>13-06-2025</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
                 </tr>
                 <tr>
                     <td>HU_EP_GEO_Migración de Mahindra Campo issuerId -issuerLogin</td>
                     <td>Rodrigo</td>
                     <td>Vladimir</td>
-                    <td class="priority-1">1</td> <td>13-06-2025</td>
+                    <td class="priority-1">1</td>
+                    <td>13-06-2025</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
                 </tr>
 
                 <tr>
-                    <th class="section-header" colspan="7">Iniciativas Regresión</th>
+                    <th class="section-header" colspan="13">Iniciativas Regresión</th>
                 </tr>
                 <tr>
                     <td class="sprint-col" rowspan="9">95</td> <td class="sub-category" rowspan="9">Regresion</td> <td>HU_EP_GEO_10139_Nota P Devolución Falla Tecnica 3.7</td>
                     <td></td>
-                    <td>Duban</td>
-                    <td class="priority-0">0</td> <td>9/6/2025</td>
+                    <td>Angelica</td>
+                    <td class="priority-0">0</td>
+                    <td>9/6/2025</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
                 </tr>
                 <tr>
                     <td>HU_EP_GEO_10070_Reimpresión soporte de recaudo</td>
                     <td></td>
-                    <td>Duban</td>
-                    <td class="priority-0">0</td> <td>9/6/2025</td>
+                    <td>Angelica</td>
+                    <td class="priority-0">0</td>
+                    <td>9/6/2025</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
                 </tr>
                 <tr>
                     <td>HU_EP_GEO_10070_Reimpresión soporte de recaudo_F12</td>
                     <td></td>
-                    <td>Duban</td>
-                    <td class="priority-0">0</td> <td>9/6/2025</td>
+                    <td>Angelica</td>
+                    <td class="priority-0">0</td>
+                    <td>9/6/2025</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
                 </tr>
                 <tr>
                     <td>HU_EP_GEO__9980_BONO_50_MOD - Ajuste en la impresión del Bono 50%</td>
                     <td></td>
-                    <td>Duban</td>
-                    <td class="priority-0">0</td> <td>9/6/2025</td>
+                    <td>Angelica</td>
+                    <td class="priority-0">0</td>
+                    <td>9/6/2025</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
                 </tr>
                 <tr>
                     <td>HU_EP_GEO_10071_Error reporte inventario McAfee Postman</td>
                     <td></td>
-                    <td>Duban</td>
-                    <td class="priority-0">0</td> <td>9/6/2025</td>
+                    <td>Angelica</td>
+                    <td class="priority-0">0</td>
+                    <td>9/6/2025</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
                 </tr>
                 <tr>
                     <td>Asesor y vendedor Desarrollo--planes de financiación</td>
                     <td></td>
-                    <td>Duban</td>
-                    <td class="priority-0">0</td> <td>9/6/2025</td>
+                    <td>Angelica</td>
+                    <td class="priority-0">0</td>
+                    <td>9/6/2025</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
                 </tr>
                 <tr>
                     <td>EP_GEO_Asesor Vendedor Alkosto y Dependencias</td>
                     <td></td>
-                    <td>Duban</td>
-                    <td class="priority-0">0</td> <td>9/6/2025</td>
+                    <td>Angelica</td>
+                    <td class="priority-0">0</td>
+                    <td>9/6/2025</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
                 </tr>
                 <tr>
                     <td>EP_GEO_Asesor Vendedor Alkosto y Dependencias Cargas</td>
                     <td></td>
-                    <td>Duban</td>
-                    <td class="priority-0">0</td> <td>9/6/2025</td>
+                    <td>Angelica</td>
+                    <td class="priority-0">0</td>
+                    <td>9/6/2025</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
                 </tr>
                 <tr>
                     <td>HU_EP_GEO_10105_Construcción de reporte eventos parametrizados (Version 1.0)</td>
                     <td></td>
-                    <td>Duban</td>
-                    <td class="priority-0">0</td> <td>9/6/2025</td>
+                    <td>Angelica</td>
+                    <td class="priority-0">0</td>
+                    <td>9/6/2025</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
                 </tr>
 
                 <tr>
-                    <th class="section-header" colspan="7">Iniciativas Nuevas</th>
+                    <th class="section-header" colspan="13">Iniciativas Nuevas</th>
                 </tr>
                 <tr>
                     <td class="sprint-col" rowspan="7">Sprint 95</td>
-                    <td class="sub-category" rowspan="7"></td> <td>EP_GEO_9986_Venta POSA precio variable Pines</td>
+                    <td class="sub-category" rowspan="7"></td>
+                    <td>EP_GEO_9986_Venta POSA precio variable Pines</td>
                     <td>Rodrigo</td>
                     <td>Sandra</td>
-                    <td class="priority-2">2</td> <td>13-06-2025</td>
+                    <td class="priority-2">2</td>
+                    <td>13-06-2025</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
                 </tr>
                 <tr>
                     <td>EP_GEO_10137_Lectura QR otras transacciones con Bono</td>
                     <td>Brian</td>
                     <td>Wilmer</td>
-                    <td class="priority-1">1</td> <td>13-06-2025</td>
+                    <td class="priority-1">1</td>
+                    <td>13-06-2025</td>
+                    <td></td>
+                    <td>29-05-2025</td>
+                    <td>03-06-2025</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
                 </tr>
                 <tr>
                     <td>EP_GEO_9999_Envio Mensaje de WhatSapp Venta de Pines en .com (Posa y Manuales) Fase 2 Wasa</td>
                     <td>Rodrigo</td>
                     <td>Sandra</td>
-                    <td class="priority-1">1</td> <td>13-06-2025</td>
+                    <td class="priority-1">1</td>
+                    <td>13-06-2025</td>
+                    <td></td>
+                    <td>29-05-2025</td>
+                    <td>03-06-2025</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
                 </tr>
                 <tr>
                     <td>HU_EP_GEO_9749_Panel de Proveedor Pines Alkosto WS (strech)</td>
                     <td>Brian</td>
                     <td>Wilmer</td>
-                    <td class="priority-2">2</td> <td>13-06-2025</td>
+                    <td class="priority-2">2</td>
+                    <td>13-06-2025</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
                 </tr>
                 <tr>
                     <td>EP_GEO_10251_Mensajes por Estado de los Bonos</td>
                     <td>Joaco</td>
                     <td>Wilmer</td>
-                    <td class="priority-1">1</td> <td>13-06-2025</td>
+                    <td class="priority-1">1</td>
+                    <td>13-06-2025</td>
+                    <td></td>
+                    <td>27-05-2025</td>
+                    <td>03-06-2025</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
                 </tr>
                 <tr>
                     <td>EP_GEO_10297_No Imprimir Bonos Físico Virtual</td>
                     <td>Belen</td>
                     <td>Sandra</td>
-                    <td class="priority-2">2</td> <td>13-06-2025</td>
+                    <td class="priority-2">2</td>
+                    <td>13-06-2025</td>
+                    <td></td>
+                    <td></td>
+                    <td>03-06-2025</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
                 </tr>
                 <tr>
                     <td>EP_GEO_10397_Descuentos Tecla D y L.</td>
                     <td>Joaco</td>
                     <td>Wilmer</td>
-                    <td class="priority-1">1</td> <td>13-06-2025</td>
+                    <td class="priority-1">1</td>
+                    <td>13-06-2025</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
                 </tr>
 
                 <tr>
-                    <th class="other-activities-header" colspan="7">Otras Actividades</th>
+                    <th class="other-activities-header" colspan="13">Otras Actividades</th>
                 </tr>
                 <tr>
                     <td colspan="4" class="other-activity-row">Acompáñamiento Release QA Nocturno</td>
                     <td>Wilmer</td>
                     <td colspan="2" class="other-activity-row">27-05-2025</td>
+                    <td class="status-finalizado">Finalizado</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
                 </tr>
                 <tr>
                     <td colspan="4" class="other-activity-row">Acompáñamiento Release QA Nocturno</td>
                     <td>Daniel</td>
                     <td colspan="2" class="other-activity-row">27-05-2025</td>
+                    <td class="status-finalizado">Finalizado</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
                 </tr>
                 <tr>
                     <td colspan="4" class="other-activity-row">Acompáñamiento Release QA Nocturno Celula 6</td>
                     <td>Bele</td>
                     <td colspan="2" class="other-activity-row">27-05-2025</td>
+                    <td class="status-finalizado">Finalizado</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
                 </tr>
                 <tr>
                     <td colspan="4" class="other-activity-row">Acompáñamiento Release QA Nocturno Celula 6</td>
                     <td>Bri</td>
                     <td colspan="2" class="other-activity-row">27-05-2025</td>
+                    <td class="status-finalizado">Finalizado</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
                 </tr>
-				<tr>
+                <tr>
                     <td colspan="4" class="other-activity-row">Acompáñamiento Release QA Nocturno Celula 6</td>
                     <td>Luciana - Demanda</td>
                     <td colspan="2" class="other-activity-row">27-05-2025</td>
+                    <td class="status-finalizado">Finalizado</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
                 </tr>
             </tbody>
         </table>
