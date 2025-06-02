@@ -91,9 +91,63 @@ th { background-color: #007bff; color: white; }
 </table>
 <p><strong>👤 Responsable:</strong> QA Asignado</p>
 </div>
-
 <div class="section">
-<h2>3️⃣ Ejecución y Documentación de Escenarios de Prueba</h2>
+<h2>3️⃣ Revision Par Cobertura Escenarios de Prueba</h2>
+
+
+<section style="font-family: 'Segoe UI', sans-serif; background-color: #f9fbfd; padding: 40px; color: #2c3e50;">
+
+  <h3 style="color: #d32f2f;">🎯 ¿Qué es?</h3>
+  <p>Es una sesión técnica de validación donde se revisan los escenarios de prueba diseñados por QA para cada Historia de Usuario (HU), con el fin de asegurar la cobertura funcional, técnica y de negocio antes de iniciar la ejecución.</p>
+
+  <h3 style="color: #d32f2f;">⚙️ ¿Cuándo se activa?</h3>
+  <p>Se activa una vez el QA termina el diseño preliminar de los casos de prueba asociados a una HU.</p>
+
+  <h3 style="color: #d32f2f;">👥 ¿Quién la activa?</h3>
+  <p>El QA responsable notifica al BA. Este se encarga de agendar la sesión y convocar a:</p>
+  <ul style="line-height: 1.8;">
+    <li>QA asignado</li>
+    <li>BA funcional</li>
+    <li>Desarrollador asignado</li>
+    <li>Líder Técnico (LT)</li>
+  </ul>
+
+  <h3 style="color: #d32f2f;">🧩 Propósito de la sesión</h3>
+  <ul style="line-height: 1.8;">
+    <li>Validar que los casos cubren los criterios de aceptación.</li>
+    <li>Aclarar dudas funcionales o técnicas antes de probar.</li>
+    <li>Detectar escenarios faltantes o dependencias.</li>
+    <li>Lograr alineación entre QA, Dev, BA y LT.</li>
+  </ul>
+
+  <h3 style="color: #d32f2f;">🚫 Reglas del proceso</h3>
+  <ul style="line-height: 1.8;">
+    <li>El QA <strong>no debe iniciar la ejecución</strong> sin esta revisión.</li>
+    <li><strong>El Scrum Master no participa</strong> directamente de esta sesión.</li>
+    <li>Puede estar presente solo si se requiere verificar cumplimiento o resolver bloqueos en el proceso.</li>
+  </ul>
+
+  <h3 style="color: #d32f2f;">✅ Resultado esperado</h3>
+  <ul style="line-height: 1.8;">
+    <li>Casos de prueba revisados y actualizados (si aplica).</li>
+    <li>Validación documentada en Azure DevOps (comentario, minuta breve o actividad).</li>
+    <li>HU habilitada para iniciar pruebas en ambiente DEV o QA.</li>
+  </ul>
+
+  <div style="background-color: #f1f8e9; padding: 15px; border-left: 4px solid #8bc34a; border-radius: 6px; margin-top: 20px;">
+    <h3 style="margin-top: 0;">🧪 Ejemplo práctico</h3>
+    <p><strong>HU:</strong> Validación de redención de bonos por código de barras</p>
+    <p><strong>QA:</strong> Diseña 7 casos de prueba para validar flujo normal, error de código, restricción de montos y duplicados.</p>
+    <p><strong>Revisión par:</strong> Se agenda por el BA con Dev (Cristian), QA (Aura), LT (Geo) y BA (Daniel). Se detectan 2 escenarios no contemplados: reintento y tiempo de expiración.</p>
+    <p><strong>Resultado:</strong> QA actualiza los casos en Azure. Se registra en comentarios de la HU: “✅ Revisión par completada el 03/06/2025”. HU habilitada para pruebas.</p>
+  </div>
+</section>
+
+
+
+</div>
+<div class="section">
+<h2>4️⃣ Ejecución y Documentación de Escenarios de Prueba</h2>
 <p><strong>🎯 Objetivo:</strong> Validar la HU ejecutando los casos de prueba.</p>
 
 <p><strong>🗓️ Cronograma sugerido:</strong></p>
@@ -118,6 +172,64 @@ th { background-color: #007bff; color: white; }
 </table>
 <p><strong>👤 Responsable:</strong> QA Asignado</p>
 </div>
+
+<div class="section">
+<h2>5️⃣ 🧪 Entrega Formal del QA al BA</h2>
+
+<section style="font-family: 'Segoe UI', sans-serif; background-color: #f9fbfd; padding: 40px; color: #2c3e50;">
+  
+
+  <h3 style="color: #d32f2f;">🎯 ¿Qué es?</h3>
+  <p>Es la validación oficial que realiza el QA hacia el BA al finalizar la ejecución de los escenarios de prueba definidos para una HU.</p>
+  <p>El objetivo es confirmar que la funcionalidad fue probada correctamente y que los criterios de aceptación se cumplieron satisfactoriamente antes de considerar la HU como lista para Review pr parte del BA.</p>
+
+  <h3 style="color: #d32f2f;">⏱ ¿Cuándo se activa?</h3>
+  <p>Se activa una vez el QA termina la ejecución completa de los casos de prueba y documenta los resultados en Azure DevOps.</p>
+
+  <h3 style="color: #d32f2f;">👥 ¿Quiénes participan?</h3>
+  <ul style="line-height: 1.8;">
+    <li><strong>QA responsable</strong> de la HU</li>
+    <li><strong>Business Analyst (BA)</strong></li>
+    <li>(Opcional) Desarrollador o Líder Técnico</li>
+  </ul>
+
+  <h3 style="color: #d32f2f;">🧩 Flujo del proceso</h3>
+  <ol style="line-height: 1.8;">
+    <li>✅ El QA finaliza la ejecución de todos los casos de prueba.</li>
+    <li>📄 Se documentan los resultados en Azure (estado de casos, bugs, notas).</li>
+    <li>📤 El QA notifica al BA para realizar la entrega formal.(Se propone Sesion entre BA y QA)</li>
+    <li>👀 El BA revisa evidencias, cobertura de escenarios y defectos corregidos. (Se propone Sesion entre BA y QA)</li>
+    <li>✅ Si todo está conforme, el BA da el visto bueno.</li>
+    <li>📌 Se registra el cierre funcional en Azure con comentario de validación.</li>
+  </ol>
+
+  <h3 style="color: #d32f2f;">✅ Resultado esperado</h3>
+  <ul style="line-height: 1.8;">
+    <li>Resultados de pruebas documentados.</li>
+    <li>Validación funcional del BA realizada.</li>
+    <li>HU cerrada o marcada como “Lista para Review”.</li>
+	<li>El BA debe informar a SM para agregar agenda para Review.</li>
+    <li>Comentario o rastro de cierre registrado en Azure.</li>
+  </ul>
+
+  <div style="background-color: #f1f8e9; padding: 15px; border-left: 4px solid #8bc34a; border-radius: 6px; margin-top: 20px;">
+    <h3 style="margin-top: 0;">🧾 Ejemplo práctico</h3>
+    <p><strong>HU:</strong> Restricción de redención de bono según monto mínimo</p>
+    <p><strong>QA:</strong> Aura ejecuta los 6 casos de prueba y registra en Azure resultados exitosos.</p>
+    <p><strong>Entrega:</strong> Notifica al BA (Daniel) con link directo a la HU y evidencias.</p>
+    <p><strong>Validación:</strong> Daniel revisa ejecución, comenta:<br>
+    <code>✅ Validación funcional completa – QA y BA – 06/06/2025</code></p>
+    <p><strong>Estado:</strong> HU movida a “Listo para Release”.</p>
+  </div>
+  </div
+</section>
+
+
+  <div style="background-color: #f1f8e9; padding: 15px; border-left: 4px solid #8bc34a; border-radius: 6px; margin-top: 20px;">
+    <h3 style="margin-top: 0;">🧪 Ejemplo práctico</h3>
+    <p><strong>HU:</strong> Visualización del resumen del bono redimido</p>
+    <p><strong>Dev:</strong> Cristian desarrolla la H
+
 
 <div class="section">
 <h2>🔄 Ejemplo práctico — Ciclo de vida de QA de una HU</h2>
