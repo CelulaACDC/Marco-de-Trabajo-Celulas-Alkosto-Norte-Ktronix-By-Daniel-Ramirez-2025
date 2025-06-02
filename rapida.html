@@ -70,11 +70,20 @@
 <tr><td>Retrospectiva (1h)</td><td>Todos</td><td>Día 15 (AM)</td><td>Reflexionar y mejorar el proceso.</td></tr>
 </table>
 
+<h2>II-a. Ceremonias Auxiliares</h2>
+<table>
+<tr><th>Ceremonia</th><th>Participantes</th><th>Frecuencia</th><th>Objetivo</th></tr>
+<tr><td>Pre Refinamiento (30 Minutos)</td><td>LT, DEV, QA, BA</td><td>Una por HU</td><td>Dar la primera Lectura a la HU antes del refinamiento para analizar y consignar dudas a resollver antes de Refinamiento.</td></tr>
+<tr><td>Analisis PAR Escenarios QA (30 min)</td><td>LT, DEV, QA, BA</td><td>Una por HU</td><td>Alinear y balancear Casos de Prueba.</td></tr>
+<tr><td>Analisis PAR LT´s  + JS Por Release</td><td>LT, DEV, QA, BA. JS</td><td>Una por Orden de Trabajo</td><td>Alinear y balancear holisticamente las iniciativas por Orden de trabajo.</td></tr>
+<tr><td>Entrea QA a BA.</td><td>QA, BA.</td><td>Una por HU</td><td>Realizar Entrega por parte de QA a BA de la finalización de la etapa de Aseguramiento de calidad.</td></tr>
+</table>
+
 <h2>III. Ciclo de Vida de una Historia de Usuario (HU)</h2>
 <table>
 <tr><th>Fase</th><th>Responsable(s)</th><th>Entregable(s)</th></tr>
-<tr><td>Diseño de de HU</td><td>LT,QA, DEV, BA</td><td>BA genera versión 1.0 de la HU.</td></tr>
-<tr><td>Analisis de HU</td><td>LT,QA, DEV, BA</td><td>Lectura de HU, Read & Confirm, Registro de dudas, escenarios y riesgos en Azure.</td></tr>
+<tr><td>Diseño de de HU</td><td>BA</td><td>BA genera versión 1.0 de la HU.</td></tr>
+<tr><td>Analisis de HU</td><td>LT,QA, DEV, BA</td><td>Lectura de HU, Read & Confirm, Registro de dudas, escenarios y riesgos en Azure + Pre Refinamiento</td></tr>
 <tr><td>Refinamiento</td><td>BA (dirige), equipo</td><td>HU clara, dudas resueltas, criterios listos.</td></tr>
 <tr><td>Puntuación</td><td>Equipo</td><td>Estimación en días y confianza del equipo.</td></tr>
 <tr><td>Planeación</td><td>Equipo</td><td>Una vez Refinada y Puntuada la HU se agrega en Sprint Goal, <br>🧠 Incluye Análisis Exploratorio de HU: validación de entendimiento por parte del equipo DEV y QA </td></tr> 
@@ -103,30 +112,19 @@
 <tr><td>Done</td><td>Completada</td><td>Revisada, aprobada, deploy lista.</td></tr>
 </table>
 
-<h2>V. Artefactos y Plantillas Clave</h2>
-<table>
-<tr><th>Artefacto</th><th>Ubicación</th><th>Responsable</th></tr>
-<tr><td>Plantilla HU</td><td>Azure DevOps</td><td>BA</td></tr>
-<tr><td>Analisis de  HU</td><td>Azure DevOps, Read & Confirm HU (ejemplo: “Leída, sin dudas” o “Leída, pendiente aclaración X”) </td><td>BA</td></tr> 
-<tr><td>Registro Análisis Exploratorio QA-DEV</td><td>Azure DevOps</td><td>QA-DEV</td></tr>
-<tr><td>Registro de Puntuación de HU</td><td>Azure DevOps</td><td>SM</td></tr>
-<tr><td>Checklist y Casos de Prueba QA</td><td>Azure DevOps</td><td>QA</td></tr>
-<tr><td>Reporte Ejecución QA</td><td>Azure DevOps</td><td>QA</td></tr>
-<tr><td>Acta de Review</td><td>Teams</td><td>BA</td></tr>
-<tr><td>Acta de Retro</td><td>Azure DevOps</td><td>SM</td></tr>
-<tr><td>Registro Action Items Retro</td><td>Azure DevOps (#retro)</td><td>Todo equipo</td></tr>
-<tr><td>Plantilla Estimación Nivel Medio</td><td>Azure DevOps</td><td>LT</td></tr>
-</table>
-
-<h2>VI. Precondiciones (Gateways)</h2>
-<table>
-<tr><th>Precondición</th><th>Responsable</th><th>Requisitos Mínimos</th></tr>
-<tr><td>Antes Refinamiento</td><td>BA</td><td>HU versión 1.0, dudas registradas, LT/BA revisaron, Registro Análisis Exploratorio QA-DEV,Read & Confirm</td></tr>
-<tr><td>Antes Planning</td><td>BA, SM</td><td>HU en estado Ready, aprobaciones LT + QA + DEV + SH.</td></tr>
-<tr><td>Antes Review</td><td>QA, BA</td><td>HU validada QA, Criterios OK, entregable documentado.</td></tr>
-</table>
 
 <h2>VII. Métricas Básicas a Medir</h2>
+
+<h3>Métricas TTM (Time to Market)</h3>
+<table>
+<tr><th>Métrica</th><th>¿Qué mide?</th><th>¿Cómo se calcula?</th><th>Frecuencia</th><th>Fuente sugerida</th><th>Valor Referencia</th></tr>
+<tr><td>TTM por HU</td><td>Tiempo que tarda una historia de usuario desde su creación (o refinamiento) hasta su despliegue en producción</td><td>TTM (HU) = Fecha de despliegue a producción – Fecha de inicio de la HU</td><td>Por HU</td><td>Azure DevOps</td><td>
+🟢 15 – 25 días	Buen ritmo.<br>
+🟡 26 – 40 días	Ritmo aceptable.<br>
+🔴 41+ días	Alto TTM.</td></tr>
+</table>
+
+
 <h3>Métricas de Entrega / Cumplimiento</h3>
 <table>
 <tr><th>Métrica</th><th>¿Qué mide?</th><th>¿Cómo se calcula?</th><th>Frecuencia</th><th>Fuente sugerida</th><th>Valor Referencia</th></tr>
