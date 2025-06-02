@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CELULA 6 AC DC - SPRINT 95 - Sprint Goal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-blue: #007bff;
+            --dark-blue: #0056b3;
+            --light-blue-bg: #eef2f7;
+            --white-bg: #fff;
+            --text-dark: #2c3e50;
+            --text-gray: #555;
+            --border-light: #e6e6e6;
+            --hover-blue: #e3f2fd;
+            --green-header: #28a745;
+            --orange-section: #ffc107;
+            /* Color unificado para todos los Strech */
+            --priority-stretch-bg: #dc3545; /* Rojo fuerte de Bootstrap */
+            --priority-stretch-text: white;
+            
+            --bg-nro-sprint: #e0f2f7;
+            --bg-carryover: #f3e5f5; /* Light purple */
+            --bg-other-activities: #e8f5e9; /* Light green for other activities */
+            --bg-spike: #f0f8ff; /* Muy ligero azul para Spike */
+        }
+
+        body {
+            font-family: 'Inter', sans-serif; /* Usamos Inter de Google Fonts */
+            background-color: var(--light-blue-bg);
+            margin: 0;
+            padding: 20px;
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        h1 {
+            text-align: center;
+            color: var(--text-dark);
+            font-size: 2.2em;
+            margin-bottom: 30px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+		
+.banner {
+  background-color: #f0f8ff;       /* Un azul muy claro de fondo */
+  color: #007bff;                  /* Azul principal para el texto */
+  text-align: center;              /* Centrar el texto horizontalmente */
+  padding: 10px;                   /* Espacio alrededor del texto */
+  margin-bottom: 20px;            /* Espacio debajo del banner */
+  border-radius: 5px;             /* Bordes redondeados */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+        .sprint-table-container {
+            overflow-x: auto;
+            margin: 0 auto;
+            max-width: 1300px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+            border-radius: 12px;
+        }
+
+        .sprint-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            background-color: var(--white-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            min-width: 800px;
+        }
+
+        .sprint-table th {
+            background: linear-gradient(90deg, var(--primary-blue) 0%, var(--dark-blue) 100%);
+            color: #fff;
+            text-align: left;
+            padding: 16px 20px;
+            font-size: 0.95em;
+            font-weight: 600;
+            text-transform: uppercase;
+            border-bottom: 1px solid var(--dark-blue);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .sprint-table thead tr:first-child th:first-child { border-top-left-radius: 12px; }
+        .sprint-table thead tr:first-child th:last-child { border-top-right-radius: 12px; }
+
+        .sprint-table td {
+            padding: 12px 20px;
+            border-bottom: 1px solid var(--border-light);
+            font-size: 0.9em;
+            color: var(--text-gray);
+            vertical-align: top;
+        }
+
+        .sprint-table tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* Colores de fila alternos */
+        .sprint-table tr:nth-child(even) td {
+            background-color: #fcfdfe;
+        }
+
+        /* Efecto hover en filas */
+        .sprint-table tr:hover td {
+            background-color: var(--hover-blue);
+            transition: background-color 0.2s ease-in-out;
+        }
+
+        /* Estilos para encabezados de sección */
+        .sprint-table th.section-header {
+            background: linear-gradient(90deg, var(--orange-section) 0%, #ff8c00 100%);
+            color: var(--text-dark);
+            font-weight: 600;
+            font-size: 1.1em;
+            text-align: center;
+            padding: 14px 20px;
+            border-top: 2px solid #e0a300;
+            border-bottom: 2px solid #e0a300;
+            text-transform: none;
+        }
+
+        /* Estilos específicos para Nro Sprint */
+        .sprint-table td.sprint-col {
+            background-color: var(--bg-nro-sprint);
+            font-weight: 600;
+            text-align: center;
+            vertical-align: middle;
+            font-size: 1em;
+            border-right: 1px solid #d4eff6;
+            color: var(--text-dark);
+        }
+
+        /* Estilos para subcategorías como CarryOver y Spike */
+        .sprint-table td.sub-category-carryover {
+            background-color: var(--bg-carryover);
+            font-weight: 600;
+            text-align: center;
+            vertical-align: middle;
+            border-right: 1px solid #eccdfb;
+            color: var(--text-dark);
+        }
+
+        .sprint-table td.sub-category-spike {
+            background-color: var(--bg-spike); /* Color para Spike */
+            font-weight: 600;
+            text-align: center;
+            vertical-align: middle;
+            border-right: 1px solid #d4eff6;
+            color: var(--text-dark);
+        }
+
+        /* TODAS LAS PRIORIDADES STRETCH EN ROJO FUERTE */
+        td[class*="priority-strong-"] {
+            background-color: var(--priority-stretch-bg);
+            color: var(--priority-stretch-text);
+            font-weight: 700;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+            text-align: center;
+        }
+        
+        /* Las demás prioridades sin color de fondo */
+        td.priority-0,
+        td.priority-1,
+        td.priority-2,
+        td.priority-3 {
+            background-color: transparent;
+            font-weight: 500;
+            color: var(--text-gray);
+            text-align: center;
+        }
+
+        /* Para celdas vacías o con 'nan' que no se quieren mostrar */
+        td:empty, td:contains("nan") {
+            /* Puedes agregar un estilo sutil para celdas vacías si quieres, o dejarlas como están */
+        }
+    </style>
+</head>
+<body>
+   <div class="banner">
+  ¡Comencemos a construir el futuro de Alkosto y Ktronix juntos!
+</div>
+    <h1>CELULA 2 GEO - SPRINT 10 - Sprint Goal</h1>
+    <div class="sprint-table-container">
+        <table class="sprint-table">
+            <thead>
+                <tr>
+                    <th rowspan="2">Nro Sprint</th>
+                    <th colspan="2">Iniciativas</th>
+                    <th>DEV</th>
+                    <th>QA</th>
+                    <th>Prioridad</th>
+                    <th>Fecha Sprint Goal</th>
+                </tr>
+                <tr>
+                    <th class="section-header" colspan="6">Iniciativas</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="sprint-col" rowspan="9">10</td> <td class="sub-category-carryover" rowspan="2">Carry Over</td> <td>HU_EP_GEO_HU-BONOS-DEV-PARCIAL</td>
+                    <td>Sebastian</td>
+                    <td>Angelica</td>
+                    <td class="priority-0">0</td>
+                    <td>27/5/2025</td>
+                </tr>
+                <tr>
+                    <td>HU_EP_GEO_HU-BONOS-REENVIO</td>
+                    <td>Damian</td>
+                    <td>Aura - Deisy</td>
+                    <td class="priority-0">0</td>
+                    <td>28-05-2025</td>
+                </tr>
+                <tr>
+                    <td class="sub-category-spike" rowspan="7">Spike</td> <td>Spike Cargue de inventario</td>
+                    <td>Luciana</td>
+                    <td>Aura - Deisy</td>
+                    <td class="priority-1">1</td>
+                    <td>29-05-2025</td>
+                </tr>
+                <tr>
+                    <td>Spike Consultas de inventarios</td>
+                    <td>Luciana</td>
+                    <td>Aura - Deisy</td>
+                    <td class="priority-1">1</td>
+                    <td>29-05-2025</td>
+                </tr>
+                <tr>
+                    <td>Spike Venta a persona natural</td>
+                    <td>Luciana</td>
+                    <td>Aura - Deisy</td>
+                    <td class="priority-2">2</td>
+                    <td>4/6/2025</td>
+                </tr>
+                <tr>
+                    <td>Spike Redención desde cajas físicas</td>
+                    <td>Luciana</td>
+                    <td>Aura - Deisy</td>
+                    <td class="priority-2">2</td>
+                    <td>4/6/2025</td>
+                </tr>
+                <tr>
+                    <td>Spike Redención desde ecommerce</td>
+                    <td>Luciana</td>
+                    <td>Aura - Deisy</td>
+                    <td class="priority-3">3</td>
+                    <td>4/6/2025</td>
+                </tr>
+                <tr>
+                    <td>Spike Control de fraudes</td>
+					<td>En Definición de Flujos</td>
+                    <td></td> <td></td> <td></td> <td></td> </tr>
+                <tr>
+                    <td>Spike Venta a cliente institucional</td>
+					<td>En Definición de Flujos</td>
+                    <td></td> <td></td> <td></td> <td></td> </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
