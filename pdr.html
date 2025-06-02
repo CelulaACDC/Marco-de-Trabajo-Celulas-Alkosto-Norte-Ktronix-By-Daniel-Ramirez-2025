@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Inclusión en Release</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f9fbfd;
+      margin: 0;
+      padding: 40px;
+      color: #2c3e50;
+    }
+    section {
+      background-color: #ffffff;
+      padding: 40px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+    h2 {
+      font-size: 24px;
+      color: #004080;
+      border-left: 5px solid #007bff;
+      padding-left: 12px;
+    }
+    h3 {
+      color: #d32f2f;
+      margin-top: 30px;
+    }
+    ul, ol {
+      line-height: 1.8;
+      padding-left: 20px;
+    }
+    ul {
+      list-style-type: square;
+    }
+    li {
+      margin-bottom: 6px;
+    }
+  </style>
+</head>
+<body>
+<section>
+  <h2>🚀 Inclusión en Release</h2>
+
+  <h3>🎯 ¿Qué es?</h3>
+  <p>Es el proceso mediante el cual una Historia de Usuario (HU), una vez aprobada por el stakeholder, se prepara y formaliza para ser incluida en un próximo release a producción. Este paso asegura que la HU cumpla con los criterios técnicos y funcionales necesarios, y que el equipo esté alineado para un paso exitoso a ambiente productivo.</p>
+
+  <h3>📅 ¿Cuándo se activa?</h3>
+  <p>Se activa una vez el <strong>Stakeholder aprueba el paso de la HU a producción</strong>. En ese momento el proceso queda en manos del equipo de Delivery y Producción.</p>
+
+  <h3>👥 ¿Quiénes intervienen?</h3>
+  <ul>
+    <li><strong>Scrum Master (SM)</strong> – Responsable de orquestar el paso de la HU al release.</li>
+    <li><strong>Líder Técnico (LT)</strong> – Responsable del documento técnico unificado.</li>
+    <li><strong>Business Analyst (BA)</strong> – Responsable de los entregables funcionales.</li>
+    <li><strong>QA Transversal</strong> y <strong>FS Transversal</strong> – Participan en la revisión técnica.</li>
+    <li><strong>Stakeholders</strong> – Aprobadores de negocio.</li>
+  </ul>
+
+  <h3>🧩 Flujo del proceso</h3>
+  <ol>
+    <li>✅ El Stakeholder aprueba oficialmente que la HU puede ir a producción.</li>
+    <li>📅 El SM revisa el <strong>Release Calendar</strong> y determina la mejor fecha para el paso a producción.</li>
+    <li>🗂 El SM configura la HU dentro del paquete de release correspondiente y formaliza el proceso a través de una <strong>orden de trabajo</strong>.</li>
+    <li>📄 El LT genera un <strong>documento unificado técnico</strong> del paquete, incluyendo toda la información técnica de cada HU agregada.</li>
+    <li>👥 El SM convoca una sesión de socialización con:<br>
+      – LT<br>
+      – BA<br>
+      – QA Transversal<br>
+      – FS Transversal<br>
+      Esta sesión es <strong>liderada por el LT y el BA</strong>, con apoyo logístico del SM.
+    </li>
+    <li>📌 Se socializa el contenido del paquete, se visualizan riesgos y se validan dependencias o impactos.</li>
+  </ol>
+
+  <h3>📑 Artefactos obligatorios para el Release</h3>
+  <ul>
+    <li>✅ Aprobación del Stakeholder para cada HU.</li>
+    <li>📘 Documento Técnico Unificado del paquete – <strong>Responsable: LT</strong>.</li>
+    <li>📄 Documento de Entrega a Soporte – <strong>Responsable: BA</strong>.</li>
+    <li>📖 Manual de Usuario (si aplica) – <strong>Responsable: BA</strong>.</li>
+    <li>⚙️ Propiedades, queries o archivos para paso a producción – <strong>Responsable: BA</strong>.</li>
+  </ul>
+</section>
+</body>
+</html>
