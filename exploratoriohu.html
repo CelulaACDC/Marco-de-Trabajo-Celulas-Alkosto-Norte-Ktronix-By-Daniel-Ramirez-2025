@@ -38,6 +38,7 @@
 <h2>⏱️ Tiempo asignado por rol</h2>
 <table>
 <tr><th>Rol</th><th>Tiempo asignado por sprint</th><th>Detalles</th></tr>
+<tr><td>Sesion de Pre Refinamiento</td><td>por HU / 30 Minutos</td><td>BA convoca, se lee la HU y se consignan las primeras dudas Exploratorias.</td></tr>
 <tr><td>Cada Desarrollador (DEV)</td><td>4 horas por sprint (equivalente al 3% redondeado)</td><td>Usado de forma flexible para análisis individual o grupal</td></tr>
 <tr><td>Líder Técnico (LT)</td><td>Participación plena</td><td>Acompaña de forma continua todo el análisis exploratorio</td></tr>
 </table>
@@ -50,19 +51,42 @@
 <p>Toda pregunta, inquietud o hallazgo relevante durante el análisis exploratorio <strong>debe registrarse y resolverse obligatoriamente en Azure DevOps</strong>, en la sección de comentarios o notas de la HU correspondiente.</p>
 <p>Aunque las conversaciones pueden gestionarse inicialmente por Teams u otros canales, su <strong>registro formal debe quedar en Azure</strong>, asegurando trazabilidad y visibilidad para todo el equipo.</p>
 
-<h3>🖋️ Estructura para documentar las preguntas en Azure</h3>
-<ul>
-<li><strong>[PREGUNTA]</strong> ¿Cómo se comporta [X] cuando ocurre [Y]?</li>
-<li><strong>[IMPACTO]</strong> Esta información es necesaria para definir [Z] en la implementación.</li>
-<li><strong>[RESPONSABLE]</strong> [Nombre del dev que plantea la pregunta]</li>
-</ul>
+<section style="font-family: 'Segoe UI', sans-serif; background-color: #f9fbfd; padding: 40px; color: #2c3e50;">
+  <h2 style="font-size: 24px; color: #004080; border-left: 5px solid #007bff; padding-left: 12px;">🧭 Estrategia “Read & Confirm” – Flujo para el equipo de la célula</h2>
 
-<p><strong>Ejemplo:</strong></p>
-<ul>
-<li><strong>[PREGUNTA]</strong> ¿Cómo se comporta el flujo de pagos cuando falla la validación del token?</li>
-<li><strong>[IMPACTO]</strong> Esta información es necesaria para definir los escenarios alternativos en el módulo de checkout.</li>
-<li><strong>[RESPONSABLE]</strong> Bri</li>
-</ul>
+  <h3 style="color: #d32f2f;">🎯 Objetivo</h3>
+  <p>La estrategia <strong>Read & Confirm</strong> busca asegurar que <strong>todos los integrantes del equipo lean, comprendan y se alineen</strong> frente a documentos clave del proceso.</p>
+  <p>Además, garantiza que <strong>las dudas se gestionen a tiempo</strong>, antes de afectar las ceremonias o entregas.</p>
+
+  <h3 style="color: #2e7d32;">🟢 CASO 1: No tengo dudas</h3>
+  <ol>
+    <li>📄 El BA comparte el documento de HU.</li>
+    <li>👤 Los integrantes lo leen completamente.</li>
+    <li>✅ Si todo está claro, responde en azure de La HU:</li>
+    <pre style="background: #e8f5e9; padding: 10px; border-radius: 6px;">✅ Leído y confirmado – [Tu nombre]</pre>
+    <p><strong>Ejemplo:</strong><br><code>✅ Leído y confirmado – Bele - Sin Dudas..</code></p>
+    <li>📌 El equipo da por alineado tu entendimiento y compromiso.</li>
+  </ol>
+
+  <h3 style="color: #f9a825;">🟡 CASO 2: Tengo dudas</h3>
+  <ol>
+    <li>📄 El BA comparte el documento de HU.</li>
+    <li>👤 Al leerlo, el integrante encuentra algo poco claro.</li>
+    <li>❓ Responde en el canal azure (Sección Discusiones) de La HU con:</li>
+    <pre style="background: #fff3e0; padding: 10px; border-radius: 6px;">❓ Leído, tengo dudas – [Tu nombre]</pre>
+    <p><strong>Ejemplo:</strong><br><code>❓ Leído, tengo dudas – Cristian T.</code></p>
+    <li>💬 Explica brevemente la duda (en el hilo o en una sesión rápida).</li>
+    <li>🧠 <strong>Regla clave:</strong> Las dudas deben quedar resueltas <u>antes de la sesión de Refinamiento</u> del sprint actual.</li>
+  </ol>
+
+  <h3 style="color: #007bff;">✅ Beneficios del Read & Confirm</h3>
+  <ul style="line-height: 1.6;">
+    <li>Permite Lectura de la HU</li>
+    <li>Refuerza la cultura de equipo responsable y autónomo.</li>
+    <li>Mejora la calidad de los refinamientos y entregas.</li>
+  </ul>
+</section>
+
 
 <h2>✅ Buenas prácticas para el análisis exploratorio</h2>
 <div class="good-practice">
