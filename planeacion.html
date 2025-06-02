@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -158,11 +159,10 @@
     <h2 class="section-title">📊 Métricas a Registrar</h2>
     <ul>
       <li>Cumplimiento de compromiso: % de HUs completadas vs comprometidas.</li>
-      <li>Precisión de estimación: desviación promedio en días.</li>
       <li>Número de bloqueos identificados y % resueltos.</li>
     </ul>
 
-    <h2 class="section-title">3. Sección A: Actividades Fijas del Sprint</h2>
+    <h2 class="section-title">Sección A: Actividades Fijas del Sprint</h2>
     <table>
       <thead>
         <tr><th>#</th><th>Actividad</th><th>Día(s)</th><th>Duración estimada</th></tr>
@@ -176,11 +176,21 @@
         <tr><td>6</td><td>Puntuación 2</td><td>Día 13</td><td>0.125 día (1 h)</td></tr>
         <tr><td>7</td><td>Retrospectiva Sprint Actual</td><td>Día 15</td><td>0.125 día (1 h)</td></tr>
         <tr><td>8</td><td>Planning Nuevo Sprint</td><td>Día 15</td><td>0.25 día (2 h)</td></tr>
-        <tr><th colspan="3">Total Actividades Fijas</th><th>1.375 días</th></tr>
+        
       </tbody>
     </table>
+	
+	
+	<h2>A - 1 Ceremonias Auxiliares</h2>
+<table>
+<tr><th>Ceremonia</th><th>Participantes</th><th>Frecuencia</th><th>Objetivo</th></tr>
+<tr><td>Pre Refinamiento (30 Minutos)</td><td>LT, DEV, QA, BA</td><td>Una por HU</td><td>Dar la primera Lectura a la HU antes del refinamiento para analizar y consignar dudas a resollver antes de Refinamiento.</td></tr>
+<tr><td>Analisis PAR Escenarios QA (30 min)</td><td>LT, DEV, QA, BA</td><td>Una por HU</td><td>Alinear y balancear Casos de Prueba.</td></tr>
+<tr><td>Analisis PAR LT´s  + JS Por Release</td><td>LT, DEV, QA, BA. JS</td><td>Una por Orden de Trabajo</td><td>Alinear y balancear holisticamente las iniciativas por Orden de trabajo.</td></tr>
+<tr><td>Entrea QA a BA.</td><td>QA, BA.</td><td>Una por HU</td><td>Realizar Entrega por parte de QA a BA de la finalización de la etapa de Aseguramiento de calidad.</td></tr>
+</table>
 
-    <h2 class="section-title">3. Sección B: Actividades Propias de Cada HU</h2>
+    <h2 class="section-title">Sección B: Actividades Propias de Cada HU</h2>
     <table>
       <thead>
         <tr><th>#</th><th>Actividad</th><th>Cuándo / Nota</th></tr>
@@ -198,6 +208,44 @@
         <tr><td>A10</td><td>Liberación a Producción (si aplica)</td><td>Al cierre exitoso de A9</td></tr>
       </tbody>
     </table>
+	
+	<h2 class="section-title">Sección C: Atras Actividades Comprometidas en Sprint</h2>
+    <table>
+      <thead>
+        <tr><th>#</th><th>Actividad</th><th>Cuándo / Nota</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>A1</td><td>Item 1 Retrospectiva - Actualizar Guia Basica</td><td>Tras planning, según la estimación</td></tr>
+        <tr><td>A2</td><td>Activacion Ambiente 98 de Ventas desde Marte</td><td>Tras planning, según la estimación</td></tr>
+   
+      </tbody>
+    </table>
+
+
+<section style="font-family: 'Segoe UI', sans-serif; background-color: #f4f7fa; padding: 40px; color: #2c3e50;">
+  <h2 style="font-size: 24px; color: #004080; border-left: 5px solid #007bff; padding-left: 12px;">
+    🧩 Validación del Sprint Goal durante el Planning
+  </h2>
+
+  <p>Una vez se han agregado todas las actividades y compromisos del equipo en el tablero, se realiza una <strong>ronda de confirmación final</strong> con todos los integrantes de la célula.</p>
+
+  <p>Cada persona debe indicar verbalmente si está de acuerdo con el objetivo del sprint, respondiendo con:</p>
+
+  <pre style="background: #e8f5e9; padding: 10px; border-left: 4px solid #4caf50; border-radius: 6px;">
+✅ Sí, estoy de acuerdo con el Sprint Goal  
+❌ No, no estoy de acuerdo (explicando por qué)
+  </pre>
+
+  <p><strong>📌 Regla clave:</strong> El Sprint Goal solo se formaliza si <u>todos los integrantes activos del equipo</u> responden afirmativamente (✅).</p>
+
+  <p>Una vez alcanzado el consenso:</p>
+  <ul style="line-height: 1.8;">
+    <li>📝 Se redacta el <strong>Sprint Goal definitivo</strong>.</li>
+    <li>🧾 Se actualiza en el tablero de <strong>Azure DevOps</strong>.</li>
+    <li>🌐 Se publica en la <strong>herramienta en línea de consulta de Sprints</strong> para acceso abierto. Link https://celulaacdc.github.io/Marco-de-Trabajo-Celulas-Alkosto-Norte-Ktronix-By-Daniel-Ramirez-2025/historico.html</li>
+  </ul>
+
+</section>
 
   </main>
 
