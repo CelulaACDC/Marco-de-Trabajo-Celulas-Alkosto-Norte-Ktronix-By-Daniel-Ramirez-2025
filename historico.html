@@ -2,7 +2,7 @@
   <h2 style="font-size: 24px; color: #004080; border-left: 5px solid #007bff; padding-left: 12px;">
     📂 Consulta histórico de Sprint
   </h2>
-  <p>Ingresa el número de sprint que deseas consultar. El sistema abrirá automáticamente la página pública con su información histórica.</p>
+  <p>Ingresa el número de sprint que deseas consultar. El sistema abrirá automáticamente el archivo correspondiente en GitHub Pages.</p>
 
   <div style="margin-top: 20px;">
     <label for="sprintNumber" style="font-weight: bold;">Número de Sprint:</label><br>
@@ -19,7 +19,7 @@
         alert("Por favor ingresa un número de sprint.");
         return;
       }
-      const url = `https://celulaacdc.github.io/sprint${numero}/`;
+      const url = `https://celulaacdc.github.io/sprint${numero}.html`;
       window.open(url, '_blank');
     }
   </script>
