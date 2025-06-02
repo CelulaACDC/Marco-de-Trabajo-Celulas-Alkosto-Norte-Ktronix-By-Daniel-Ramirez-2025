@@ -1,0 +1,60 @@
+<section style="font-family: 'Segoe UI', sans-serif; background-color: #f9fbfd; padding: 40px; color: #2c3e50;">
+  <h2 style="font-size: 24px; color: #004080; border-left: 5px solid #007bff; padding-left: 12px;">
+    📦 Guía de Liberación a Ambiente DEV
+  </h2>
+
+  <p>Este proceso se activa una vez la <strong>Historia de Usuario (HU)</strong> ha sido aceptada en la <strong>pre-revisión técnica (preriview)</strong> por parte del BA. El objetivo es asegurar una transición fluida hacia pruebas de QA en ambiente DEV bajo condiciones controladas y con trazabilidad.</p>
+
+  <h3 style="color: #d32f2f;">🎯 Objetivo</h3>
+  <p>Permitir que QA inicie las pruebas funcionales de una HU en ambiente DEV bajo condiciones claras, asegurando responsabilidad técnica y entrega de información precisa.</p>
+
+  <h3 style="color: #2e7d32;">🧩 Flujo del Proceso</h3>
+
+  <ol style="line-height: 1.8;">
+    <li><strong>✅ Aprobación de la preriview técnica</strong><br>
+      El BA valida que la HU cumple con lo funcionalmente requerido. El SM habilita la HU para ser liberada técnicamente.
+    </li>
+
+    <li><strong>⏳ Liberación del paquete por parte del Dev (máx. 12h)</strong><br>
+      El desarrollador responsable debe liberar el paquete a ambiente DEV dentro de las siguientes <strong>12 horas hábiles</strong> después de la aprobación. Exceder este tiempo puede afectar la planificación del sprint.
+    </li>
+
+    <li><strong>📄 Generación del documento de Vida de la HU</strong><br>
+      El Dev debe adjuntar un documento técnico que incluya:
+      <ul>
+        <li>Versión liberada</li>
+        <li>Rutas, endpoints o configuraciones</li>
+        <li>Consideraciones técnicas o ambientales</li>
+        <li>Limitaciones funcionales o restricciones</li>
+      </ul>
+      Este documento se adjunta directamente a la HU en Azure DevOps.
+    </li>
+
+    <li><strong>🔁 Entrega e instalación por parte del SM</strong><br>
+      El SM valida que el paquete esté completo, lo instala en ambiente DEV y notifica al equipo de QA que puede iniciar pruebas.
+    </li>
+
+    <li><strong>🧠 Soporte activo del Dev durante pruebas</strong><br>
+      El Dev debe planear capacidad dentro del sprint para resolver:
+      <ul>
+        <li>Dudas no cubiertas en el documento</li>
+        <li>Errores menores o validaciones técnicas</li>
+      </ul>
+    </li>
+
+    <li><strong>📚 Consolidación técnica para release</strong><br>
+      Cuando la HU es validada en QA, el Dev entrega la información técnica al <strong>Líder Técnico (Geo)</strong>, quien compila el documento final para el release.
+    </li>
+  </ol>
+
+  <h3 style="color: #007bff;">✅ Checklist de Prerrequisitos</h3>
+  <ul style="line-height: 1.8;">
+    <li>HU aprobada por el BA en preriview técnica.</li>
+    <li>Liberación realizada dentro de las 12h posteriores a la aprobación.</li>
+    <li>Documento de Vida de la HU adjunto en Azure.</li>
+    <li>Instalación completada por el SM.</li>
+    <li>QA habilitado para iniciar el aseguramiento.</li>
+    <li>Dev con capacidad reservada para soporte activo.</li>
+    <li>Información entregada al LT para consolidación del release.</li>
+  </ul>
+</section>
