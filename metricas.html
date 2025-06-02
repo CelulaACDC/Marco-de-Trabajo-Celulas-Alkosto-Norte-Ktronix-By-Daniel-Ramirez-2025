@@ -1,0 +1,99 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Métricas Básicas a Medir</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f9fbfd;
+      padding: 40px;
+      color: #2c3e50;
+    }
+    section {
+      background-color: #ffffff;
+      padding: 40px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+    h2 {
+      font-size: 24px;
+      color: #004080;
+      border-left: 5px solid #007bff;
+      padding-left: 12px;
+    }
+    h3 {
+      color: #d32f2f;
+      margin-top: 30px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 15px;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 10px;
+      text-align: center;
+    }
+    th {
+      background-color: #004080;
+      color: #fff;
+    }
+    .subsection {
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+<section>
+  <h2>📊 VII. Métricas Básicas a Medir</h2>
+  <p>Esta sección tiene como objetivo orientar al equipo sobre las métricas clave que empezaremos a monitorear con la implementación de esta guía. Las métricas permiten visualizar el desempeño en aspectos de entrega, calidad, colaboración y mejora continua. Su análisis periódico servirá como insumo para la toma de decisiones y ajustes en nuestro proceso.</p>
+
+  <div class="subsection">
+    <h3>⏱️ Métricas TTM (Time to Market)</h3>
+    <table>
+      <tr><th>Métrica</th><th>¿Qué mide?</th><th>¿Cómo se calcula?</th><th>Frecuencia</th><th>Fuente sugerida</th><th>Valor Referencia</th></tr>
+      <tr><td>TTM por HU</td><td>Tiempo desde creación hasta producción</td><td>Fecha de despliegue – Fecha de inicio</td><td>Por HU</td><td>Azure DevOps</td><td>🟢 15–25 días<br>🟡 26–40 días<br>🔴 41+ días</td></tr>
+    </table>
+  </div>
+
+  <div class="subsection">
+    <h3>📦 Métricas de Entrega / Cumplimiento</h3>
+    <table>
+      <tr><th>Métrica</th><th>¿Qué mide?</th><th>¿Cómo se calcula?</th><th>Frecuencia</th><th>Fuente sugerida</th><th>Valor Referencia</th></tr>
+      <tr><td>Compromisos cumplidos vs comprometidos</td><td>% de trabajo entregado vs lo planeado</td><td>HUs completadas / comprometidas × 100</td><td>Cada sprint</td><td>Azure DevOps</td><td>✅ ≥ 80% aceptable<br>⚠️ &lt; 60% requiere análisis</td></tr>
+    </table>
+  </div>
+
+  <div class="subsection">
+    <h3>🛡️ Métricas de Calidad</h3>
+    <table>
+      <tr><th>Métrica</th><th>¿Qué mide?</th><th>¿Cómo se calcula?</th><th>Frecuencia</th><th>Fuente sugerida</th><th>Valor Referencia</th></tr>
+      <tr><td>Tasa de bugs post-dev</td><td>Errores encontrados por QA</td><td>Bugs QA / Total HUs</td><td>Cada sprint</td><td>Azure DevOps</td><td>⚠️ Ideal: &lt; 0.3 bugs/HU</td></tr>
+      <tr><td>Tasa de bugs en Stage</td><td>Errores en ambiente de pruebas</td><td>Bugs Stage / Total HUs</td><td>Cada release</td><td>Azure DevOps</td><td>⚠️ Ideal: &lt; 0.2 bugs/HU</td></tr>
+      <tr><td>Tasa de bugs en Producción</td><td>Errores detectados tras liberar</td><td>Bugs PDR / Total HUs</td><td>Cada release</td><td>Azure DevOps</td><td>🚨 Ideal: 0<br>Aceptable: &lt; 0.1 bugs/HU</td></tr>
+    </table>
+  </div>
+
+  <div class="subsection">
+    <h3>🤝 Métricas de Colaboración</h3>
+    <table>
+      <tr><th>Métrica</th><th>¿Qué mide?</th><th>¿Cómo se calcula?</th><th>Frecuencia</th><th>Fuente sugerida</th><th>Valor Referencia</th></tr>
+      <tr><td>Participación en ceremonias</td><td>Involucramiento del equipo</td><td>Asistencia promedio</td><td>Cada ceremonia</td><td>Teams</td><td>✅ &gt; 90% de asistencia</td></tr>
+      <tr><td>Dudas resueltas en análisis</td><td>Eficiencia en análisis exploratorio</td><td>Preguntas resueltas / levantadas × 100</td><td>Cada sprint</td><td>Azure DevOps</td><td>✅ Ideal: &gt; 95%</td></tr>
+    </table>
+  </div>
+
+  <div class="subsection">
+    <h3>📈 Métricas de Mejora Continua</h3>
+    <table>
+      <tr><th>Métrica</th><th>¿Qué mide?</th><th>¿Cómo se calcula?</th><th>Valor Referencia</th></tr>
+      <tr><td>% Action Items completados (Retro)</td><td>Implementación de mejoras del equipo</td><td>Items completados / creados × 100</td><td>✅ &gt; 85% por sprint</td></tr>
+    </table>
+  </div>
+
+</section>
+</body>
+</html>
