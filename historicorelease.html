@@ -2,101 +2,249 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <title>Consulta de Release – Célula AC DC</title>
+  <title>Presentación Célula 1 - Release junio</title>
   <style>
+    /* Reset ligero */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
     body {
-      font-family: 'Segoe UI', sans-serif;
+      font-family: Arial, sans-serif;
       background-color: #f4f7fb;
       color: #2c3e50;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 40px;
+      line-height: 1.6;
+      padding: 20px;
     }
     .container {
+      max-width: 900px;
+      margin: 0 auto;
       background-color: #ffffff;
       border-radius: 8px;
       padding: 30px 40px;
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-      max-width: 500px;
-      width: 100%;
     }
     h2 {
       color: #004080;
       margin-bottom: 20px;
-      font-size: 24px;
-      text-align: center;
       border-bottom: 3px solid #007bff;
       padding-bottom: 8px;
+      font-size: 26px;
     }
-    label {
-      display: block;
-      font-weight: bold;
-      margin-bottom: 8px;
-      color: #333;
+    h3 {
+      color: #d32f2f;
+      margin-top: 30px;
+      margin-bottom: 12px;
+      font-size: 20px;
     }
-    input[type="text"] {
-      width: 100%;
-      padding: 10px;
-      font-size: 16px;
-      border: 1px solid #ccc;
+    p {
+      margin-bottom: 12px;
+    }
+    ul, ol {
+      margin: 10px 0 20px 20px;
+    }
+    li {
+      margin-bottom: 6px;
+    }
+    code {
+      background-color: #eef2fa;
+      padding: 2px 6px;
       border-radius: 4px;
-      margin-bottom: 16px;
-    }
-    button {
-      background-color: #007bff;
-      color: #fff;
-      border: none;
-      border-radius: 4px;
-      padding: 12px 20px;
-      font-size: 16px;
-      cursor: pointer;
-      width: 100%;
-    }
-    button:hover {
-      background-color: #005bb5;
-    }
-    .note {
-      margin-top: 20px;
+      font-family: Consolas, monospace;
       font-size: 14px;
-      color: #666;
-      text-align: center;
+    }
+    pre {
+      background-color: #f9f9f9;
+      border-left: 4px solid #007bff;
+      padding: 12px 16px;
+      margin: 10px 0 20px 0;
+      font-family: Consolas, monospace;
+      font-size: 14px;
+      border-radius: 4px;
+      overflow-x: auto;
+    }
+    /* Colores por aplicativo */
+    .aplicativo-geopos {
+      color: #1a73e8; /* Azul */
+      font-weight: bold;
+    }
+    .aplicativo-bono-service {
+      color: #2e7d32; /* Verde */
+      font-weight: bold;
+    }
+    .aplicativo-geohub {
+      color: #6a1b9a; /* Púrpura */
+      font-weight: bold;
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <h2>Consulta de Release – Célula AC DC</h2>
-    <p>Ingresa el mes y año del Release que deseas consultar (por ejemplo, <em>Junio 2025</em>), y haz clic en "Consultar Release".</p>
-    <form id="releaseForm" onsubmit="consultarRelease(event)">
-      <label for="mesAnio">Mes y Año del Release:</label>
-      <input
-        type="text"
-        id="mesAnio"
-        placeholder="Ej: Junio 2025"
-        required
-      />
-      <button type="submit">Consultar Release</button>
-    </form>
-  </div>
+    <h2>Presentación célula 1 - Release junio</h2>
 
-  <script>
-    function consultarRelease(event) {
-      event.preventDefault();
-      const valor = document.getElementById('mesAnio').value.trim();
-      if (!valor) {
-        alert('Por favor ingresa el mes y año del Release (por ejemplo, "Junio 2025").');
-        return;
-      }
-      // Construir el nombre de archivo esperado
-      const nombreArchivo = `Release ${valor} Celula AC DC.html`;
-      // Base URL de tu GitHub Pages (ajusta "usuario" y "repositorio" según corresponda)
-      const baseURL = 'https://celulaacdc.github.io/Marco-de-Trabajo-Celulas-Alkosto-Norte-Ktronix-By-Daniel-Ramirez-2025/';
-      // Construir URL final
-      const url = baseURL + encodeURIComponent(nombreArchivo);
-      // Abrir en nueva pestaña
-      window.open(url, '_blank');
-    }
-  </script>
+    <h3>HU_EP_GEO_10139_Nota P Devolución Falla Técnica</h3>
+    <p>El objetivo es mostrar la fecha de compra y la fecha de entrega en el documento de Nota P.</p>
+    <p><strong>Aplicativo:</strong> <span class="aplicativo-geopos">GEOPos</span>,</p>
+    <p><strong>Configuraciones:</strong> sin configuraciones particulares</p>
+
+    <h3>HU_EP_GEO_10070_Reimpresión soporte de recaudo</h3>
+    <p>Se busca permitir la reimpresión de documentos de recaudo de créditos propios y TCA por medio de la tecla F12, para facilitar la gestión de comprobantes en caso de pérdida o error.</p>
+    <p>Se solicita supervisor para realizar la reimpresión sólo si el documento seleccionado lo requiere.</p>
+    <p>Mediante la funcionalidad F12 se pueden reimprimir los siguientes documentos</p>
+    <ul>
+      <li>Tickets de venta "sale"</li>
+      <li>Recaudo de Tarjeta Alkosto "alkCardCsh"</li>
+      <li>Recaudo de Créditos Internos "currentAccountPay"</li>
+      <li>Avance de Tarjeta Alkosto "alkCardAdv"</li>
+      <li>Anulación de Avance de Tarjeta Alkosto "alkCardAdvVoid"</li>
+    </ul>
+    <p><strong>Aplicativo:</strong> <span class="aplicativo-geopos">GEOPos</span></p>
+    <p><strong>Configuraciones:</strong> Se agrega en el archivo <code>pos-production.properties</code> de GEOPos la siguiente propiedad con su documentType por defecto:</p>
+    <pre>reprint.document.types.need.supervisor=sale</pre>
+    <p>Si se requiere solicitar supervisor para la reimpresión de alguno de los anteriores, se puede configurar de la siguiente manera:</p>
+    <pre>reprint.document.types.need.supervisor=sale,alkCardCsh</pre>
+
+    <h3>HU_EP_GEO__9980_BONO_50_MOD - Ajuste en la impresión del Bono 50%</h3>
+    <p>El objetivo es que se elimine la información del cajero y visado al final del bono 50% y que la sección de presentación del documento de identidad solo aparezca para personas jurídicas</p>
+    <p>Flujo del proceso:</p>
+    <ol>
+      <li>Se genera un bono de descuento del 50% en el sistema.</li>
+      <li>Se valida si el bono corresponde a una persona natural o jurídica.<br>
+        - Si es persona natural, el texto "se debe presentar el original y documento de identidad para redimirlo" <strong>NO se imprime</strong>.<br>
+        - Si es persona jurídica, el texto <strong>SÍ</strong> se imprime.
+      </li>
+      <li>El bono se imprime en formato térmico o láser.</li>
+      <li>La línea con la información de cajero y visado <strong>NO</strong> debe aparecer en la impresión del bono.</li>
+    </ol>
+    <p><strong>Aplicativo:</strong> <span class="aplicativo-geopos">GEOPos</span>,</p>
+    <p><strong>Configuraciones:</strong> sin configuraciones particulares</p>
+
+    <h3>HU_EP_GEO_10071_Error reporte inventario McAfee Postman</h3>
+    <p>El informe de inventario de los pines de McAfee no estaba llegando al correo debido a que el archivo Excel generado superaba el límite permitido por Amazon para archivos adjuntos, el cual actualmente es de 10MB</p>
+    <p>Para solucionar este problema:</p>
+    <ul>
+      <li>Si el informe supera los 10MB, se envía comprimido en un archivo ZIP.</li>
+      <li>Se optimizó la generación del informe para mejorar la velocidad de procesamiento y evitar problemas de memoria.</li>
+      <li>Se creó un índice en la base de datos para mejorar la performance en la consulta de datos.</li>
+    </ul>
+    <p>Con estos cambios, el informe se genera más rápido y se asegura su entrega por correo sin inconvenientes.</p>
+    <p><strong>Aplicativo:</strong> <span class="aplicativo-geopos">GEOPos</span></p>
+    <p><strong>Configuración:</strong> Creacion de indice en mongo.</p>
+    <pre>db.pinManager.createIndex({ supplier: 1, initDate: 1 })</pre>
+    <p>Tipo de servicio: <code>POST</code></p>
+    <p>URL: <code>http://10.181.11.1:8020/alkosto-pin/report/inventory</code></p>
+    <p>Ejemplo del Request:</p>
+    <pre>{
+  "operator":"McAfee",
+  "startDate":"2025-01-01",
+  "endDate":"2026-01-01",
+  "business":"ALKOSTO NORTE/KTRONIX"
+}</pre>
+
+    <h3>EP_GEO_Asesor Vendedor Alkosto y Dependencias</h3>
+    <p>Partiendo de la nueva tabla generada en la base de datos de geopos. Se permite configurar la solicitud de vendedor y asesor en caja en base a una unidad de negocio y un plan de financiación. De esta manera se desacopla dicha solicitud de las propiedades ya existentes (<code>enable.all.article.saler</code> e <code>enable.adviser</code>).</p>
+    <p>Si no se encuentra cierta unidad de negocio o PF en la tabla, o la transacción en caja no utiliza PF, se utilizan las propiedades recién mencionadas para la solicitud de vendedores y asesores.</p>
+    <p>Esquema resumido:</p>
+    <ul>
+      <li>Transacción con PF (configurado en tabla de geopos) → Se toma dicha configuración (Para Alkosto Norte + Ktronix)</li>
+      <li>Transacción con PF (sin configurar en tabla de geopos) →Se toma configuración por propiedades (Para Demas UN)</li>
+      <li>Transacción sin PF → Se toma configuración por propiedades</li>
+    </ul>
+    <p><strong>Aplicativo:</strong> <span class="aplicativo-geopos">GEOPos</span></p>
+    <p><strong>Configuración:</strong></p>
+    <ul>
+      <li>Propiedades ya existentes para solicitud de vendedor y asesor:</li>
+      <ul>
+        <li><code>enable.all.article.saler=true/false</code> → Habilita o deshabilita solicitar vendedores. Deshabilitada, inactiva la solicitud de asesor también.</li>
+        <li><code>enable.adviser=true/false</code> → Habilita o deshabilita solicitar asesor. Depende de la propiedad anterior.</li>
+        <li><code>print.saler.all.sale=true/false</code> → Habilita o deshabilita la impresión de vendedores en el ticket.</li>
+      </ul>
+      <li>CAMBIOS DE ESTRUCTURA EN LA BASE DE DATOS: Se genera nueva tabla a nivel de geopos CENTRAL, LOCAL y CAJA, para cargas desde consola de geopos.</li>
+      <ul>
+        <li>Nombre de la tabla: <code>finance_plan_seller_configuration</code></li>
+        <li>Columnas:</li>
+        <ul>
+          <li><code>business_unit</code> (VARCHAR para unidad de negocio)</li>
+          <li><code>finance_plan</code> (VARCHAR para el nombre del plan de financiación)</li>
+          <li><code>seller_enable</code> (BOOLEANO para habilitar o deshabilitar vendedor)</li>
+          <li><code>adviser_enable</code> (BOOLEANO para habilitar o deshabilitar asesor)</li>
+        </ul>
+      </ul>
+    </ul>
+
+    <h3>HU_EP_GEO_10105_Construcción de reporte eventos parametrizados</h3>
+    <p>Se implementó una nueva vista en la sección de reportería de Geohub para la exportación de bonos final factura generados por cierto evento promocional, en formato excel. Para llegar a esto se generaron cambios en 3 aplicativos:</p>
+    <ul>
+      <li><strong>Geopos:</strong> Cada vez que se genera un bono debido a un evento promocional, el ID de la promoción se envía a Bono-Service para almacenar este dato, mandatorio para la generación del reporte.</li>
+      <li><strong>Bono-service:</strong> Se almacena el dato del ID la promoción generadora del bono. Se implementó un endpoint para la generación del reporte, recibe la solicitud desde Geohub. Aquí se encuentra toda la lógica de obtención de información, filtrado y formato, y generación del excel.</li>
+      <li><strong>Geohub:</strong> Se reajustó la sección de reportería, incorporando el nuevo panel para exportación del excel de bonos final factura. Se pueden incluir filtros tales cómo:</li>
+      <ul>
+        <li>Id's promoción (Obligatorio): Uno o varios separados por coma. Se genera una hoja de excel dentro del archivo por cada promoción.</li>
+        <li>Fechas de creación (Opcional): Se puede especificar un rango de este dato, para filtrar ciertos bonos generados entre esas fechas.</li>
+      </ul>
+    </ul>
+    <p><strong>Aplicativos:</strong> <span class="aplicativo-geopos">GEOPos</span>, <span class="aplicativo-bono-service">Bono-service</span>, <span class="aplicativo-geohub">GEOHub</span></p>
+    <p><strong>Configuraciones:</strong></p>
+    <ul>
+      <li>Se agregó una nueva propiedad en geohub que corresponde a la URL del aplicativo Bono-Service:<br>
+        <code>bono.service.url=http://localhost:7004</code>
+      </li>
+    </ul>
+
+    <h3>EP_GEO_9862_Parametrización por usuario para descuentos que exceden el 70 Por Ciento</h3>
+    <p>La iniciativa tiene como objetivo que los usuarios puedan modificar el límite del porcentaje de categorías, para poder crear una promoción con el nuevo limite, cada usuario podrá modificar solo las categorías a las que pertenece, este cambio solo permanece activo durante un tiempo configurable, luego de eso el mismo se reversa volviendo a su valor original</p>
+    <p>Se agrega la sección categorías para poder asignarle a cada comercial, cuales categorías va a poder configurar</p>
+    <p>Esto genera que se actualice el documento de la coleccion <code>"users"</code> quedando de la siguiente manera:</p>
+	
+	<pre><p><code>db.getCollection("users").find({})
+
+Raw shell output Find Query (line 1) x
+<- <-> -> 50 Documents 1 to 5
+{
+"_id" : ObjectId("64ac1484f34bcd5a17f8e53f"),
+"userId" : "UsuarioB",
+"name" : "Esperancito",
+"prefix" : "USER02",
+"categories" : [
+"HOGAR.",
+"MERCA.MER01."
+]</pre></code><p>
+	
+    <p>Para la auditoria de estos cambios, se creó una colección en la base de datos geohub llamada <code>percentageCategoryAudit</code>, en esta se guarda la fecha del cambio, el usuario que realizo el cambio, el porcentaje nuevo y el porcentaje antiguo</p>
+    <p>En caso de no volver al porcentaje anterior manualmente, una vez transcurrido el tiempo configurado, el porcentaje volverá al valor anterior pero en el usuario de la auditoria quedara como "Automatic"</p>
+	
+	<pre>
+db.getCollection("percentageCategoryAudit").find({}).sort({date: -1})
+
+Raw shell output Find Query (line 1) x
+&lt;-- &lt;--> --> 50 Documents 1 to 19
+{
+  "_id" : ObjectId("678021fc23d54f4f43d184b5"),
+  "user" : {
+    "userId" : "UsuarioB",
+    "userName" : "Esperancito"
+  },
+  "percentageCategory" : {
+    "_id" : "HOGAR.",
+    "newPercentage" : NumberInt(75),
+    "oldPercentage" : NumberInt(70)
+  },
+  "date" : ISODate("2025-01-09T16:22:36.139-0300")
+}
+</pre>
+    <p><strong>Aplicativos:</strong> <span class="aplicativo-geohub">GEOHub</span></p>
+    <p><strong>Configuraciones:</strong></p>
+    <ul>
+      <li><code>percentage.expiration.time.minutes=10</code> Tiempo que se le da al comercial para crear promociones cuando configura un valor mayor al permitido.</li>
+      <li><code>max.allowed.percentage=70</code> Configuramos cual es el porcentaje máximo que se puede poner en geohub de forma permanente, en caso de configurar un valor mayor a este, transcurrido el tiempo que configuramos en percentage.expiration.time.minutes, el valor va a volver a como estaba antes.</li>
+    </ul>
+
+    <h3>EP_GEO_9295_REPORTE GEOHUB MEDIOS DE PAGO</h3>
+    <p>En las promociones por producto se eliminan los campos %CMP y valor CMP al ingresar eventos con medios de pago.</p>
+    <p>Adicionalmente se crea lógica para generar automáticamente los valores CMP en el reporte de eventos comerciales en base a cálculos de promociones de Hiperdescuentos existentes para los productos, teniendo en cuenta fechas de las promoción</p>
+    <p><strong>Aplicativos:</strong> <span class="aplicativo-geohub">GEOHub</span></p>
+    <p><strong>Configuraciones:</strong> no hay configuraciones nuevas</p>
+  </div>
 </body>
 </html>
