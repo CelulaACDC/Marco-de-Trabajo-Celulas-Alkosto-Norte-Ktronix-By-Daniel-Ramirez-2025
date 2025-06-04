@@ -1,4 +1,4 @@
-<!DOCTYPE html>More actions
+<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
@@ -78,6 +78,10 @@
       />
       <button type="submit">Consultar Release</button>
     </form>
+    <p class="note">
+      Asegúrate de que el archivo exista en GitHub Pages con este formato:<br />
+      <code>Release [Mes] [Año] Celula AC DC.html</code>
+    </p>
   </div>
 
   <script>
@@ -91,7 +95,7 @@
       // Construir el nombre de archivo esperado
       const nombreArchivo = `Release ${valor} Celula AC DC.html`;
       // Base URL de tu GitHub Pages (ajusta "usuario" y "repositorio" según corresponda)
-      const baseURL = 'https://github.com/CelulaACDC/Marco-de-Trabajo-Celulas-Alkosto-Norte-Ktronix-By-Daniel-Ramirez-2025/';
+      const baseURL = 'https://usuario.github.io/';
       // Construir URL final
       const url = baseURL + encodeURIComponent(nombreArchivo);
       // Abrir en nueva pestaña
