@@ -29,6 +29,10 @@
       border-bottom: 3px solid #007bff;
       padding-bottom: 8px;
     }
+    p {
+      margin-bottom: 16px;
+      font-size: 16px;
+    }
     label {
       display: block;
       font-weight: bold;
@@ -66,13 +70,16 @@
       background: #eef2fa;
       padding: 2px 4px;
       border-radius: 4px;
+      font-family: monospace;
     }
   </style>
 </head>
 <body>
+
   <div class="container">
     <h2>Consulta de Release – Célula AC DC</h2>
-    <p>Ingresa el mes y año del Release que deseas consultar (por ejemplo, <em>Junio 2025</em>), y haz clic en <strong>Consultar Release</strong>.</p>
+    <p>Ingresa el mes y año del Release que deseas consultar (<strong>por ejemplo, “Junio 2025”</strong>). El formulario convertirá espacios en guiones bajos para buscar el archivo adecuado.</p>
+
     <form id="releaseForm" onsubmit="consultarRelease(event)">
       <label for="mesAnio">Mes y Año del Release:</label>
       <input
@@ -83,30 +90,33 @@
       />
       <button type="submit">Consultar Release</button>
     </form>
+
     <p class="note">
       Asegúrate de que el archivo exista en GitHub Pages con este formato:<br />
-      <code>Release [Mes] [Año] Celula AC DC.html</code>
+      <code>Junio_2025.html</code>, <code>Julio_2025.html</code>, <code>Agosto_2025.html</code>, etc.
     </p>
   </div>
 
   <script>
     function consultarRelease(event) {
       event.preventDefault();
-      const valor = document.getElementById('mesAnio').value.trim();
-      if (!valor) {
+      const valorRaw = document.getElementById('mesAnio').value.trim();
+      if (!valorRaw) {
         alert('Por favor ingresa el mes y año del Release (por ejemplo, "Junio 2025").');
         return;
       }
-      // Construir el nombre de archivo esperado:
-      // - Se mantiene exactamente "Release [Mes] [Año] Celula AC DC.html"
-      const nombreArchivo = `Release ${valor} Celula AC DC.html`;
+      // Convertir espacios en guiones bajos
+      const valor = valorRaw.replace(/\s+/g, '_');
+      // Construir nombre de archivo esperado
+      const nombreArchivo = `${valor}.html`;
       // Base URL de tu GitHub Pages (ajusta según tu repo)
       const baseURL = 'https://celulaacdc.github.io/Marco-de-Trabajo-Celulas-Alkosto-Norte-Ktronix-By-Daniel-Ramirez-2025/';
-      // Construir URL final, codificando espacios con encodeURIComponent
+      // Construir URL final
       const url = baseURL + encodeURIComponent(nombreArchivo);
       // Abrir en nueva pestaña
       window.open(url, '_blank');
     }
   </script>
+
 </body>
 </html>
