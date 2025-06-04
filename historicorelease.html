@@ -62,12 +62,17 @@
       color: #666;
       text-align: center;
     }
+    code {
+      background: #eef2fa;
+      padding: 2px 4px;
+      border-radius: 4px;
+    }
   </style>
 </head>
 <body>
   <div class="container">
     <h2>Consulta de Release – Célula AC DC</h2>
-    <p>Ingresa el mes y año del Release que deseas consultar (por ejemplo, <em>Junio 2025</em>), y haz clic en "Consultar Release".</p>
+    <p>Ingresa el mes y año del Release que deseas consultar (por ejemplo, <em>Junio 2025</em>), y haz clic en <strong>Consultar Release</strong>.</p>
     <form id="releaseForm" onsubmit="consultarRelease(event)">
       <label for="mesAnio">Mes y Año del Release:</label>
       <input
@@ -92,11 +97,12 @@
         alert('Por favor ingresa el mes y año del Release (por ejemplo, "Junio 2025").');
         return;
       }
-      // Construir el nombre de archivo esperado
+      // Construir el nombre de archivo esperado:
+      // - Se mantiene exactamente "Release [Mes] [Año] Celula AC DC.html"
       const nombreArchivo = `Release ${valor} Celula AC DC.html`;
-      // Base URL de tu GitHub Pages (ajusta "usuario" y "repositorio" según corresponda)
-      const baseURL = 'https://usuario.github.io/';
-      // Construir URL final
+      // Base URL de tu GitHub Pages (ajusta según tu repo)
+      const baseURL = 'https://celulaacdc.github.io/Marco-de-Trabajo-Celulas-Alkosto-Norte-Ktronix-By-Daniel-Ramirez-2025/';
+      // Construir URL final, codificando espacios con encodeURIComponent
       const url = baseURL + encodeURIComponent(nombreArchivo);
       // Abrir en nueva pestaña
       window.open(url, '_blank');
