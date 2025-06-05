@@ -245,6 +245,39 @@ Raw shell output Find Query (line 1) x
     <p>Adicionalmente se crea lógica para generar automáticamente los valores CMP en el reporte de eventos comerciales en base a cálculos de promociones de Hiperdescuentos existentes para los productos, teniendo en cuenta fechas de las promoción</p>
     <p><strong>Aplicativos:</strong> <span class="aplicativo-geohub">GEOHub</span></p>
     <p><strong>Configuraciones:</strong> no hay configuraciones nuevas</p>
+	
+	<!-- Sección HU_EP_GEO_9768 para añadir al HTML principal -->
+<h3>HU_EP_GEO_9768 Lista Productos - Lista Clientes</h3>
+
+<p>El objetivo es permitir configurar un criterio de "Acumulado" en los eventos tipo "Especiales", para permitir que estos eventos puedan acumularse con promociones de tipo "Hiperdescuento".</p>
+
+<p>
+  Tanto las promociones Hiperdescuento como las promociones Especiales tienen el tipo de promoción "Venta". Para permitir que estas promociones puedan acumularse, es necesario crear un nuevo tipo de promoción denominado 
+  <code>ESPECIAL_ACUMULABLE</code> dentro de <span class="aplicativo-geopos">GEOPromotion</span>.
+</p>
+
+<p>
+  A partir desde esta HU, será posible configurar las promociones especiales para que acumulen, tanto a nivel de producto como de grupo, siempre y cuando tengan una lista de clientes asociada. Si la promoción aplica a todos los clientes, no se permitirá marcar la opción de acumulación.
+  
+  <img src="HU_EP_GEO_9768_1.png" alt="Checkbox en cada producto para indicar acumulado">
+
+</p>
+
+<p>Se ha agregado un checkbox en cada producto para indicar si la promoción especial acumula o no:</p>
+<img src="HU_EP_GEO_9768_2.png" alt="Checkbox en cada producto para indicar acumulado">
+
+<p>De igual manera, en las promociones especiales por grupo, se incluye una opción para activar la acumulación:</p>
+<img src="HU_EP_GEO_9768_3.png" alt="Opción de acumulación en promociones especiales por grupo">
+
+<p>
+  Si el usuario intenta marcar la opción de acumulación sin seleccionar una lista de clientes, el sistema debe mostrar un mensaje de advertencia indicando que esta configuración no es válida:
+</p>
+<img src="HU_EP_GEO_9768_4.png" alt="Mensaje de advertencia al marcar acumulado sin lista de clientes">
+
+<p><strong>Aplicativos:</strong> <span class="aplicativo-geohub">GEOHub</span>, <span class="aplicativo-geohub">GEOHub-GEOPromotion-Integrator</span></p>
+
+<p><strong>Configuraciones:</strong> no hay configuraciones especificas</p>
+
   </div>
 </body>
 </html>
