@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hoja de Vida HU 10070 - Reimpresión soporte de recaudo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #f2f4f8;
+      margin: 0;
+      padding: 0;
+      color: #2c3e50;
+    }
+    header {
+      background-color: #1a2a6c;
+      color: white;
+      padding: 2rem;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+    header p {
+      margin-top: 0.5rem;
+      font-size: 1rem;
+      color: #dcdde1;
+    }
+    .container {
+      max-width: 1000px;
+      margin: 2rem auto;
+      background-color: #fff;
+      border-radius: 10px;
+      padding: 2rem;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      white-space: pre-wrap;
+      line-height: 1.6;
+    }
+    .section {
+      margin-top: 2rem;
+    }
+    .section h2 {
+      color: #1a2a6c;
+      border-left: 6px solid #2980b9;
+      padding-left: 0.75rem;
+      font-size: 1.5rem;
+    }
+    .section p, .section ul, .section ol {
+      margin-top: 1rem;
+    }
+    .highlight {
+      background-color: #f0f8ff;
+      border-left: 5px solid #3498db;
+      padding: 1rem;
+      border-radius: 6px;
+    }
+    code {
+      background: #ecf0f1;
+      padding: 0.2rem 0.4rem;
+      border-radius: 4px;
+      font-family: monospace;
+      color: #c0392b;
+    }
+    a {
+      color: #2980b9;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1><i class="fa-solid fa-file-lines"></i> Hoja de Vida de HU 10070</h1>
+    <p>Reimpresión soporte de recaudo</p>
+  </header>
+  <div class="container">
+    <div class="section">
+      <h2><i class="fa-solid fa-hourglass-start"></i> ANTES</h2>
+      <div class="highlight">
+Hoja de Vida de HU 10070 Reimpresión soporte de recaudo
+
+ANTES
+Descripción: Se requiere poder hacer la reimpresión de soporte de pago de recaudo, ya que se ha presentado novedad con reinicio de caja o daño en impresora y no se le puede hacer la entrega al cliente del respectivo soporte, lo que genera molestias
+
+1.	Escrita versión 1.0 Wednesday, ‎April ‎9, ‎2025, ‏‎8:32:42 AM
+2.	Refinada con Jefe de soluciones de Negocio: En esta sesión el Jefe de soluciones nos indica aclarar en refinamiento con Negocio que la solución a aplicar será útil para la inmediatez (Falla en Impresora o Falta de papel dado que se mostraran los últimos 5 Movimientos.
+3.	Refinamiento con Negocio donde se expresa la indicación del Jefe de soluciones y se da el Ok sobre alcance Funcional
+4.	Iniciativa Tomada en Sprint 93 Célula AC DC: https://dev.azure.com/colcomercio/Ciclo%20Facturaci%C3%B3n%20POS/_testPlans/execute?planId=160010&suiteId=186738
+Como Se soluciono: A la funcionalidad de Reimpresión de Facturas F12, se agregaron a las listas las transacciones de recaudos disponibles para reimprimir.
+•	Ventas (Esta transacción ya estaba para esta funcionalidad)
+•	Recaudo de Créditos Propios 
+•	Recaudo de Tarjeta Alkosto
+•	Avance de Tarjeta Alkosto
+Debido a que los documentos de recaudo no tienen información sensible que requiera supervisor para autorizar su reimpresión no así como la copia de las facturas se creo propiedad:
+<code>reprint.document.types.need.supervisor=sale,alkCardCsh</code>
+En esta propiedad se puede configurar cual de las transacciones requieren superviso para reimprimir. Para producción se solicita al área técnica dejar activo solo para ventas (Tal y como ocurre actualmente) y de libre impresión las demás operaciones.
+5.	La certifico Duban en ambiente .98 bajo este test plan   https://dev.azure.com/colcomercio/Ciclo%20Facturaci%C3%B3n%20POS/_testPlans/charts?planId=160010&suiteId=188414
+6.	La HU Fue presentada a diana Martínez en el review 23/05 a satisfacción
+7.	la certificación de la regresión se realizo en ambiente 4.4  se realizo con angelica  bajo el test plan https://dev.azure.com/colcomercio/Ciclo%20Facturaci%C3%B3n%20POS/_testPlans/execute?planId=153624&suiteId=197739
+</div>
+    </div>
+
+    <div class="section">
+      <h2><i class="fa-solid fa-forward"></i> DESPUÉS</h2>
+      <div class="highlight">
+1.	Durante la implementación en las pruebas Preapertura se detecto una novedad con la impresión de los recaudos, los títulos de la UN quedan desfasados (En dos Lineas), se acordó con el negocio que era un bug pero q se podía convivir con el desface hasta el cierre para publicar la corrección.
+2.	De igual forma se detecto un problema con endoso de documentos que aun usa Nariño para recaudo des servicios publico.
+3.	A mitad de jornada empezó a salir un mensaje con algunos recaudos que indicaba que no podía imprimir por problemas en  <code>"Index 167 out of bounds for length 167"</code>. Este escenario no fue posible reproducirlo en QA de Alkosto ni en Ambientes de GEO por su aleatoriedad.
+4.	Intentado solucionar el problema en caliente (dado que roolback a mitad de la jornada es inviable técnicamente los equipos de Geocom, Lideres Técnico y demás equipo se aplicaron medidas de contingencia con cambios manuales de JSP y algunos artefactos que mitigaron la novedad.
+5.	Se libero una versión por parte del parte del proveedor la cual pretendía la corrección pero esta versión ocasión que tanto la reimpresión con tecla F12 asi con lo endosos operar de igual forma. Ósea la F12 endosaba también lo cual es incorrecto.
+6.	Por ultimo se libero versión de parte del proveedor con la corrección del error en versión la cual tuvo una regresión en QA trasversal y una instalación cerrando el problema.
+</div>
+    </div>
+
+    <div class="section">
+      <h2><i class="fa-solid fa-stethoscope"></i> DIAGNÓSTICO</h2>
+      <div class="highlight">
+1.	La Hu a nivel procedimental paso por todo el ciclo diseñado para la Celula y su funcionalidad es correcta luego de la estabilización Respectiva.
+2.	La misma a nivel de QA ce certifico según los procesos establecidos (Ambiente 98 y 4.4)
+</div>
+    </div>
+
+    <div class="section">
+      <h2><i class="fa-solid fa-triangle-exclamation"></i> FALLAS</h2>
+      <div class="highlight">
+1.	El aseguramiento de calidad se realizo sobre impresión por archivo (en todas sus etapas de pruebas 98, 4.4 y regresión (Confirmar con Diana si se realiza impresiones físicas de esta funcionalida en Regresion 4.4)  lo que impidió ver el desfase en el titulo que genero en la cadena de problemas.
+2.	No se regresión el Flujo de Endoso funcionalidad aun usada por Nariño.
+3.	No se regresión la reimpresión de otros documentos a parte de las casos específicos de la iniciativa los cuales operaron de forma correcta.
+</div>
+    </div>
+
+    <div class="section">
+      <h2><i class="fa-solid fa-lightbulb"></i> MEJORAS A APLICAR</h2>
+      <div class="highlight">
+1.	Se solicitará al líder Técnico de la Célula Juan David dotar al ambiente 98 de una caja física con impresora y periféricos disponibles ya que este es 100% Virtual – Responsable: Juan David Cuenu
+2.	Se imparte instrucción estricta  a los equipos de Calidad de la célula la obligatoriedad de impresiones reales para todas la iniciativas que manejen impresión (Inicialmente en 4.4 y cuando este disponible en ambiente 98.) Responsable: Daniel Ramirez
+3.	Se elevara al proveedor Geocom la posibilidad de suplir en sus ambientes dispositivos de impresión físicas para que la prueba de desarrollo contemple esta arista: Responsable: Juan David Cuenu, Mercedes Hechavarria.
+4.	Se debe definir el proceso de regresión para otras funcionalidades para ver si estas serán regresionadas en la etapa de reléase o se debe regresiones por las diferentes células (Pendiente definir con QA- Area técnica)
+</div>
+    </div>
+  </div>
+</body>
+</html>
