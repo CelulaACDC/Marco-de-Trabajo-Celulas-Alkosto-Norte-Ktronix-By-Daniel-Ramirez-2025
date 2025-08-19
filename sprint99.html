@@ -1,0 +1,299 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+  <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="generator" content="PhpSpreadsheet, https://github.com/PHPOffice/PhpSpreadsheet">
+    <style type="text/css">
+      html { font-family:Calibri, Arial, Helvetica, sans-serif; font-size:11pt; background-color:white }
+      a.comment-indicator:hover + div.comment { background:#ffd; position:absolute; display:block; border:1px solid black; padding:0.5em }
+      a.comment-indicator { background:red; display:inline-block; border:1px solid black; width:0.5em; height:0.5em }
+      div.comment { display:none }
+      table { border-collapse:collapse; page-break-after:always }
+      .gridlines td { border:1px dotted black }
+      .gridlines th { border:1px dotted black }
+      .b { text-align:center }
+      .e { text-align:center }
+      .f { text-align:right }
+      .inlineStr { text-align:left }
+      .n { text-align:right }
+      .s { text-align:left }
+      td.style0 { vertical-align:bottom; border-bottom:none #000000; border-top:none #000000; border-left:none #000000; border-right:none #000000; color:#000000; font-family:'Calibri'; font-size:11pt; background-color:white }
+      th.style0 { vertical-align:bottom; border-bottom:none #000000; border-top:none #000000; border-left:none #000000; border-right:none #000000; color:#000000; font-family:'Calibri'; font-size:11pt; background-color:white }
+      td.style1 { vertical-align:bottom; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:1px solid #000000 !important; border-right:1px solid #000000 !important; color:#000000; font-family:'Calibri'; font-size:11pt; background-color:white }
+      th.style1 { vertical-align:bottom; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:1px solid #000000 !important; border-right:1px solid #000000 !important; color:#000000; font-family:'Calibri'; font-size:11pt; background-color:white }
+      td.style2 { vertical-align:bottom; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:none #000000; border-right:1px solid #000000 !important; color:#000000; font-family:'Calibri'; font-size:11pt; background-color:white }
+      th.style2 { vertical-align:bottom; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:none #000000; border-right:1px solid #000000 !important; color:#000000; font-family:'Calibri'; font-size:11pt; background-color:white }
+      td.style3 { vertical-align:bottom; border-bottom:1px solid #000000 !important; border-top:none #000000; border-left:1px solid #000000 !important; border-right:1px solid #000000 !important; color:#000000; font-family:'Calibri'; font-size:11pt; background-color:white }
+      th.style3 { vertical-align:bottom; border-bottom:1px solid #000000 !important; border-top:none #000000; border-left:1px solid #000000 !important; border-right:1px solid #000000 !important; color:#000000; font-family:'Calibri'; font-size:11pt; background-color:white }
+      td.style4 { vertical-align:top; text-align:center; border-bottom:1px solid #000000 !important; border-top:2px solid #000000 !important; border-left:2px solid #000000 !important; border-right:1px solid #000000 !important; font-weight:bold; color:#FFFFFF; font-family:'Calibri'; font-size:8pt; background-color:#1F497D }
+      th.style4 { vertical-align:top; text-align:center; border-bottom:1px solid #000000 !important; border-top:2px solid #000000 !important; border-left:2px solid #000000 !important; border-right:1px solid #000000 !important; font-weight:bold; color:#FFFFFF; font-family:'Calibri'; font-size:8pt; background-color:#1F497D }
+      td.style5 { vertical-align:top; text-align:center; border-bottom:1px solid #000000 !important; border-top:2px solid #000000 !important; border-left:1px solid #000000 !important; border-right:1px solid #000000 !important; font-weight:bold; color:#FFFFFF; font-family:'Calibri'; font-size:8pt; background-color:#1F497D }
+      th.style5 { vertical-align:top; text-align:center; border-bottom:1px solid #000000 !important; border-top:2px solid #000000 !important; border-left:1px solid #000000 !important; border-right:1px solid #000000 !important; font-weight:bold; color:#FFFFFF; font-family:'Calibri'; font-size:8pt; background-color:#1F497D }
+      td.style6 { vertical-align:top; text-align:center; border-bottom:1px solid #000000 !important; border-top:2px solid #000000 !important; border-left:1px solid #000000 !important; border-right:2px solid #000000 !important; font-weight:bold; color:#FFFFFF; font-family:'Calibri'; font-size:8pt; background-color:#1F497D }
+      th.style6 { vertical-align:top; text-align:center; border-bottom:1px solid #000000 !important; border-top:2px solid #000000 !important; border-left:1px solid #000000 !important; border-right:2px solid #000000 !important; font-weight:bold; color:#FFFFFF; font-family:'Calibri'; font-size:8pt; background-color:#1F497D }
+      td.style7 { vertical-align:top; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:2px solid #000000 !important; border-right:1px solid #000000 !important; font-weight:bold; color:#000000; font-family:'Calibri'; font-size:8pt; background-color:#FBD4B4 }
+      th.style7 { vertical-align:top; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:2px solid #000000 !important; border-right:1px solid #000000 !important; font-weight:bold; color:#000000; font-family:'Calibri'; font-size:8pt; background-color:#FBD4B4 }
+      td.style8 { vertical-align:top; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:1px solid #000000 !important; border-right:1px solid #000000 !important; text-decoration:underline; color:#0000FF; font-family:'Calibri'; font-size:8pt; background-color:#FBD4B4 }
+      th.style8 { vertical-align:top; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:1px solid #000000 !important; border-right:1px solid #000000 !important; text-decoration:underline; color:#0000FF; font-family:'Calibri'; font-size:8pt; background-color:#FBD4B4 }
+      td.style9 { vertical-align:top; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:1px solid #000000 !important; border-right:1px solid #000000 !important; color:#000000; font-family:'Calibri'; font-size:8pt; background-color:#FBD4B4 }
+      th.style9 { vertical-align:top; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:1px solid #000000 !important; border-right:1px solid #000000 !important; color:#000000; font-family:'Calibri'; font-size:8pt; background-color:#FBD4B4 }
+      td.style10 { vertical-align:top; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:1px solid #000000 !important; border-right:2px solid #000000 !important; color:#000000; font-family:'Calibri'; font-size:8pt; background-color:#FBD4B4 }
+      th.style10 { vertical-align:top; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:1px solid #000000 !important; border-right:2px solid #000000 !important; color:#000000; font-family:'Calibri'; font-size:8pt; background-color:#FBD4B4 }
+      td.style11 { vertical-align:top; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:2px solid #000000 !important; border-right:1px solid #000000 !important; color:#000000; font-family:'Calibri'; font-size:8pt; background-color:#C2D69B }
+      th.style11 { vertical-align:top; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:2px solid #000000 !important; border-right:1px solid #000000 !important; color:#000000; font-family:'Calibri'; font-size:8pt; background-color:#C2D69B }
+      td.style12 { vertical-align:top; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:1px solid #000000 !important; border-right:1px solid #000000 !important; text-decoration:underline; color:#0000FF; font-family:'Calibri'; font-size:8pt; background-color:#C2D69B }
+      th.style12 { vertical-align:top; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:1px solid #000000 !important; border-right:1px solid #000000 !important; text-decoration:underline; color:#0000FF; font-family:'Calibri'; font-size:8pt; background-color:#C2D69B }
+      td.style13 { vertical-align:top; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:1px solid #000000 !important; border-right:1px solid #000000 !important; color:#000000; font-family:'Calibri'; font-size:8pt; background-color:#C2D69B }
+      th.style13 { vertical-align:top; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:1px solid #000000 !important; border-right:1px solid #000000 !important; color:#000000; font-family:'Calibri'; font-size:8pt; background-color:#C2D69B }
+      td.style14 { vertical-align:top; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:1px solid #000000 !important; border-right:2px solid #000000 !important; color:#000000; font-family:'Calibri'; font-size:8pt; background-color:#C2D69B }
+      th.style14 { vertical-align:top; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:1px solid #000000 !important; border-right:2px solid #000000 !important; color:#000000; font-family:'Calibri'; font-size:8pt; background-color:#C2D69B }
+      td.style15 { vertical-align:top; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:2px solid #000000 !important; border-right:1px solid #000000 !important; color:#000000; font-family:'Calibri'; font-size:8pt; background-color:#CCC0D9 }
+      th.style15 { vertical-align:top; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:2px solid #000000 !important; border-right:1px solid #000000 !important; color:#000000; font-family:'Calibri'; font-size:8pt; background-color:#CCC0D9 }
+      td.style16 { vertical-align:top; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:1px solid #000000 !important; border-right:1px solid #000000 !important; text-decoration:underline; color:#0000FF; font-family:'Calibri'; font-size:8pt; background-color:#CCC0D9 }
+      th.style16 { vertical-align:top; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:1px solid #000000 !important; border-right:1px solid #000000 !important; text-decoration:underline; color:#0000FF; font-family:'Calibri'; font-size:8pt; background-color:#CCC0D9 }
+      td.style17 { vertical-align:top; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:1px solid #000000 !important; border-right:1px solid #000000 !important; color:#000000; font-family:'Calibri'; font-size:8pt; background-color:#CCC0D9 }
+      th.style17 { vertical-align:top; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:1px solid #000000 !important; border-right:1px solid #000000 !important; color:#000000; font-family:'Calibri'; font-size:8pt; background-color:#CCC0D9 }
+      td.style18 { vertical-align:top; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:2px solid #000000 !important; border-right:1px solid #000000 !important; color:#000000; font-family:'Calibri'; font-size:8pt; background-color:#B6DDE8 }
+      th.style18 { vertical-align:top; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:2px solid #000000 !important; border-right:1px solid #000000 !important; color:#000000; font-family:'Calibri'; font-size:8pt; background-color:#B6DDE8 }
+      td.style19 { vertical-align:top; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:1px solid #000000 !important; border-right:1px solid #000000 !important; text-decoration:underline; color:#0000FF; font-family:'Calibri'; font-size:8pt; background-color:#B6DDE8 }
+      th.style19 { vertical-align:top; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:1px solid #000000 !important; border-right:1px solid #000000 !important; text-decoration:underline; color:#0000FF; font-family:'Calibri'; font-size:8pt; background-color:#B6DDE8 }
+      td.style20 { vertical-align:top; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:1px solid #000000 !important; border-right:1px solid #000000 !important; color:#000000; font-family:'Calibri'; font-size:8pt; background-color:#B6DDE8 }
+      th.style20 { vertical-align:top; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:1px solid #000000 !important; border-right:1px solid #000000 !important; color:#000000; font-family:'Calibri'; font-size:8pt; background-color:#B6DDE8 }
+      td.style21 { vertical-align:top; text-align:center; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:2px solid #000000 !important; border-right:none #000000; font-weight:bold; color:#FFFFFF; font-family:'Calibri'; font-size:8pt; background-color:#7891B0 }
+      th.style21 { vertical-align:top; text-align:center; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:2px solid #000000 !important; border-right:none #000000; font-weight:bold; color:#FFFFFF; font-family:'Calibri'; font-size:8pt; background-color:#7891B0 }
+      td.style22 { vertical-align:top; text-align:center; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:none #000000; border-right:none #000000; font-weight:bold; color:#FFFFFF; font-family:'Calibri'; font-size:8pt; background-color:#7891B0 }
+      th.style22 { vertical-align:top; text-align:center; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:none #000000; border-right:none #000000; font-weight:bold; color:#FFFFFF; font-family:'Calibri'; font-size:8pt; background-color:#7891B0 }
+      td.style23 { vertical-align:top; text-align:center; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:none #000000; border-right:2px solid #000000 !important; font-weight:bold; color:#FFFFFF; font-family:'Calibri'; font-size:8pt; background-color:#7891B0 }
+      th.style23 { vertical-align:top; text-align:center; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:none #000000; border-right:2px solid #000000 !important; font-weight:bold; color:#FFFFFF; font-family:'Calibri'; font-size:8pt; background-color:#7891B0 }
+      td.style24 { vertical-align:top; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:2px solid #000000 !important; border-right:1px solid #000000 !important; color:#000000; font-family:'Calibri'; font-size:8pt; background-color:white }
+      th.style24 { vertical-align:top; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:2px solid #000000 !important; border-right:1px solid #000000 !important; color:#000000; font-family:'Calibri'; font-size:8pt; background-color:white }
+      td.style25 { vertical-align:top; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:1px solid #000000 !important; border-right:1px solid #000000 !important; text-decoration:underline; color:#0000FF; font-family:'Calibri'; font-size:8pt; background-color:white }
+      th.style25 { vertical-align:top; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:1px solid #000000 !important; border-right:1px solid #000000 !important; text-decoration:underline; color:#0000FF; font-family:'Calibri'; font-size:8pt; background-color:white }
+      td.style26 { vertical-align:top; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:1px solid #000000 !important; border-right:1px solid #000000 !important; color:#000000; font-family:'Calibri'; font-size:8pt; background-color:white }
+      th.style26 { vertical-align:top; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:1px solid #000000 !important; border-right:1px solid #000000 !important; color:#000000; font-family:'Calibri'; font-size:8pt; background-color:white }
+      td.style27 { vertical-align:bottom; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:1px solid #000000 !important; border-right:1px solid #000000 !important; color:#000000; font-family:'Calibri'; font-size:8pt; background-color:white }
+      th.style27 { vertical-align:bottom; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:1px solid #000000 !important; border-right:1px solid #000000 !important; color:#000000; font-family:'Calibri'; font-size:8pt; background-color:white }
+      td.style28 { vertical-align:top; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:1px solid #000000 !important; border-right:2px solid #000000 !important; color:#000000; font-family:'Calibri'; font-size:8pt; background-color:white }
+      th.style28 { vertical-align:top; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:1px solid #000000 !important; border-right:2px solid #000000 !important; color:#000000; font-family:'Calibri'; font-size:8pt; background-color:white }
+      td.style29 { vertical-align:top; border-bottom:2px solid #000000 !important; border-top:1px solid #000000 !important; border-left:2px solid #000000 !important; border-right:1px solid #000000 !important; color:#000000; font-family:'Calibri'; font-size:8pt; background-color:white }
+      th.style29 { vertical-align:top; border-bottom:2px solid #000000 !important; border-top:1px solid #000000 !important; border-left:2px solid #000000 !important; border-right:1px solid #000000 !important; color:#000000; font-family:'Calibri'; font-size:8pt; background-color:white }
+      td.style30 { vertical-align:top; border-bottom:2px solid #000000 !important; border-top:1px solid #000000 !important; border-left:1px solid #000000 !important; border-right:1px solid #000000 !important; text-decoration:underline; color:#0000FF; font-family:'Calibri'; font-size:8pt; background-color:white }
+      th.style30 { vertical-align:top; border-bottom:2px solid #000000 !important; border-top:1px solid #000000 !important; border-left:1px solid #000000 !important; border-right:1px solid #000000 !important; text-decoration:underline; color:#0000FF; font-family:'Calibri'; font-size:8pt; background-color:white }
+      td.style31 { vertical-align:top; border-bottom:2px solid #000000 !important; border-top:1px solid #000000 !important; border-left:1px solid #000000 !important; border-right:1px solid #000000 !important; color:#000000; font-family:'Calibri'; font-size:8pt; background-color:white }
+      th.style31 { vertical-align:top; border-bottom:2px solid #000000 !important; border-top:1px solid #000000 !important; border-left:1px solid #000000 !important; border-right:1px solid #000000 !important; color:#000000; font-family:'Calibri'; font-size:8pt; background-color:white }
+      td.style32 { vertical-align:top; border-bottom:2px solid #000000 !important; border-top:1px solid #000000 !important; border-left:1px solid #000000 !important; border-right:2px solid #000000 !important; color:#000000; font-family:'Calibri'; font-size:8pt; background-color:white }
+      th.style32 { vertical-align:top; border-bottom:2px solid #000000 !important; border-top:1px solid #000000 !important; border-left:1px solid #000000 !important; border-right:2px solid #000000 !important; color:#000000; font-family:'Calibri'; font-size:8pt; background-color:white }
+      table.sheet0 col.col0 { width:257.5555526pt }
+      table.sheet0 col.col1 { width:85.39999902pt }
+      table.sheet0 col.col2 { width:85.39999902pt }
+      table.sheet0 col.col3 { width:115.89999867pt }
+      table.sheet0 col.col4 { width:85.39999902pt }
+      table.sheet0 col.col5 { width:42pt }
+      table.sheet0 tr { height:15pt }
+      table.sheet0 tr.row6 { height:22.5pt }
+      table.sheet0 tr.row7 { height:22.5pt }
+      table.sheet0 tr.row11 { height:22.5pt }
+      table.sheet0 tr.row12 { height:22.5pt }
+      table.sheet0 tr.row13 { height:22.5pt }
+      table.sheet0 tr.row14 { height:22.5pt }
+      table.sheet0 tr.row15 { height:22.5pt }
+      table.sheet0 tr.row16 { height:22.5pt }
+      table.sheet0 tr.row18 { height:22.5pt }
+      table.sheet0 tr.row19 { height:22.5pt }
+      table.sheet0 tr.row21 { height:15.75pt }
+    </style>
+  </head>
+
+  <body>
+<style>
+@page { margin-left: 0.7in; margin-right: 0.7in; margin-top: 0.75in; margin-bottom: 0.75in; }
+body { margin-left: 0.7in; margin-right: 0.7in; margin-top: 0.75in; margin-bottom: 0.75in; }
+</style>
+    <table border="0" cellpadding="0" cellspacing="0" id="sheet0" class="sheet0 gridlines">
+        <col class="col0">
+        <col class="col1">
+        <col class="col2">
+        <col class="col3">
+        <col class="col4">
+        <col class="col5">
+        <tbody>
+          <tr class="row0">
+            <td class="column0 style4 s">Title</td>
+            <td class="column1 style5 s">ID</td>
+            <td class="column2 style5 s">State</td>
+            <td class="column3 style5 s">Assigned To QA</td>
+            <td class="column4 style6 s">Assigned To DEV</td>
+            <td class="column5 style2 null"></td>
+          </tr>
+          <tr class="row1">
+            <td class="column0 style7 s">Análisis</td>
+            <td class="column1 style8 n"><a href="https://dev.azure.com/colcomercio/Ciclo%20Facturaci%C3%B3n%20POS/_workitems/edit/220147/?view=edit" title="">220147</a></td>
+            <td class="column2 style9 s">Nueva</td>
+            <td class="column3 style9 s">All</td>
+            <td class="column4 style10 s">All</td>
+            <td class="column5 style2 null"></td>
+          </tr>
+          <tr class="row2">
+            <td class="column0 style7 s">Ciclo de desarrollo</td>
+            <td class="column1 style8 n"><a href="https://dev.azure.com/colcomercio/Ciclo%20Facturaci%C3%B3n%20POS/_workitems/edit/220008/?view=edit" title="">220008</a></td>
+            <td class="column2 style9 s">Nueva</td>
+            <td class="column3 style9 s">All</td>
+            <td class="column4 style10 s">All</td>
+            <td class="column5 style2 null"></td>
+          </tr>
+          <tr class="row3">
+            <td class="column0 style11 s">EP_GEO 9584 Automatización de Retenidos</td>
+            <td class="column1 style12 n"><a href="https://dev.azure.com/colcomercio/Ciclo%20Facturaci%C3%B3n%20POS/_workitems/edit/199777/?view=edit" title="">199777</a></td>
+            <td class="column2 style13 s">Pruebas de QA</td>
+            <td class="column3 style13 s">Sandra</td>
+            <td class="column4 style14 null"></td>
+            <td class="column5 style2 null"></td>
+          </tr>
+          <tr class="row4">
+            <td class="column0 style11 s">Migrar a Mahindra la activación de tarjetas POSA para tienda física</td>
+            <td class="column1 style12 n"><a href="https://dev.azure.com/colcomercio/Ciclo%20Facturaci%C3%B3n%20POS/_workitems/edit/206889/?view=edit" title="">206889</a></td>
+            <td class="column2 style13 s">Pruebas de QA</td>
+            <td class="column3 style13 s">Sandra</td>
+            <td class="column4 style14 null"></td>
+            <td class="column5 style2 null"></td>
+          </tr>
+          <tr class="row5">
+            <td class="column0 style11 s">Migrar a Mahindra la desactivación de tarjetas POSA para tienda física</td>
+            <td class="column1 style12 n"><a href="https://dev.azure.com/colcomercio/Ciclo%20Facturaci%C3%B3n%20POS/_workitems/edit/209383/?view=edit" title="">209383</a></td>
+            <td class="column2 style13 s">Pruebas de QA</td>
+            <td class="column3 style13 s">Sandra</td>
+            <td class="column4 style14 null"></td>
+            <td class="column5 style2 null"></td>
+          </tr>
+          <tr class="row6">
+            <td class="column0 style15 s">HU_EP_GEO_Ajuste flujo devolución por RMA: continuidad parcial y bloqueo causal heredada</td>
+            <td class="column1 style16 n"><a href="https://dev.azure.com/colcomercio/Ciclo%20Facturaci%C3%B3n%20POS/_workitems/edit/212271/?view=edit" title="">212271</a></td>
+            <td class="column2 style17 s">Pruebas de QA</td>
+            <td class="column3 style17 s">Cami</td>
+            <td class="column4 style17 null"></td>
+            <td class="column5 style2 null"></td>
+          </tr>
+          <tr class="row7">
+            <td class="column0 style18 s">HU_EP_GEO_Configuración dinámica del campo nombreAplicacion en el contexto transaccional de envío de PIN por WhatsApp</td>
+            <td class="column1 style19 n"><a href="https://dev.azure.com/colcomercio/Ciclo%20Facturaci%C3%B3n%20POS/_workitems/edit/213631/?view=edit" title="">213631</a></td>
+            <td class="column2 style20 s">Pruebas de QA</td>
+            <td class="column3 style20 s">Vlado</td>
+            <td class="column4 style20 null"></td>
+            <td class="column5 style2 null"></td>
+          </tr>
+          <tr class="row8">
+            <td class="column0 style11 s">HU-EP-GEO-Asesor Vendedor Alkosto Ktronix- BUG</td>
+            <td class="column1 style12 n"><a href="https://dev.azure.com/colcomercio/Ciclo%20Facturaci%C3%B3n%20POS/_workitems/edit/212184/?view=edit" title="">212184</a></td>
+            <td class="column2 style13 s">Pruebas de QA</td>
+            <td class="column3 style13 s">Sandra</td>
+            <td class="column4 style13 null"></td>
+            <td class="column5 style2 null"></td>
+          </tr>
+          <tr class="row9">
+            <td class="column0 style18 s">Nuevas formas de pago tipo Consignación Directa para .COM - Strech 1</td>
+            <td class="column1 style19 n"><a href="https://dev.azure.com/colcomercio/Ciclo%20Facturaci%C3%B3n%20POS/_workitems/edit/211840/?view=edit" title="">211840</a></td>
+            <td class="column2 style20 s">Pruebas de QA</td>
+            <td class="column3 style20 s">Vlado</td>
+            <td class="column4 style20 null"></td>
+            <td class="column5 style2 null"></td>
+          </tr>
+          <tr class="row10">
+            <td class="column0 style21 s style23" colspan="5">Sprint 99 Sprint Goal</td>
+            <td class="column5 style2 null"></td>
+          </tr>
+          <tr class="row11">
+            <td class="column0 style24 s">EP_GEOPRICER_ALTERNO – Validación dinámica de márgenes</td>
+            <td class="column1 style25 n"><a href="https://dev.azure.com/colcomercio/Ciclo%20Facturaci%C3%B3n%20POS/_workitems/edit/223609/?view=edit" title="">223609</a></td>
+            <td class="column2 style26 s">Activa</td>
+            <td class="column3 style27 null"></td>
+            <td class="column4 style28 s">Luciana Valeria Guartechea</td>
+            <td class="column5 style2 null"></td>
+          </tr>
+          <tr class="row12">
+            <td class="column0 style24 s">EP_GEO_Crear propiedades de configuración para parametrizar por plantilla de email</td>
+            <td class="column1 style25 n"><a href="https://dev.azure.com/colcomercio/Ciclo%20Facturaci%C3%B3n%20POS/_workitems/edit/219925/?view=edit" title="">219925</a></td>
+            <td class="column2 style26 s">Desarrollo</td>
+            <td class="column3 style26 s">Cami</td>
+            <td class="column4 style28 s">Belen</td>
+            <td class="column5 style2 null"></td>
+          </tr>
+          <tr class="row13">
+            <td class="column0 style24 s">EP_GEO_Migrar emails a Salesforce Marketing Cloud sin bonos para caja automática</td>
+            <td class="column1 style25 n"><a href="https://dev.azure.com/colcomercio/Ciclo%20Facturaci%C3%B3n%20POS/_workitems/edit/211990/?view=edit" title="">211990</a></td>
+            <td class="column2 style26 s">Desarrollo</td>
+            <td class="column3 style26 s">Vlado</td>
+            <td class="column4 style28 s">Belen</td>
+            <td class="column5 style2 null"></td>
+          </tr>
+          <tr class="row14">
+            <td class="column0 style24 s">10155 Migrar emails a Salesforce Marketing Cloud con bono 50 y/o promocional para caja automática</td>
+            <td class="column1 style25 n"><a href="https://dev.azure.com/colcomercio/Ciclo%20Facturaci%C3%B3n%20POS/_workitems/edit/212835/?view=edit" title="">212835</a></td>
+            <td class="column2 style26 s">Desarrollo</td>
+            <td class="column3 style27 s">Cami (38) - Sandra 10</td>
+            <td class="column4 style28 s">Bri</td>
+            <td class="column5 style2 null"></td>
+          </tr>
+          <tr class="row15">
+            <td class="column0 style24 s">10155 Migrar emails a Salesforce Marketing Cloud con bonos cambio para caja manual</td>
+            <td class="column1 style25 n"><a href="https://dev.azure.com/colcomercio/Ciclo%20Facturaci%C3%B3n%20POS/_workitems/edit/214893/?view=edit" title="">214893</a></td>
+            <td class="column2 style26 s">Desarrollo</td>
+            <td class="column3 style26 s">Sandra</td>
+            <td class="column4 style28 s">Bri</td>
+            <td class="column5 style2 null"></td>
+          </tr>
+          <tr class="row16">
+            <td class="column0 style24 s">10155 Migrar emails a Salesforce Marketing Cloud sin bonos para caja manual</td>
+            <td class="column1 style25 n"><a href="https://dev.azure.com/colcomercio/Ciclo%20Facturaci%C3%B3n%20POS/_workitems/edit/212924/?view=edit" title="">212924</a></td>
+            <td class="column2 style26 s">Desarrollo</td>
+            <td class="column3 style26 s">Vlado</td>
+            <td class="column4 style28 s">Rock</td>
+            <td class="column5 style2 null"></td>
+          </tr>
+          <tr class="row17">
+            <td class="column0 style21 s style23" colspan="5">Strech Goal 99</td>
+            <td class="column5 style2 null"></td>
+          </tr>
+          <tr class="row18">
+            <td class="column0 style24 s">10155 Migrar emails a Salesforce Marketing Cloud con bono 50 y/o promocional para caja manual</td>
+            <td class="column1 style25 n"><a href="https://dev.azure.com/colcomercio/Ciclo%20Facturaci%C3%B3n%20POS/_workitems/edit/214605/?view=edit" title="">214605</a></td>
+            <td class="column2 style26 s">Refinada</td>
+            <td class="column3 style26 s">Daniel Antonio Ramirez Mora </td>
+            <td class="column4 style28 s">Joaco</td>
+            <td class="column5 style2 null"></td>
+          </tr>
+          <tr class="row19">
+            <td class="column0 style24 s">10155 Migrar emails a Salesforce Marketing Cloud con bonos Regalo y bonos Yo Puedo para caja manual</td>
+            <td class="column1 style25 n"><a href="https://dev.azure.com/colcomercio/Ciclo%20Facturaci%C3%B3n%20POS/_workitems/edit/212918/?view=edit" title="">212918</a></td>
+            <td class="column2 style26 s">Refinada</td>
+            <td class="column3 style26 s">Daniel Antonio Ramirez Mora </td>
+            <td class="column4 style28 s">Joaco</td>
+            <td class="column5 style2 null"></td>
+          </tr>
+          <tr class="row20">
+            <td class="column0 style24 s">HU_EP_GEO_10105_Construcción de reporte eventos parametrizados</td>
+            <td class="column1 style25 n"><a href="https://dev.azure.com/colcomercio/Ciclo%20Facturaci%C3%B3n%20POS/_workitems/edit/172351/?view=edit" title="">172351</a></td>
+            <td class="column2 style26 s">Pruebas de QA</td>
+            <td class="column3 style26 s">Daniel Antonio Ramirez Mora </td>
+            <td class="column4 style28 null"></td>
+            <td class="column5 style2 null"></td>
+          </tr>
+          <tr class="row21">
+            <td class="column0 style29 s">HU_EP_GEO_9768 Lista Productos - Lista Clientes</td>
+            <td class="column1 style30 n"><a href="https://dev.azure.com/colcomercio/Ciclo%20Facturaci%C3%B3n%20POS/_workitems/edit/170906/?view=edit" title="">170906</a></td>
+            <td class="column2 style31 s">Pruebas de QA</td>
+            <td class="column3 style31 s">Daniel Antonio Ramirez Mora </td>
+            <td class="column4 style32 null"></td>
+            <td class="column5 style2 null"></td>
+          </tr>
+          <tr class="row22">
+            <td class="column0 style3 null"></td>
+            <td class="column1 style3 null"></td>
+            <td class="column2 style3 null"></td>
+            <td class="column3 style3 null"></td>
+            <td class="column4 style3 null"></td>
+            <td class="column5">&nbsp;</td>
+          </tr>
+        </tbody>
+    </table>
+  </body>
+</html>
