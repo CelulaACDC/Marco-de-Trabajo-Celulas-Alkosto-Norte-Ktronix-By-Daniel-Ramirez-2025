@@ -1,0 +1,374 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Matriz de Riesgos Proyecto GIFTCARD</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+        h1, h2 {
+            color: #0056a3;
+        }
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            background: #fff;
+            padding: 30px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 12px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        th {
+            background-color: #0056a3;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        .section {
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Matriz de Riesgos - Proyecto GIFTCARD</h1>
+
+        <div class="section">
+            <h2>Introducción</h2>
+            <p>El proyecto GIFTCARD contempla múltiples funcionalidades distribuidas en fases, incluyendo emisión, redención, anulaciones, reemplazos, consultas, integraciones REST/SOAP, uso de MongoDB, reportes, y conexión con sistemas como Hybris, GeoPos, GeoConciliación y ERP. Este documento presenta un análisis completo de riesgos asociados a la implementación del proyecto.</p>
+        </div>
+
+        <div class="section">
+            <h2>Riesgos Técnicos</h2>
+            <ul>
+                <li>Integración REST/SOAP puede generar incompatibilidades.</li>
+                <li>Gestión de estados en MongoDB puede causar saldos incorrectos.</li>
+                <li>Errores en carga masiva de GiftCards.</li>
+                <li>Configuraciones dinámicas mal aplicadas.</li>
+                <li>Enmascaramiento incorrecto de datos sensibles.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Riesgos de Seguridad</h2>
+            <ul>
+                <li>Exposición de PIN o códigos scratch.</li>
+                <li>Acceso no autorizado a servicios REST.</li>
+                <li>Manipulación de estados por usuarios no autorizados.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Riesgos Operativos</h2>
+            <ul>
+                <li>Errores en caja física por parte de cajeros.</li>
+                <li>Redención parcial mal aplicada.</li>
+                <li>Anulación de ventas con GiftCard dañada.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Riesgos de Reportes y Conciliación</h2>
+            <ul>
+                <li>Fuentes de datos inconsistentes.</li>
+                <li>Errores en conciliación ERP.</li>
+                <li>Campos faltantes en reportes.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Riesgos durante la Instalación</h2>
+            <ul>
+                <li>Configuración incorrecta de propiedades.</li>
+                <li>Servicios REST mal configurados o no disponibles.</li>
+                <li>Errores en conexión con MongoDB.</li>
+                <li>Problemas de compatibilidad entre versiones de servicios.</li>
+                <li>Errores en impresión de vouchers o actas.</li>
+                <li>Falta de sincronización entre módulos.</li>
+                <li>Problemas de seguridad en activación.</li>
+                <li>Errores en redención en caja.</li>
+                <li>Falta de capacitación al personal.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Matriz de Riesgos Detallada</h2>
+            <html><head>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+th {
+    background-color: #0046bf;
+    color: white;
+    padding: 12px;
+    text-align: left;
+    border-bottom: 2px solid #003399;
+}
+td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+tr:hover {
+    background-color: #e6f0ff;
+}
+@media screen and (max-width: 768px) {
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+    th {
+        position: sticky;
+        top: 0;
+        background-color: #0046bf;
+    }
+    td {
+        border: none;
+        position: relative;
+        padding-left: 50%;
+    }
+    td::before {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        width: 45%;
+        white-space: nowrap;
+        font-weight: bold;
+    }
+}
+</style>
+</head><body><table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th>Riesgo</th>
+<th>Descripción</th>
+<th>Impacto</th>
+<th>Probabilidad</th>
+<th>Mitigación</th>
+<th>Responsable</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Integración REST/SOAP</td>
+<td>Migración de servicios SOAP a REST puede generar incompatibilidades o errores en consumo desde Hybris.</td>
+<td>Alto</td>
+<td>Media</td>
+<td>Pruebas unitarias y de integración con Hybris. Validar contratos de servicios en Swagger.</td>
+<td>Equipo de Desarrollo</td>
+</tr>
+<tr>
+<td>Gestión de estados en MongoDB</td>
+<td>Estados como ACTIVE, USED, VOIDED deben mantenerse consistentes. Errores pueden generar saldos incorrectos.</td>
+<td>Alto</td>
+<td>Alta</td>
+<td>Validaciones automáticas en backend. Auditoría de transacciones.</td>
+<td>Equipo Backend</td>
+</tr>
+<tr>
+<td>Carga masiva de GiftCards</td>
+<td>Procesos masivos pueden fallar por formato incorrecto o fechas inválidas.</td>
+<td>Medio</td>
+<td>Alta</td>
+<td>Validación previa del archivo .csv. Logs detallados y rollback en caso de error.</td>
+<td>Equipo Técnico</td>
+</tr>
+<tr>
+<td>Configuraciones por propiedades</td>
+<td>Propiedades mal configuradas pueden habilitar funcionalidades no deseadas.</td>
+<td>Alto</td>
+<td>Media</td>
+<td>Checklist de configuración por ambiente. Validación en QA antes de producción.</td>
+<td>Equipo QA</td>
+</tr>
+<tr>
+<td>Enmascaramiento de datos sensibles</td>
+<td>Mal enmascaramiento puede exponer datos de tarjetas.</td>
+<td>Alto</td>
+<td>Media</td>
+<td>Pruebas de seguridad y validación de visibilidad por rol.</td>
+<td>Equipo de Seguridad</td>
+</tr>
+<tr>
+<td>Exposición de PIN o códigos scratch</td>
+<td>Si no se enmascaran correctamente, pueden ser usados indebidamente.</td>
+<td>Alto</td>
+<td>Alta</td>
+<td>Encriptación y enmascaramiento obligatorio en UI y logs.</td>
+<td>Equipo de Seguridad</td>
+</tr>
+<tr>
+<td>Acceso no autorizado a servicios</td>
+<td>Servicios REST pueden ser accedidos sin token válido.</td>
+<td>Alto</td>
+<td>Media</td>
+<td>Autenticación y autorización por token JWT. Validación en gateway.</td>
+<td>Equipo DevOps</td>
+</tr>
+<tr>
+<td>Manipulación de estados por usuarios</td>
+<td>Cambios manuales en MongoDB pueden alterar el flujo de negocio.</td>
+<td>Alto</td>
+<td>Baja</td>
+<td>Restricción de acceso a base de datos. Auditoría y control de cambios.</td>
+<td>DBA</td>
+</tr>
+<tr>
+<td>Errores en caja física</td>
+<td>Cajeros pueden ingresar mal los datos o no seguir el flujo correcto.</td>
+<td>Medio</td>
+<td>Alta</td>
+<td>Capacitación, validaciones en UI, mensajes claros de error.</td>
+<td>Equipo de Soporte</td>
+</tr>
+<tr>
+<td>Redención parcial mal aplicada</td>
+<td>Si no se actualiza correctamente el saldo, puede haber inconsistencias.</td>
+<td>Alto</td>
+<td>Media</td>
+<td>Validación automática del currentBalance y logs de transacción.</td>
+<td>Equipo Backend</td>
+</tr>
+<tr>
+<td>Anulación de ventas con GiftCard dañada</td>
+<td>Si no se valida el estado físico, puede haber fraude.</td>
+<td>Alto</td>
+<td>Media</td>
+<td>Validación física obligatoria antes de anulación. Registro fotográfico opcional.</td>
+<td>Cajero / Supervisor</td>
+</tr>
+<tr>
+<td>Fuentes de datos inconsistentes</td>
+<td>Reportes pueden tomar datos de bono-report o bono-service según fecha.</td>
+<td>Medio</td>
+<td>Media</td>
+<td>Validar propiedad date.use.bono.service.DB y sincronizar fuentes.</td>
+<td>Equipo de Reportes</td>
+</tr>
+<tr>
+<td>Errores en conciliación ERP</td>
+<td>Exportaciones pueden fallar si no se respetan formatos o fechas.</td>
+<td>Alto</td>
+<td>Media</td>
+<td>Validaciones previas, pruebas de exportación, logs detallados.</td>
+<td>Equipo ERP</td>
+</tr>
+<tr>
+<td>Campos faltantes en reportes</td>
+<td>Si no se migran todos los campos, reportes pueden estar incompletos.</td>
+<td>Medio</td>
+<td>Media</td>
+<td>Validación de estructura completa en bonoReportItem.</td>
+<td>Equipo de Reportes</td>
+</tr>
+<tr>
+<td>Configuración incorrecta de propiedades</td>
+<td>Activar/desactivar funcionalidades puede causar errores operativos.</td>
+<td>Alto</td>
+<td>Alta</td>
+<td>Checklist de configuración por ambiente. Validación en QA antes de producción.</td>
+<td>Equipo QA</td>
+</tr>
+<tr>
+<td>Servicios REST no disponibles o mal configurados</td>
+<td>Endpoints pueden fallar si no están correctamente expuestos.</td>
+<td>Alto</td>
+<td>Media</td>
+<td>Pruebas de conectividad y validación en Swagger. Monitoreo de logs en tiempo real.</td>
+<td>Equipo DevOps</td>
+</tr>
+<tr>
+<td>Errores en conexión con MongoDB</td>
+<td>Si la base de datos no está correctamente conectada, los movimientos no se registran.</td>
+<td>Alto</td>
+<td>Media</td>
+<td>Validación de conexión previa. Backup y restauración de datos.</td>
+<td>DBA</td>
+</tr>
+<tr>
+<td>Carga masiva de GiftCards con errores</td>
+<td>Archivos .csv mal formateados o fuera de rango pueden bloquear el proceso.</td>
+<td>Medio</td>
+<td>Alta</td>
+<td>Validación automática del archivo antes de carga. Logs detallados y rollback.</td>
+<td>Equipo Técnico</td>
+</tr>
+<tr>
+<td>Problemas de compatibilidad entre versiones de servicios</td>
+<td>Diferencias entre versiones de bono-service, GeoPOS, Hybris, etc.</td>
+<td>Alto</td>
+<td>Media</td>
+<td>Validación cruzada de versiones. Pruebas de integración previas.</td>
+<td>Equipo de Desarrollo</td>
+</tr>
+<tr>
+<td>Errores en impresión de vouchers o actas</td>
+<td>Si no se configuran correctamente las rutas o formatos, no se generan los documentos.</td>
+<td>Medio</td>
+<td>Media</td>
+<td>Validación de rutas (pdf.report.path) y pruebas de impresión.</td>
+<td>Equipo Técnico</td>
+</tr>
+<tr>
+<td>Falta de sincronización entre módulos</td>
+<td>GeoConciliación, ERP, POS pueden tener desfases en datos.</td>
+<td>Alto</td>
+<td>Media</td>
+<td>Validación de propiedad date.use.bono.service.DB y pruebas de conciliación.</td>
+<td>Equipo de Integración</td>
+</tr>
+<tr>
+<td>Problemas de seguridad en activación</td>
+<td>PINs o códigos scratch visibles o mal encriptados.</td>
+<td>Alto</td>
+<td>Alta</td>
+<td>Enmascaramiento obligatorio. Validación de visibilidad por rol.</td>
+<td>Equipo de Seguridad</td>
+</tr>
+<tr>
+<td>Errores en redención en caja</td>
+<td>Si el medio de pago no está correctamente configurado, se bloquea la operación.</td>
+<td>Alto</td>
+<td>Media</td>
+<td>Validación de sale.bono.enabled y sale.giftcard.enabled. Pruebas en caja física.</td>
+<td>Equipo QA</td>
+</tr>
+<tr>
+<td>Falta de capacitación al personal</td>
+<td>Cajeros o técnicos pueden cometer errores por desconocimiento.</td>
+<td>Medio</td>
+<td>Alta</td>
+<td>Capacitación previa. Manuales operativos y simulaciones.</td>
+<td>Equipo de Formación</td>
+</tr>
+</tbody>
+</table></body></html>
+        </div>
+    </div>
+</body>
+</html>
