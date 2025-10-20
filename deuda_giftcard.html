@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Deudas Técnicas Proyecto Giftcard – MVP</title>
+<style>
+  body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    margin: 0;
+    padding: 0;
+  }
+
+  header {
+    background-color: #0033A0;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 24px;
+    margin: 0;
+  }
+
+  table {
+    width: 90%;
+    margin: 30px auto;
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  th, td {
+    border: 1px solid #ddd;
+    padding: 12px 10px;
+    text-align: left;
+    vertical-align: top;
+  }
+
+  th {
+    background-color: #0033A0;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 13px;
+  }
+
+  tr:nth-child(even) {
+    background-color: #f2f6ff;
+  }
+
+  tr:hover {
+    background-color: #e9f1ff;
+  }
+
+  .azure {
+    color: #0033A0;
+    font-weight: bold;
+  }
+
+  footer {
+    text-align: center;
+    margin: 30px 0;
+    padding: 15px;
+    background-color: #f0f8ff;
+    color: #0033A0;
+    border-top: 3px solid #E41E26;
+    font-weight: 500;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Deudas Técnicas Proyecto Giftcard – MVP</h1>
+</header>
+
+<table>
+  <thead>
+    <tr>
+      <th>Azure</th>
+      <th>Nombre</th>
+      <th>Descripción</th>
+      <th>Deuda</th>
+      <th>Cómo cerrar</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="azure">240811</td>
+      <td>HU_EP_GEO_Conciliacion_Bonos_JSON</td>
+      <td>Ante la imposibilidad de usar Jasper dado que el informe actual 2.3.10 no soporta consumo de WS, y ante la indicación de no usar Power BI para reportes, fue necesario crear un WS que reemplazara el reporte de Jasper 2.3.10. Este reporte contiene la misma información que el Jasper 2.3.10 pero amplía la capacidad de manejo de saldos variables y redenciones parciales. Se crea WS en GEO para ser consumido por el módulo transaccional de Giftcard.</td>
+      <td>El WS se debe pasar por Bus de Integración.</td>
+      <td>Se pasará el WS por el Bus y se harán los ajustes en el módulo de consultas para usar el WS desde el Bus.</td>
+    </tr>
+
+    <tr>
+      <td class="azure">221805</td>
+      <td>HU_EP_GEO_GiftCard_Fase2_Activación Masiva GiftCard</td>
+      <td>Con el fin de solucionar la venta masiva se crea un WS en GEO que permitirá subir a través de un plano un archivo de precarga de tarjetas para que estas sean llamadas y activadas en caja sin necesidad de escanear una a una las tarjetas. (Esquema similar a carga masiva de bonos que también tiene deuda dado que ese proceso no pasa por BUS.)</td>
+      <td>Se debe definir el Front para la carga y el WS, y su desarrollo de Front. El WS se debe pasar por Bus de Integración.</td>
+      <td>Se pasará el WS por el Bus y se está a la espera de la definición del Front.</td>
+    </tr>
+
+    <tr>
+      <td class="azure">217498</td>
+      <td>HU_EP_GEO_GiftCard_Fase_2_Reporte Ventas GiftCard</td>
+      <td>Se crea WS en Geopos para saber las tarjetas vendidas en una UN en especial y así poder tener control de inventarios del mismo.</td>
+      <td>Se debe definir el Front, se debe desarrollar el Front y se debe pasar el WS por el BUS.</td>
+      <td>Se pasará el WS por el Bus y se está a la espera de la definición del Front.</td>
+    </tr>
+
+    <tr>
+      <td class="azure">199765</td>
+      <td>HU_EP_GEO_GiftCard_Fase_2_Carga de Inventario</td>
+      <td>WS que permite solicitar emisión de tarjetas a la imprenta.</td>
+      <td>Se debe definir el Front, se debe desarrollar el Front.</td>
+      <td>A la espera de la definición del Front.</td>
+    </tr>
+  </tbody>
+</table>
+
+<footer>
+  Continuemos construyendo el futuro de Alkosto y Ktronix juntos 🚀
+</footer>
+
+</body>
+</html>
