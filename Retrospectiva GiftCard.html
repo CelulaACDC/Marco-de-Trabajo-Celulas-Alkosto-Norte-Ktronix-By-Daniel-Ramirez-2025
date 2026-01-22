@@ -185,6 +185,30 @@
 <p><strong>Responsables:</strong> PO + Stakeholders + Scrum Master</p>
 </div>
 
+<h2>7. Plan de Acción (Pruebas con Volúmenes de PDR)</h2>
+<div class="card">
+  <p><strong>Gestión de Pruebas con Data en Cantidad Similar a PDR</strong></p>
+
+  <p><strong>Problema que ataca:</strong></p>
+  <ul>
+    <li>No contar con volúmenes de registros ni data representativa del entorno de Producción.</li>
+  </ul>
+
+  <p><strong>Acción concreta:</strong></p>
+  <ul>
+    <li>Cuando existan transacciones que requieran altos volúmenes de flujo de información:
+      <ul class="sub">
+        <li>Con el apoyo del recurso de Ambientes, se extraerán backups controlados de las bases de datos aplicables.</li>
+        <li>Posteriormente, estos backups se replicarán de forma controlada en los ambientes DEV y STAGE, según sea necesario, para realizar pruebas con data cercana a los valores de PDR.</li>
+      </ul>
+    </li>
+  </ul>
+
+  <p><strong>Responsables:</strong> Líder de Ambientes Célula + QA + LT + DEV</p>
+</div>
+
+
+
 </div>
 <footer>Retrospectiva Proyecto GiftCard · Documento de aprendizaje y mejora continua</footer>
 </body>
