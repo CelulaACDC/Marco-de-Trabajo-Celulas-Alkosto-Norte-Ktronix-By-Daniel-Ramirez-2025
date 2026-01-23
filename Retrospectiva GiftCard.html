@@ -49,14 +49,15 @@
 <ol>
 <li>Se logró implementar las Fases 1 y 2 de un proyecto que había estado postergado varias veces, representando un reto relevante a nivel técnico y organizacional. Con esto se equipara la funcionalidad con otros segmentos y se tienes valores agregados como redención en .com la cual no esta disponible en otras herramientas del sector.</li>
 <li>La definición de una cota de tiempo clara (30/09/2025) permitió concretar un MVP real, enfocado en la usabilidad y en la salida a producción.</li>
-<li>Como requerimiento adquirido dentro del proyecto se logro centralizar la fuente de información de bonos Alkosto/Giftcard y a su vez se modificaron todos los aplicativos para ejecutar toda su transaccionalidad en dicha fuente de información. Como resultado se espera la disminucion de procesos de conntabilizacion de Bonos entre los diferentes aplicativos</li>
 <li>A corte 20/12/2025, el proyecto ha generado ventas por $2.271.170.619, correspondientes a 6.777 GiftCards, evidenciando tracción comercial.</li>
-<li>Se logró la centralización de las fuentes de información de Bonos Alkosto / GiftCard en Bono Service, rediseñando los aplicativos para consumir una única fuente de verdad.</li>
 <li>Se estima una reducción de costos de emisión del 45,38%, comparando:
 <ul class="sub"><li>Bono en papel de seguridad: $758</li><li>GiftCard: $414</li></ul></li>
 <li>Se conformó un nuevo equipo de trabajo (Célula 2), que durante el proyecto adquirió curva de aprendizaje organizacional y técnica, quedando preparado para apoyar futuros backlogs. ademas en la marcha el nuevo equipo adquirio conocimientos en la suite de Geoconciliación permitiendo tener mas capaciada en dicho nicho de aplicacion.</li>
 <li>Las experiencias de navegación, cliente y cajero en cajas fueron desarrolladas de forma intuitiva, requiriendo solo una capacitación masiva para la operación en tiendas.</li>
-<li>La homologación de la experiencia de caja a un modelo conocido (Bonos) facilitó la adopción y entendimiento en tiendas.</li>
+<li>La homologación de la experiencia de caja a un modelo ya conocido (Bonos) facilitó significativamente la adopción y el entendimiento del proceso en tiendas.
+
+Adicionalmente, la reutilización de flujos contables previamente validados permitió reducir casi a cero el esfuerzo de desarrollo en los módulos complementarios, como PS, Contabilidad y otros sistemas relacionados, garantizando una adaptación contable rápida, controlada y alineada con los procesos existentes.
+</li>
 <li>El proyecto GiftCard fue aplicado a nivel corporativo:
 <ul class="sub"><li>Alkosto</li><li>Ktronix</li><li>Alkomprar</li><li>Nariño</li><li>Canal .com (en redención)</li></ul></li>
 <li>El equipo mostró alta resiliencia durante los dos primeros días críticos post-implementación, priorizando la estabilización del front en cajas y asegurando los flujos principales de operación.</li>
@@ -69,7 +70,6 @@
 <div class="card bad">
 <ol>
 <li>Se presentó una alta dispersión de hallazgos, con un total de 48 hallazgos relevantes reportados en azure, generando reprocesos y ajustes posteriores a la salida. Link: https://dev.azure.com/colcomercio/Ciclo%20Facturaci%C3%B3n%20POS/_workitems/edit/291536 </li>
-<li>Se evidenció una centralización excesiva de la operación, limitando la autonomía de cada líder de proceso en la gestión de sus actividades.</li>
 <li>Hubo un fallo generalizado en el análisis, concepción técnica y aseguramiento de calidad de los requerimientos no funcionales, a nivel de todo el equipo.</li>
 <li>Dada la cota de tiempo para disponibilizar el proyecto en 2025, el requerimiento de reporte contable no alcanzó un nivel adecuado de madurez, lo que obligó a tomar definiciones unilaterales para poder liberar la información.
 <ul class="sub"><li>Inicialmente se planteó DataLake + Power BI, descartado al definirse BI como herramienta de visualización y no de reportería.</li><li>Se evaluó Jasper, presentando limitaciones:
@@ -213,3 +213,4 @@
 <footer>Retrospectiva Proyecto GiftCard · Documento de aprendizaje y mejora continua</footer>
 </body>
 </html>
+
