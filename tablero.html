@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Estados de Historias de Usuario – Enfoque Célula</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    :root {
+      --bg: #f5f7fb;
+      --card: #ffffff;
+      --primary: #1e3a8a;
+      --ok: #065f46;
+      --warn: #92400e;
+      --bad: #991b1b;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --border: #e5e7eb;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 32px 24px 120px;
+    }
+
+    h1 {
+      color: var(--primary);
+      font-size: 2.1rem;
+      margin-bottom: 8px;
+    }
+
+    h2 {
+      margin-top: 48px;
+      margin-bottom: 16px;
+      font-size: 1.6rem;
+      color: var(--primary);
+      padding-left: 12px;
+      border-left: 6px solid var(--primary);
+    }
+
+    h3 {
+      margin-top: 32px;
+      margin-bottom: 12px;
+      font-size: 1.2rem;
+      color: var(--primary);
+    }
+
+    p {
+      margin: 0 0 10px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 24px 28px;
+      margin-bottom: 24px;
+      box-shadow: 0 10px 24px rgba(0,0,0,.05);
+    }
+
+    ul {
+      margin: 8px 0 0;
+      padding-left: 20px;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 12px;
+      font-size: 0.95rem;
+    }
+
+    th, td {
+      border: 1px solid var(--border);
+      padding: 10px 12px;
+      text-align: left;
+    }
+
+    th {
+      background: #f1f5f9;
+      color: var(--primary);
+      font-weight: 600;
+    }
+
+    .yes { color: var(--ok); font-weight: 600; }
+    .no { color: var(--bad); font-weight: 600; }
+    .partial { color: var(--warn); font-weight: 600; }
+
+    footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: #ffffffcc;
+      backdrop-filter: blur(6px);
+      border-top: 1px solid var(--border);
+      padding: 10px 24px;
+      font-size: 0.85rem;
+      color: var(--muted);
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+<div class="container">
+
+  <h1>Estados de Historias de Usuario – Enfoque Célula</h1>
+  <p>Resumen operativo para control real del avance, alineado a Azure DevOps y al trabajo diario de la célula.</p>
+
+  <h2>Resumen de Estados (visión célula)</h2>
+  <div class="card">
+    <ul>
+      <li><strong>Nueva / Aprobada:</strong> La célula no puede trabajar. Pendiente de negocio.</li>
+      <li><strong>Refinada:</strong> La célula entiende, acepta y se compromete.</li>
+      <li><strong>Desarrollo:</strong> DEV trabajando activamente.</li>
+      <li><strong>Fin Desarrollo:</strong> DEV terminó y entrega a QA.</li>
+      <li><strong>Pruebas QA:</strong> QA valida. DEV solo soporta.</li>
+      <li><strong>Certificado QA:</strong> Lista para negocio.</li>
+      <li><strong>Pruebas / Certificado UAT:</strong> Validación y aprobación del negocio.</li>
+      <li><strong>Producción:</strong> Despliegue y estabilización.</li>
+      <li><strong>Cerrada:</strong> HU estable, capacidad liberada.</li>
+    </ul>
+  </div>
+
+  <h2>Cuadro Visual de Estados – Operación de la Célula</h2>
+  <div class="card">
+   <table>
+  <thead>
+    <tr>
+      <th>Estado</th>
+      <th>¿Quién tiene la pelota?</th>
+      <th>¿La célula puede avanzar?</th>
+      <th>¿Quién mueve el estado?</th>
+      <th>Qué significa realmente</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Nueva</td>
+      <td>BA</td>
+      <td class="no">No</td>
+      <td>BA</td>
+      <td>HU creada, sin validar</td>
+    </tr>
+    <tr>
+      <td>Aprobada</td>
+      <td>BA</td>
+      <td class="no">No</td>
+      <td>BA</td>
+      <td>Negocio aprobó alcance</td>
+    </tr>
+    <tr>
+      <td>Refinada</td>
+      <td>Célula completa</td>
+      <td class="yes">Sí</td>
+      <td>Scrum Master</td>
+      <td>Entendida y lista para trabajar</td>
+    </tr>
+    <tr>
+      <td>Desarrollo</td>
+      <td>DEV</td>
+      <td class="yes">Sí</td>
+      <td>DEV</td>
+      <td>Código en construcción</td>
+    </tr>
+    <tr>
+      <td>Fin Desarrollo</td>
+      <td>DEV</td>
+      <td class="partial">No</td>
+      <td>DEV</td>
+      <td>Desarrollo terminado, listo para QA</td>
+    </tr>
+    <tr>
+      <td>Pruebas QA</td>
+      <td>QA</td>
+      <td class="partial">No</td>
+      <td>QA</td>
+      <td>Validación funcional y técnica</td>
+    </tr>
+    <tr>
+      <td>Certificado QA</td>
+      <td>QA</td>
+      <td class="partial">No</td>
+      <td>QA</td>
+      <td>Lista para validación de negocio</td>
+    </tr>
+    <tr>
+      <td>Pruebas UAT</td>
+      <td>Negocio</td>
+      <td class="partial">No</td>
+      <td>BA</td>
+      <td>Validación funcional del negocio</td>
+    </tr>
+    <tr>
+      <td>Certificado UAT</td>
+      <td>Negocio</td>
+      <td class="partial">No</td>
+      <td>BA</td>
+      <td>Aprobación final</td>
+    </tr>
+    <tr>
+      <td>Producción</td>
+      <td>SM + LT</td>
+      <td class="partial">Parcial</td>
+      <td>Scrum Master</td>
+      <td>Despliegue y estabilización</td>
+    </tr>
+    <tr>
+      <td>Cerrada</td>
+      <td>BA</td>
+      <td class="no">No</td>
+      <td>Scrum Master</td>
+      <td>HU finalizada</td>
+    </tr>
+  </tbody>
+</table>
+  </div>
+
+  <h2>Estados Especiales</h2>
+  <div class="card">
+    <ul>
+      <li><strong>Bloqueada:</strong> Impedimento real. El Scrum Master debe gestionar desbloqueo.</li>
+      <li><strong>Cancelada:</strong> Ya no aplica. Se libera capacidad inmediatamente.</li>
+    </ul>
+  </div>
+
+  <h2>Regla de Oro</h2>
+  <div class="card">
+    <p><strong>Si la célula no puede avanzar, el estado está mal.</strong></p>
+    <p>Los estados reflejan realidad operativa, no intención ni presión.</p>
+	<p>Es de vital importancia la actualización de tablero con las notas en la sección de @notas, es responsabilidad de cada miembro del equipo velar por la actualización de estados, Bloqueos, Preguntas y aclaraciones.</p>
+	<p>Ningun comentario sobra todas las opiniones son tenidas en cuenta, La ausencia de notas si puede llevar a un problema.</p>
+  </div>
+
+</div>
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Gestión de BUGs – Azure DevOps</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+:root {
+  --primary:#1f3a5f;
+  --bg:#f5f7fb;
+  --card:#ffffff;
+  --border:#dce1e7;
+  --accent:#4f8cff;
+  --qa:#2ecc71;
+  --dev:#f39c12;
+  --po:#9b59b6;
+  --rm:#3498db;
+  --sm:#16a085;
+  --danger:#e74c3c;
+  --info:#17a2b8;
+}
+
+body {
+  margin:0;
+  padding:24px;
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  background:var(--bg);
+  color:#2c3e50;
+}
+
+.container {
+  max-width:1200px;
+  margin:auto;
+}
+
+h1 {
+  color:var(--primary);
+  margin-bottom:4px;
+}
+
+h2 {
+  margin-top:32px;
+  padding-left:12px;
+  border-left:5px solid var(--accent);
+  color:var(--primary);
+}
+
+.card {
+  background:var(--card);
+  padding:20px;
+  border-radius:10px;
+  box-shadow:0 4px 10px rgba(0,0,0,0.05);
+  margin-top:16px;
+}
+
+.flow {
+  display:flex;
+  flex-wrap:wrap;
+  gap:14px;
+  margin-top:16px;
+}
+
+.state {
+  flex:1 1 220px;
+  border:1px solid var(--border);
+  border-radius:10px;
+  padding:14px;
+  background:#fff;
+}
+
+.state h4 {
+  margin:0 0 6px 0;
+  color:var(--primary);
+}
+
+.badge {
+  display:inline-block;
+  font-size:12px;
+  padding:4px 10px;
+  border-radius:20px;
+  color:#fff;
+  margin-bottom:8px;
+}
+
+.qa { background:var(--qa); }
+.dev { background:var(--dev); }
+.po { background:var(--po); }
+.rm { background:var(--rm); }
+.sm { background:var(--sm); }
+.danger { background:var(--danger); }
+.info { background:var(--info); }
+
+table {
+  width:100%;
+  border-collapse:collapse;
+  margin-top:16px;
+  background:#fff;
+  border-radius:10px;
+  overflow:hidden;
+}
+
+th {
+  background:var(--primary);
+  color:#fff;
+  text-align:left;
+  padding:12px;
+}
+
+td {
+  padding:12px;
+  border-bottom:1px solid var(--border);
+  font-size:14px;
+}
+
+tr:last-child td {
+  border-bottom:none;
+}
+
+.note {
+  margin-top:24px;
+  background:#fff;
+  padding:16px;
+  border-radius:8px;
+  border-left:5px solid var(--danger);
+  font-size:13px;
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<h1>Gestión de BUGs – Azure DevOps</h1>
+<p><strong>Modelo de estados, responsables y control (BUG)</strong></p>
+
+<!-- Resumen -->
+<div class="card">
+  <p>
+    Los BUGs se gestionan como <strong>Work Items independientes</strong> en Azure DevOps.
+    El Scrum Master gobierna el flujo inicial y la asignación del responsable.
+    Se incorpora el estado <strong>ACTIVA</strong> como mecanismo formal para solicitud de información adicional.
+  </p>
+</div>
+
+<!-- Flujo -->
+<h2>Flujo Oficial de Estados</h2>
+
+<div class="flow">
+
+  <div class="state">
+    <h4>Nueva</h4>
+    <span class="badge qa">QA / Usuario</span>
+    <p>BUG recién creado, pendiente de gestión.</p>
+  </div>
+
+  <div class="state">
+    <h4>Activa</h4>
+    <span class="badge info">DEV / LT</span>
+    <span class="badge sm">Scrum Master</span>
+    <p>
+      Estado utilizado cuando el DEV requiere más información para continuar.
+      <strong>Debe incluir nota obligatoria</strong> detallando la información solicitada.
+    </p>
+  </div>
+
+  <div class="state">
+    <h4>Proveedor</h4>
+    <span class="badge sm">Scrum Master</span>
+    <span class="badge dev">DEV / LT</span>
+    <p>
+      El Scrum Master asigna el responsable.
+      En este estado el DEV y el LT realizan la corrección del BUG.
+    </p>
+  </div>
+
+  <div class="state">
+    <h4>Desarrollo finalizado</h4>
+    <span class="badge dev">DEV / LT</span>
+    <p>Corrección terminada.</p>
+  </div>
+
+  <div class="state">
+    <h4>Resuelta</h4>
+    <span class="badge qa">QA</span>
+    <p>QA valida la corrección.</p>
+  </div>
+
+  <div class="state">
+    <h4>Cerrada</h4>
+    <span class="badge rm">Scrum Master</span>
+    <p>BUG desplegado y confirmado en ambiente.</p>
+  </div>
+
+  <div class="state">
+    <h4>Reabierto</h4>
+    <span class="badge danger">QA</span>
+    <p>Corrección no válida. El BUG regresa a <strong>Proveedor</strong>.</p>
+  </div>
+
+  <div class="state">
+    <h4>Cancelada</h4>
+    <span class="badge po">Scrum Master</span>
+    <p>BUG no aplica, duplicado o inválido.</p>
+  </div>
+
+</div>
+
+<!-- Cuadro de control -->
+<h2>Cuadro de Control de Estados</h2>
+
+<table>
+<thead>
+<tr>
+  <th>Estado</th>
+  <th>Objetivo</th>
+  <th>Quién cambia el estado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Nueva</td>
+  <td>Registrar BUG</td>
+  <td>QA</td>
+</tr>
+<tr>
+  <td>Activa</td>
+  <td>Solicitar información adicional</td>
+  <td>DEV / LT</td>
+</tr>
+<tr>
+  <td>Proveedor</td>
+  <td>Asignar responsable y corregir BUG</td>
+  <td>Scrum Master</td>
+</tr>
+<tr>
+  <td>Desarrollo finalizado</td>
+  <td>Entregar corrección a QA</td>
+  <td>DEV / LT</td>
+</tr>
+<tr>
+  <td>Resuelta</td>
+  <td>Validar corrección</td>
+  <td>QA</td>
+</tr>
+<tr>
+  <td>Cerrada</td>
+  <td>Confirmar despliegue</td>
+  <td>Scrum Master</td>
+</tr>
+<tr>
+  <td>Reabierto</td>
+  <td>Reingresar BUG al flujo</td>
+  <td>QA</td>
+</tr>
+<tr>
+  <td>Cancelada</td>
+  <td>Cancelar BUG no válido</td>
+  <td>Scrum Master</td>
+</tr>
+</tbody>
+</table>
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Gestión de BUGs – Azure DevOps</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+:root {
+  --primary:#1f3a5f;
+  --bg:#f5f7fb;
+  --card:#ffffff;
+  --border:#dce1e7;
+  --accent:#4f8cff;
+  --qa:#2ecc71;
+  --dev:#f39c12;
+  --po:#9b59b6;
+  --rm:#3498db;
+  --sm:#16a085;
+  --danger:#e74c3c;
+  --info:#17a2b8;
+}
+
+body {
+  margin:0;
+  padding:24px;
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  background:var(--bg);
+  color:#2c3e50;
+}
+
+.container {
+  max-width:1200px;
+  margin:auto;
+}
+
+h1 {
+  color:var(--primary);
+  margin-bottom:4px;
+}
+
+h2 {
+  margin-top:32px;
+  padding-left:12px;
+  border-left:5px solid var(--accent);
+  color:var(--primary);
+}
+
+.card {
+  background:var(--card);
+  padding:20px;
+  border-radius:10px;
+  box-shadow:0 4px 10px rgba(0,0,0,0.05);
+  margin-top:16px;
+}
+
+.flow {
+  display:flex;
+  flex-wrap:wrap;
+  gap:14px;
+  margin-top:16px;
+}
+
+.state {
+  flex:1 1 220px;
+  border:1px solid var(--border);
+  border-radius:10px;
+  padding:14px;
+  background:#fff;
+}
+
+.state h4 {
+  margin:0 0 6px 0;
+  color:var(--primary);
+}
+
+.badge {
+  display:inline-block;
+  font-size:12px;
+  padding:4px 10px;
+  border-radius:20px;
+  color:#fff;
+  margin-bottom:8px;
+}
+
+.qa { background:var(--qa); }
+.dev { background:var(--dev); }
+.po { background:var(--po); }
+.rm { background:var(--rm); }
+.sm { background:var(--sm); }
+.danger { background:var(--danger); }
+.info { background:var(--info); }
+
+.flow-diagram {
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  align-items:center;
+  margin-top:12px;
+}
+
+.flow-step {
+  background:#fff;
+  border:1px solid var(--border);
+  padding:10px 14px;
+  border-radius:20px;
+  font-size:13px;
+  font-weight:600;
+}
+
+.arrow {
+  font-size:20px;
+  color:var(--accent);
+}
+
+.note {
+  margin-top:24px;
+  background:#fff;
+  padding:16px;
+  border-radius:8px;
+  border-left:5px solid var(--danger);
+  font-size:13px;
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+
+
+<!-- ESQUEMAS DE FLUJO -->
+<h2>Esquemas de Flujo de Estados</h2>
+
+<!-- Flujo Feliz -->
+<div class="card">
+  <h3>✅ Flujo feliz</h3>
+  <div class="flow-diagram">
+    <div class="flow-step">Nueva</div>
+    <div class="arrow">→</div>
+    <div class="flow-step">Proveedor</div>
+    <div class="arrow">→</div>
+    <div class="flow-step">Desarrollo finalizado</div>
+    <div class="arrow">→</div>
+    <div class="flow-step">Resuelta</div>
+    <div class="arrow">→</div>
+    <div class="flow-step">Cerrada</div>
+  </div>
+  <p>El BUG cuenta con información suficiente, se corrige, se valida y se despliega sin reprocesos.</p>
+</div>
+
+<!-- DEV solicita info -->
+<div class="card">
+  <h3>ℹ️ Flujo cuando DEV solicita más información</h3>
+  <div class="flow-diagram">
+    <div class="flow-step">Proveedor</div>
+    <div class="arrow">→</div>
+    <div class="flow-step">Activa</div>
+    <div class="arrow">→</div>
+    <div class="flow-step">Proveedor</div>
+  </div>
+  <p>
+    El DEV/LT identifica información insuficiente y devuelve el BUG a <strong>Activa</strong>
+    con nota obligatoria. Una vez aclarado, el Scrum Master lo retorna a <strong>Proveedor</strong>.
+  </p>
+</div>
+
+<!-- QA reabre -->
+<div class="card">
+  <h3>🔁 Flujo cuando QA reabre un BUG</h3>
+  <div class="flow-diagram">
+    <div class="flow-step">Resuelta</div>
+    <div class="arrow">→</div>
+    <div class="flow-step">Reabierto</div>
+    <div class="arrow">→</div>
+    <div class="flow-step">Proveedor</div>
+  </div>
+  <p>
+    QA detecta que la corrección no cumple o genera regresión.
+    El BUG se reabre y vuelve al flujo de corrección.
+  </p>
+</div>
+
+<!-- Descarte -->
+<div class="card">
+  <h3>🚫 Flujo de descarte del BUG</h3>
+  <div class="flow-diagram">
+    <div class="flow-step">Nueva / Activa</div>
+    <div class="arrow">→</div>
+    <div class="flow-step">Cancelada</div>
+  </div>
+  <p>
+    El Scrum Master descarta el BUG cuando se confirma que
+    <strong>no aplica, es duplicado o inválido</strong>.
+  </p>
+</div>
+
+<div class="note">
+<strong>Regla transversal:</strong><br>
+Todo cambio de estado debe tener trazabilidad mediante nota clara cuando aplique,
+especialmente en <strong>Activa</strong> y <strong>Reabierto</strong>.
+</div>
+
+</div>
+</body>
+</html>
+
+
+<div class="note">
+<strong>Reglas clave:</strong><br>
+• ACTIVA solo se usa para solicitud de información<br>
+• Toda solicitud debe dejar nota clara y accionable<br>
+• DEV y LT corrigen únicamente en Proveedor<br>
+• Cerrada solo después de despliegue
+</div>
+
+</div>
+</body>
+</html>
+
+
+<footer>
+  Estados de HU · Enfoque Célula · Gobierno operativo y mejora continua
+</footer>
+</body>
+</html>
