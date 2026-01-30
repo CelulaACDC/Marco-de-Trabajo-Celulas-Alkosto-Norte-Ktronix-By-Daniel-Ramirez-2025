@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Gestión de BUGs – Azure DevOps</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+:root {
+  --primary:#1f3a5f;
+  --bg:#f5f7fb;
+  --card:#ffffff;
+  --border:#dce1e7;
+  --accent:#4f8cff;
+  --qa:#2ecc71;
+  --dev:#f39c12;
+  --po:#9b59b6;
+  --rm:#3498db;
+  --sm:#16a085;
+  --danger:#e74c3c;
+  --info:#17a2b8;
+}
+
+body {
+  margin:0;
+  padding:24px;
+  font-family:"Segoe UI", Roboto, Arial, sans-serif;
+  background:var(--bg);
+  color:#2c3e50;
+}
+
+.container {
+  max-width:1200px;
+  margin:auto;
+}
+
+h1 {
+  color:var(--primary);
+  margin-bottom:6px;
+}
+
+h2 {
+  margin-top:36px;
+  padding-left:12px;
+  border-left:5px solid var(--accent);
+  color:var(--primary);
+}
+
+h3 {
+  margin-top:20px;
+  color:var(--primary);
+}
+
+.card {
+  background:var(--card);
+  padding:20px;
+  border-radius:10px;
+  box-shadow:0 4px 10px rgba(0,0,0,0.05);
+  margin-top:16px;
+}
+
+.flow {
+  display:flex;
+  flex-wrap:wrap;
+  gap:14px;
+  margin-top:16px;
+}
+
+.state {
+  flex:1 1 220px;
+  border:1px solid var(--border);
+  border-radius:10px;
+  padding:14px;
+  background:#fff;
+}
+
+.state h4 {
+  margin:0 0 6px 0;
+  color:var(--primary);
+}
+
+.badge {
+  display:inline-block;
+  font-size:12px;
+  padding:4px 10px;
+  border-radius:20px;
+  color:#fff;
+  margin-bottom:8px;
+}
+
+.qa { background:var(--qa); }
+.dev { background:var(--dev); }
+.po { background:var(--po); }
+.rm { background:var(--rm); }
+.sm { background:var(--sm); }
+.danger { background:var(--danger); }
+.info { background:var(--info); }
+
+table {
+  width:100%;
+  border-collapse:collapse;
+  margin-top:16px;
+}
+
+th {
+  background:var(--primary);
+  color:#fff;
+  padding:12px;
+  text-align:left;
+}
+
+td {
+  padding:12px;
+  border-bottom:1px solid var(--border);
+  font-size:14px;
+}
+
+.flow-diagram {
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  align-items:center;
+  margin-top:12px;
+}
+
+.flow-step {
+  background:#fff;
+  border:1px solid var(--border);
+  padding:10px 14px;
+  border-radius:20px;
+  font-size:13px;
+  font-weight:600;
+}
+
+.arrow {
+  font-size:20px;
+  color:var(--accent);
+}
+
+.note {
+  margin-top:24px;
+  background:#fff;
+  padding:16px;
+  border-radius:8px;
+  border-left:5px solid var(--danger);
+  font-size:13px;
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<h1>Gestión de BUGs – Azure DevOps</h1>
+<p><strong>Modelo operativo de estados, responsables y caminos</strong></p>
+
+<div class="card">
+  <p>
+    Los BUGs se gestionan como Work Items independientes.
+    El flujo prioriza claridad de responsabilidad, trazabilidad
+    y control real del estado.
+  </p>
+</div>
+
+<!-- ESTADOS -->
+<h2>Flujo Oficial de Estados</h2>
+
+<div class="flow">
+
+  <div class="state">
+    <h4>Nueva</h4>
+    <span class="badge qa">QA / Usuario</span>
+    <p>BUG registrado y pendiente de gestión inicial.</p>
+  </div>
+
+  <div class="state">
+    <h4>Activa</h4>
+    <span class="badge sm">Scrum Master</span>
+    <span class="badge info">DEV / LT / Configuración</span>
+    <p>
+      • El <strong>Scrum Master</strong> mueve de <strong>Nueva → Activa</strong>
+      para continuar el flujo y puede asignar al
+      <strong>Analista de Configuración</strong> o al <strong>DEV</strong> según el caso.<br><br>
+      • El <strong>DEV / LT y/o Analista de Configuración</strong> devuelve el BUG
+      a <strong>Activa</strong> cuando requiere notas aclaratorias
+      o información faltante.<br><br>
+      <strong>Nota obligatoria y accionable.</strong>
+    </p>
+  </div>
+
+  <div class="state">
+    <h4>Proveedor</h4>
+    <span class="badge dev">DEV / LT</span>
+    <span class="badge po">Analista Configuración</span>
+    <p>
+      <strong>Estado de corrección.</strong><br>
+      DEV, LT o Analista de Configuración trabajan activamente el BUG.<br><br>
+      El <strong>Analista de Configuración</strong> evalúa:<br>
+      • Si es tema de proveedor → permanece o pasa a <strong>Proveedor</strong><br>
+      • Si es tema de ambiente/configuración → pasa a <strong>Resuelta</strong>
+    </p>
+  </div>
+
+  <div class="state">
+    <h4>Resuelta</h4>
+    <span class="badge dev">DEV / Configuración</span>
+    <p>
+      El BUG pasa a <strong>Resuelta</strong> cuando:
+      <br>• El DEV envía correo de liberación
+      <br>• Se confirma solución por ambiente/configuración
+    </p>
+  </div>
+
+  <div class="state">
+    <h4>Cerrada</h4>
+    <span class="badge qa">QA</span>
+    <p>QA valida y confirma la corrección.</p>
+  </div>
+
+  <div class="state">
+    <h4>Reabierto</h4>
+    <span class="badge danger">QA</span>
+    <p>La corrección no cumple. El BUG retorna a <strong>Proveedor</strong>.</p>
+  </div>
+
+  <div class="state">
+    <h4>Cancelada</h4>
+    <span class="badge po">Scrum Master</span>
+    <p>BUG no aplica, duplicado o inválido.</p>
+  </div>
+
+</div>
+
+<!-- CAMINOS -->
+<h2>Caminos del Flujo</h2>
+
+<div class="card">
+  <h3>✅ Flujo feliz</h3>
+  <div class="flow-diagram">
+    <div class="flow-step">Nueva</div>
+    <div class="arrow">→</div>
+    <div class="flow-step">Activa</div>
+    <div class="arrow">→</div>
+    <div class="flow-step">Proveedor</div>
+    <div class="arrow">→</div>
+    <div class="flow-step">Resuelta</div>
+    <div class="arrow">→</div>
+    <div class="flow-step">Cerrada</div>
+  </div>
+</div>
+
+<div class="card">
+  <h3>ℹ️ DEV / Configuración solicita información</h3>
+  <div class="flow-diagram">
+    <div class="flow-step">Proveedor</div>
+    <div class="arrow">→</div>
+    <div class="flow-step">Activa</div>
+    <div class="arrow">→</div>
+    <div class="flow-step">Proveedor</div>
+  </div>
+  <p>El BUG regresa a Activa con nota aclaratoria obligatoria.</p>
+</div>
+
+<div class="card">
+  <h3>🔁 QA reabre BUG</h3>
+  <div class="flow-diagram">
+    <div class="flow-step">Resuelta</div>
+    <div class="arrow">→</div>
+    <div class="flow-step">Reabierto</div>
+    <div class="arrow">→</div>
+    <div class="flow-step">Proveedor</div>
+  </div>
+</div>
+
+<div class="card">
+  <h3>🚫 Descarte de BUG</h3>
+  <div class="flow-diagram">
+    <div class="flow-step">Nueva / Activa</div>
+    <div class="arrow">→</div>
+    <div class="flow-step">Cancelada</div>
+  </div>
+</div>
+
+<div class="note">
+<strong>Reglas transversales:</strong><br>
+• Activa habilita el flujo y gestiona faltantes<br>
+• Toda devolución debe tener nota clara<br>
+• QA es el único que cierra o reabre<br>
+• El estado debe reflejar realidad operativa
+</div>
+
+</div>
+</body>
+</html>
