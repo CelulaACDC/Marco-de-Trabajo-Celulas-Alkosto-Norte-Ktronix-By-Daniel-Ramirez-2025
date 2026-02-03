@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Estados de Historias de Usuario – Enfoque Célula</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    :root {
+      --bg: #f5f7fb;
+      --card: #ffffff;
+      --primary: #1e3a8a;
+      --ok: #065f46;
+      --warn: #92400e;
+      --bad: #991b1b;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --border: #e5e7eb;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 32px 24px 120px;
+    }
+
+    h1 {
+      color: var(--primary);
+      font-size: 2.1rem;
+      margin-bottom: 8px;
+    }
+
+    h2 {
+      margin-top: 48px;
+      margin-bottom: 16px;
+      font-size: 1.6rem;
+      color: var(--primary);
+      padding-left: 12px;
+      border-left: 6px solid var(--primary);
+    }
+
+    h3 {
+      margin-top: 32px;
+      margin-bottom: 12px;
+      font-size: 1.2rem;
+      color: var(--primary);
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 24px 28px;
+      margin-bottom: 24px;
+      box-shadow: 0 10px 24px rgba(0,0,0,.05);
+    }
+
+    ul {
+      margin: 8px 0 0;
+      padding-left: 20px;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 12px;
+      font-size: 0.95rem;
+    }
+
+    th, td {
+      border: 1px solid var(--border);
+      padding: 10px 12px;
+      text-align: left;
+    }
+
+    th {
+      background: #f1f5f9;
+      color: var(--primary);
+      font-weight: 600;
+    }
+
+    .yes { color: var(--ok); font-weight: 600; }
+    .no { color: var(--bad); font-weight: 600; }
+    .partial { color: var(--warn); font-weight: 600; }
+
+    svg text {
+      font-family: system-ui, Arial;
+      fill: var(--text);
+      font-size: 13px;
+      font-weight: 600;
+    }
+  </style>
+</head>
+
+<body>
+<div class="container">
+
+<h1>Estados de Historias de Usuario – Enfoque Célula</h1>
+<p>Resumen operativo para control real del avance, alineado a Azure DevOps y al trabajo diario de la célula.</p>
+
+<h2>Resumen de Estados (visión célula)</h2>
+<div class="card">
+  <ul>
+    <li><strong>Nueva / Aprobada:</strong> La célula no puede trabajar. Pendiente de negocio.</li>
+    <li><strong>Refinada:</strong> La célula entiende, acepta y se compromete.</li>
+    <li><strong>Desarrollo:</strong> DEV trabajando activamente.</li>
+    <li><strong>Fin Desarrollo:</strong> DEV terminó y entrega a QA con correo de liberación.</li>
+    <li><strong>Pruebas QA:</strong> QA valida. DEV solo soporta.</li>
+    <li><strong>Certificado QA:</strong> Lista para negocio.</li>
+    <li><strong>Certificado UAT (Review):</strong> Validación y aprobación del negocio.</li>
+    <li><strong>Producción:</strong> Despliegue y estabilización.</li>
+    <li><strong>Cerrada:</strong> HU estable, capacidad liberada.</li>
+  </ul>
+</div>
+
+<!-- ================= CUADRO DE ESTADOS HU ================= -->
+<table border="1" cellspacing="0" cellpadding="8" width="100%">
+  <thead style="background-color:#f3f4f6;">
+    <tr>
+      <th>Estado</th>
+      <th>¿Quién mueve el estado?</th>
+      <th>Qué significa realmente</th>
+      <th>Evidencia o Artefacto</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Nueva / Aprobada</td>
+      <td>BA</td>
+      <td>HU creada, sin validar</td>
+      <td>HU Escrita en Azure</td>
+    </tr>
+
+    <tr>
+      <td><strong>Refinada</strong></td>
+      <td><strong>BA</strong></td>
+      <td>Negocio aprobó alcance, Entendida y lista para trabajar</td>
+      <td>Nota en HU con Link de Grabación de Teams</td>
+    </tr>
+
+    <tr>
+      <td>Desarrollo</td>
+      <td>DEV</td>
+      <td>Código en construcción</td>
+      <td></td>
+    </tr>
+
+    <tr>
+      <td>Fin Desarrollo</td>
+      <td>DEV</td>
+      <td>
+        Desarrollo terminado, listo para QA, con entrega de 
+        <strong>correo de liberación</strong>
+      </td>
+      <td>
+        Correo de Liberación + Continuar con Nota de Liberación detallada
+      </td>
+    </tr>
+
+    <tr>
+      <td><strong>Pruebas QA</strong></td>
+      <td><strong>LQA</strong></td>
+      <td>Validación funcional y técnica</td>
+      <td></td>
+    </tr>
+
+    <tr>
+      <td>Certificado QA</td>
+      <td>QA</td>
+      <td>Lista para validación de negocio</td>
+      <td>
+        Nota en HU sobre la Finalización de pruebas junto con Link de test Plan
+      </td>
+    </tr>
+
+    <tr>
+      <td style="color:red;"><strong>Certificado UAT (Review)</strong></td>
+      <td>BA</td>
+      <td>Aprobación final</td>
+      <td>Nota en HU con Link de Grabación de Teams</td>
+    </tr>
+
+    <tr>
+      <td>Producción</td>
+      <td>Scrum Master</td>
+      <td>Despliegue y estabilización</td>
+      <td></td>
+    </tr>
+
+    <tr>
+      <td>Cerrada</td>
+      <td>Scrum Master</td>
+      <td>HU finalizada</td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+	<h2>Flujo Visual de Estados</h2>
+<div class="card">
+<svg width="100%" height="260" viewBox="0 0 1400 260">
+<defs>
+  <marker id="arrow" markerWidth="10" markerHeight="10" refX="6" refY="3" orient="auto">
+    <path d="M0,0 L6,3 L0,6 Z" fill="#374151"/>
+  </marker>
+</defs>
+
+<!-- Fila 1 -->
+<rect x="30" y="60" width="130" height="45" rx="10" fill="#fff" stroke="#1e3a8a" stroke-width="2"/>
+<text x="95" y="88" text-anchor="middle">Nueva</text>
+
+<rect x="190" y="60" width="140" height="45" rx="10" fill="#fff" stroke="#1e3a8a" stroke-width="2"/>
+<text x="260" y="88" text-anchor="middle">Aprobada</text>
+
+<rect x="360" y="60" width="140" height="45" rx="10" fill="#fff" stroke="#1e3a8a" stroke-width="2"/>
+<text x="430" y="88" text-anchor="middle">Refinada</text>
+
+<rect x="530" y="60" width="150" height="45" rx="10" fill="#fff" stroke="#1e3a8a" stroke-width="2"/>
+<text x="605" y="88" text-anchor="middle">Desarrollo</text>
+
+<rect x="710" y="60" width="170" height="45" rx="10" fill="#fff" stroke="#1e3a8a" stroke-width="2"/>
+<text x="795" y="88" text-anchor="middle">Fin Desarrollo</text>
+
+<!-- Fila 2 -->
+<rect x="190" y="150" width="160" height="45" rx="10" fill="#fff" stroke="#1e3a8a" stroke-width="2"/>
+<text x="270" y="178" text-anchor="middle">Pruebas QA</text>
+
+<rect x="380" y="150" width="170" height="45" rx="10" fill="#fff" stroke="#1e3a8a" stroke-width="2"/>
+<text x="465" y="178" text-anchor="middle">Certificado QA</text>
+
+<rect x="580" y="150" width="190" height="45" rx="10" fill="#fff" stroke="#1e3a8a" stroke-width="2"/>
+<text x="675" y="178" text-anchor="middle">Pruebas / Cert. UAT /Review</text>
+
+<rect x="800" y="150" width="150" height="45" rx="10" fill="#fff" stroke="#1e3a8a" stroke-width="2"/>
+<text x="875" y="178" text-anchor="middle">Producción</text>
+
+<rect x="980" y="150" width="140" height="45" rx="10" fill="#fff" stroke="#1e3a8a" stroke-width="2"/>
+<text x="1050" y="178" text-anchor="middle">Cerrada</text>
+
+<!-- Flechas fila 1 -->
+<line x1="160" y1="83" x2="190" y2="83" stroke="#374151" stroke-width="2" marker-end="url(#arrow)"/>
+<line x1="330" y1="83" x2="360" y2="83" stroke="#374151" stroke-width="2" marker-end="url(#arrow)"/>
+<line x1="500" y1="83" x2="530" y2="83" stroke="#374151" stroke-width="2" marker-end="url(#arrow)"/>
+<line x1="680" y1="83" x2="710" y2="83" stroke="#374151" stroke-width="2" marker-end="url(#arrow)"/>
+
+<!-- Flecha bajada -->
+<line x1="795" y1="105" x2="270" y2="150" stroke="#374151" stroke-width="2" marker-end="url(#arrow)"/>
+
+<!-- Flechas fila 2 -->
+<line x1="350" y1="173" x2="380" y2="173" stroke="#374151" stroke-width="2" marker-end="url(#arrow)"/>
+<line x1="550" y1="173" x2="580" y2="173" stroke="#374151" stroke-width="2" marker-end="url(#arrow)"/>
+<line x1="770" y1="173" x2="800" y2="173" stroke="#374151" stroke-width="2" marker-end="url(#arrow)"/>
+<line x1="950" y1="173" x2="980" y2="173" stroke="#374151" stroke-width="2" marker-end="url(#arrow)"/>
+
+</svg>
+</div>
+
+
+<h2>Caminos del Flujo</h2>
+
+<div class="card">
+<h3>Camino Feliz</h3>
+<ul>
+<li>Nueva → Aprobada → Refinada</li>
+<li>Refinada → Desarrollo → Fin Desarrollo</li>
+<li>Fin Desarrollo → Pruebas QA → Certificado QA</li>
+<li>Certificado QA → Pruebas / Certificado UAT (Review) → Producción</li>
+<li>Producción → Cerrada</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>Caminos No Felices</h3>
+<ul>
+<li><strong>Reproceso técnico:</strong> Pruebas QA → Desarrollo</li>
+<li><strong>Observaciones de negocio:</strong> UAT → BA valida contra Criterios de Aceptación y define BUG o Evolutivo</li>
+<li><strong>Observaciones de negocio:</strong> Si esta dentro de Criterios de Aceptación BUG → Desarrollo </li>
+<li><strong>Observaciones de negocio:</strong> Si esta Fuera de Alcance → Nuevas HU </li>
+<li><strong>Bloqueo:</strong> Cualquier estado → Bloqueada</li>
+<li><strong>Cancelación:</strong> Cualquier estado → Cancelada</li>
+</ul>
+</div>
+
+<h2>Estados Especiales</h2>
+<div class="card">
+<ul>
+<li><strong>Bloqueada:</strong> Impedimento real. El Scrum Master debe gestionar desbloqueo.</li>
+<li><strong>Cancelada:</strong> Ya no aplica. Se libera capacidad inmediatamente.</li>
+</ul>
+</div>
+
+<h2>Regla de Oro</h2>
+<div class="card">
+<p><strong>Si la célula no puede avanzar, el estado está mal.</strong></p>
+<p>Los estados reflejan realidad operativa, no intención ni presión.</p>
+<p>La actualización de notas (@notas) es obligatoria para bloqueos, dudas y aclaraciones.</p>
+<p>La ausencia de notas puede generar reprocesos y retrasos.</p>
+</div>
+
+</div>
+</body>
+</html>
