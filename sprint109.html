@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Planeación Sprint</title>
+
+<style>
+
+body{
+font-family:Segoe UI,Arial;
+background:#f3f4f6;
+margin:0;
+}
+
+header{
+background:#111827;
+color:white;
+padding:18px;
+font-size:22px;
+font-weight:bold;
+}
+
+.container{
+padding:20px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:20px;
+margin-bottom:20px;
+}
+
+.card{
+background:white;
+border-radius:10px;
+padding:18px;
+box-shadow:0 3px 10px rgba(0,0,0,0.08);
+}
+
+.card h3{
+margin-top:0;
+font-size:16px;
+}
+
+.big{
+font-size:28px;
+font-weight:bold;
+color:#2563eb;
+}
+
+.table-box{
+background:white;
+padding:20px;
+border-radius:10px;
+box-shadow:0 3px 10px rgba(0,0,0,0.08);
+margin-top:20px;
+overflow:auto;
+}
+
+table{
+border-collapse:collapse;
+width:100%;
+min-width:900px;
+}
+
+th,td{
+border:1px solid #e5e7eb;
+padding:6px;
+font-size:13px;
+}
+
+th{
+background:#f1f5f9;
+}
+
+tr:nth-child(even){
+background:#fafafa;
+}
+
+.total{
+background:#dbeafe;
+font-weight:bold;
+}
+
+.alert{
+background:#fee2e2;
+font-weight:bold;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+Planeación Sprint
+</header>
+
+<div class="container">
+
+<div class="grid">
+
+<div class="card">
+<h3>Inicio</h3>
+<div class="big">16-03-2026</div>
+</div>
+
+<div class="card">
+<h3>Fin</h3>
+<div class="big">03-04-2026</div>
+</div>
+
+<div class="card">
+<h3>Total QA Disponible</h3>
+<div class="big">564</div>
+</div>
+
+<div class="card">
+<h3>Total DEV Disponible</h3>
+<div class="big">416</div>
+</div>
+
+<div class="card">
+<h3>Total LT Disponible</h3>
+<div class="big">44</div>
+</div>
+
+</div>
+
+
+<div class="table-box">
+
+<h3>Capacidad QA</h3>
+
+<table>
+
+<tr>
+<th>QA</th>
+<th>Asignación</th>
+<th>Horas</th>
+</tr>
+
+<tr><td>Cami</td><td>100%</td><td>120</td></tr>
+<tr><td>Vlado</td><td>100%</td><td>120</td></tr>
+<tr><td>Dey</td><td>100%</td><td>120</td></tr>
+<tr><td>Cristian</td><td>100%</td><td>120</td></tr>
+<tr><td>Stefy</td><td>100%</td><td>120</td></tr>
+<tr><td>Santi</td><td>50%</td><td>60</td></tr>
+
+<tr class="total">
+<td>Total</td>
+<td></td>
+<td>660</td>
+</tr>
+
+<tr>
+<td>Licencias Equipo</td>
+<td></td>
+<td>96</td>
+</tr>
+
+<tr class="total">
+<td>Total Disponible</td>
+<td></td>
+<td>564</td>
+</tr>
+
+</table>
+
+</div>
+
+
+<div class="table-box">
+
+<h3>Capacidad DEV</h3>
+
+<table>
+
+<tr><th>DEV</th><th>Asignación</th><th>Horas</th></tr>
+
+<tr><td>Bele</td><td>100%</td><td>120</td></tr>
+<tr><td>Joaco</td><td>100%</td><td>120</td></tr>
+<tr><td>Rodri</td><td>100%</td><td>120</td></tr>
+<tr><td>Bri</td><td>100%</td><td>120</td></tr>
+
+<tr class="total"><td>Total</td><td></td><td>480</td></tr>
+<tr><td>Licencias Equipo</td><td></td><td>64</td></tr>
+<tr class="total"><td>Total Disponible</td><td></td><td>416</td></tr>
+
+</table>
+
+</div>
+
+
+<div class="table-box">
+
+<h3>Capacidad LT</h3>
+
+<table>
+
+<tr><th>LT</th><th>Asignación</th><th>Horas</th></tr>
+
+<tr><td>Lu</td><td>50%</td><td>60</td></tr>
+
+<tr class="total"><td>Total</td><td></td><td>60</td></tr>
+<tr><td>Licencias Equipo</td><td></td><td>16</td></tr>
+<tr class="total"><td>Total Disponible</td><td></td><td>44</td></tr>
+
+</table>
+
+</div>
+
+
+<div class="table-box">
+
+<h3>Licencias Reportadas</h3>
+
+<table>
+
+<tr><th>Persona</th><th>Fecha</th><th>Horas</th></tr>
+
+<tr>
+<td>Daniel</td>
+<td>20/03/2026</td>
+<td>4</td>
+</tr>
+
+<tr>
+<td>Marcela</td>
+<td>20/03/2026</td>
+<td>4</td>
+</tr>
+
+</table>
+
+</div>
+
+
+<div class="table-box">
+
+<h3>Trabajo Sprint</h3>
+
+<table>
+
+<tr>
+<th>Palabra Clave</th>
+<th>Azure</th>
+<th>Asignado</th>
+<th>Horas</th>
+<th>Actividad</th>
+<th>Prioridad</th>
+<th>Fecha Inicio</th>
+<th>Fecha Fin</th>
+</tr>
+
+<tr><td>Tecl Esc</td><td>342341</td><td>Cristian</td><td>8</td><td>Pruebas QA</td><td>1</td><td>16/3/2026</td><td>16/3/2026</td></tr>
+
+<tr><td>Impex No Bin</td><td>27735</td><td>Vladimir</td><td>16</td><td>Pruebas QA</td><td>1</td><td>16/3/2026</td><td>17/3/2026</td></tr>
+
+<tr><td>Release</td><td>Release Abril</td><td>Vladimir</td><td>24</td><td>Regresión</td><td>2</td><td>8/3/2026</td><td>20/3/2026</td></tr>
+
+<tr><td>Release</td><td>Release Abril</td><td>Cami</td><td>24</td><td>Regresión</td><td>2</td><td>8/3/2026</td><td>20/3/2026</td></tr>
+
+<tr><td>Retenidos</td><td>199777</td><td>Cami</td><td>16</td><td>Pruebas QA</td><td>1</td><td>8/3/2026</td><td>19/3/2026</td></tr>
+
+<tr><td>Giftcard</td><td>305188</td><td>Cristian</td><td>17</td><td>Pruebas QA</td><td>1</td><td></td><td></td></tr>
+
+<tr><td>Giftcard</td><td>328506</td><td>Cristian</td><td>28</td><td>Pruebas QA</td><td>1</td><td></td><td></td></tr>
+
+<tr><td>Giftcard</td><td>308473</td><td>Vladimir</td><td>20</td><td>Pruebas QA</td><td>2</td><td></td><td></td></tr>
+
+<tr><td>Giftcard</td><td>308407</td><td>Deisy</td><td>16</td><td>Pruebas QA</td><td>1</td><td></td><td></td></tr>
+
+<tr><td>Giftcard</td><td>289408</td><td>Deisy</td><td>16</td><td>Pruebas QA</td><td>1</td><td></td><td></td></tr>
+
+<tr><td>Giftcard</td><td>308473</td><td>Vladimir</td><td>20</td><td>Pruebas QA</td><td>2</td><td></td><td></td></tr>
+
+<tr><td>Giftcard</td><td>303142</td><td>Cami</td><td>16</td><td>Pruebas QA</td><td>1</td><td></td><td></td></tr>
+
+<tr><td>Giftcard</td><td>316093</td><td>Cami</td><td>4</td><td>Pruebas QA</td><td></td><td></td><td></td></tr>
+
+<tr><td>Mail Safe Force</td><td>212835</td><td>Angelica</td><td>8</td><td>Pruebas QA</td><td></td><td></td><td></td></tr>
+
+<tr><td>Mail Safe Force</td><td>214893</td><td>Angelica</td><td>10</td><td>Pruebas QA</td><td></td><td></td><td></td></tr>
+
+<tr><td>Mail Safe Force</td><td>212361</td><td>Santiago</td><td>14</td><td>Pruebas QA</td><td></td><td></td><td></td></tr>
+
+<tr><td>Mail Safe Force</td><td>212806</td><td>Angelica</td><td>17</td><td>Pruebas QA</td><td></td><td></td><td></td></tr>
+
+<tr><td>Mail Safe Force</td><td>226296</td><td>Cami</td><td>10</td><td>Pruebas QA</td><td></td><td></td><td></td></tr>
+
+<tr><td>Mail Safe Force</td><td>251363</td><td>Angelica</td><td>46</td><td>Pruebas QA</td><td></td><td></td><td></td></tr>
+
+<tr><td>Mail Safe Force</td><td>328045</td><td>Angelica</td><td>4</td><td>Pruebas QA</td><td></td><td></td><td></td></tr>
+
+<tr><td>Mail Safe Force</td><td>244107</td><td>Angelica</td><td>24</td><td>Pruebas QA</td><td></td><td></td><td></td></tr>
+
+<tr><td>Mail Safe Force</td><td>244116</td><td>Cami</td><td>17</td><td>Pruebas QA</td><td></td><td></td><td></td></tr>
+
+<tr><td>Mail Safe Force</td><td>244126</td><td>Cami</td><td>4</td><td>Pruebas QA</td><td></td><td></td><td></td></tr>
+
+<tr><td>Mail Safe Force</td><td>274873</td><td>Cami</td><td>44</td><td>Pruebas QA</td><td></td><td></td><td></td></tr>
+
+<tr><td>Mail Safe Force</td><td>274851</td><td>Cami</td><td>14</td><td>Pruebas QA</td><td></td><td></td><td></td></tr>
+
+<tr><td>Otros QA</td><td></td><td>Todos</td><td>24</td><td>Pruebas QA</td><td></td><td></td><td></td></tr>
+
+<tr><td>Refracturacion</td><td>275828</td><td>Deisy</td><td>54</td><td>Pruebas QA</td><td></td><td></td><td></td></tr>
+
+<tr><td>Boletin Mayor</td><td>259447</td><td>Deisy</td><td>34</td><td>Pruebas QA</td><td></td><td></td><td></td></tr>
+
+<tr><td>Armado Version Abril</td><td>171020</td><td>Bri</td><td>16</td><td>DEV</td><td>1</td><td>16/3/2026</td><td>17/3/2026</td></tr>
+
+<tr><td>Armado Version Abril</td><td>182379</td><td>Rodri</td><td>8</td><td>DEV</td><td>1</td><td>16/3/2026</td><td>17/3/2026</td></tr>
+
+<tr><td>Impex Sin Franquicia</td><td>273735</td><td></td><td>16</td><td>DEV</td><td></td><td></td><td></td></tr>
+
+<tr><td>Canal Alterno 2 "Estimacion + Plan Trabajo"</td><td>342355</td><td></td><td></td><td>DEV</td><td></td><td>16/3/2026</td><td>16/3/2026</td></tr>
+
+<tr><td>Canal Alterno 2 "Estimacion + Plan Trabajo"</td><td>342736</td><td></td><td></td><td>DEV</td><td></td><td>16/3/2026</td><td>16/3/2026</td></tr>
+
+<tr><td>INT47 Cancelados</td><td></td><td></td><td></td><td>DEV</td><td></td><td></td><td></td></tr>
+
+<tr><td>Whatsapp Mayusculas</td><td></td><td></td><td></td><td>DEV</td><td></td><td></td><td></td></tr>
+
+<tr><td>Desarrollos BUS parque X llave Y</td><td>204092</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+
+</table>
+
+</div>
+
+<br>
+
+<div class="table-box">
+
+<table>
+
+</div>
+
+
+<div class="table-box">
+
+<h3>Resumen Sprint</h3>
+
+<table>
+
+<tr>
+<th></th>
+<th>Capacidad</th>
+<th>Comprometido</th>
+<th>Disponible</th>
+</tr>
+
+<tr>
+<td>Total QA</td>
+<td>564</td>
+<td>566</td>
+<td class="alert">-2</td>
+</tr>
+
+<tr>
+<td>Total DEV</td>
+<td>416</td>
+<td>64</td>
+<td>352</td>
+</tr>
+
+</table>
+
+</div>
+
+</div>
+
+</body>
+</html>
