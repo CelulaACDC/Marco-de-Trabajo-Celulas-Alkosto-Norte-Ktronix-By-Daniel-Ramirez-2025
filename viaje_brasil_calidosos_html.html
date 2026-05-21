@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brasil 2026 - Cálidosos Fútbol</title>
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family: 'Inter', Arial, sans-serif;
+    }
+
+    body{
+      background:#050816;
+      color:white;
+      overflow-x:hidden;
+    }
+
+    .background{
+      position:fixed;
+      inset:0;
+      background:
+      radial-gradient(circle at top left, rgba(34,197,94,0.25), transparent 35%),
+      radial-gradient(circle at bottom right, rgba(59,130,246,0.2), transparent 35%),
+      linear-gradient(135deg,#020617,#071226,#0f172a);
+      z-index:-1;
+    }
+
+    .container{
+      max-width:1100px;
+      margin:auto;
+      padding:40px 20px 80px;
+    }
+
+    .hero{
+      position:relative;
+      overflow:hidden;
+      border-radius:32px;
+      padding:70px 50px;
+      background:linear-gradient(135deg,#16a34a,#14532d);
+      box-shadow:0 20px 60px rgba(0,0,0,0.5);
+      margin-bottom:35px;
+    }
+
+    .hero::before{
+      content:'';
+      position:absolute;
+      width:400px;
+      height:400px;
+      background:rgba(255,255,255,0.08);
+      border-radius:50%;
+      top:-120px;
+      right:-120px;
+    }
+
+    .hero::after{
+      content:'';
+      position:absolute;
+      width:250px;
+      height:250px;
+      background:rgba(255,255,255,0.06);
+      border-radius:50%;
+      bottom:-100px;
+      left:-70px;
+    }
+
+    .hero-content{
+      position:relative;
+      z-index:2;
+    }
+
+    .hero small{
+      letter-spacing:3px;
+      text-transform:uppercase;
+      font-size:14px;
+      opacity:0.9;
+    }
+
+    .hero h1{
+      font-size:64px;
+      margin:18px 0;
+      line-height:1;
+      font-weight:900;
+    }
+
+    .hero p{
+      font-size:20px;
+      line-height:1.8;
+      max-width:760px;
+      opacity:0.96;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:22px;
+      margin-bottom:28px;
+    }
+
+    .card{
+      background:rgba(255,255,255,0.05);
+      border:1px solid rgba(255,255,255,0.08);
+      border-radius:28px;
+      padding:28px;
+      backdrop-filter:blur(12px);
+      transition:0.35s ease;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .card:hover{
+      transform:translateY(-6px) scale(1.01);
+      border-color:rgba(74,222,128,0.5);
+      box-shadow:0 20px 40px rgba(0,0,0,0.4);
+    }
+
+    .card h2{
+      color:#4ade80;
+      font-size:24px;
+      margin-bottom:18px;
+    }
+
+    .card p, .card li{
+      font-size:17px;
+      line-height:1.8;
+      color:#e5e7eb;
+    }
+
+    ul{
+      list-style:none;
+      display:flex;
+      flex-direction:column;
+      gap:14px;
+    }
+
+    .highlight{
+      color:#4ade80;
+      font-weight:800;
+      font-size:20px;
+    }
+
+    .payment-box{
+      background:linear-gradient(135deg,rgba(34,197,94,0.12),rgba(34,197,94,0.03));
+      border:1px solid rgba(74,222,128,0.25);
+      border-radius:22px;
+      padding:22px;
+      margin-top:16px;
+    }
+
+    .quote{
+      margin-top:32px;
+      background:linear-gradient(135deg,#1e293b,#0f172a);
+      border-left:5px solid #4ade80;
+      padding:32px;
+      border-radius:24px;
+      font-size:24px;
+      line-height:1.7;
+      color:#f8fafc;
+      font-weight:600;
+      text-align:center;
+    }
+
+    .footer{
+      margin-top:40px;
+      text-align:center;
+      padding:30px;
+      font-size:34px;
+      font-weight:900;
+      color:#4ade80;
+      text-transform:uppercase;
+      letter-spacing:2px;
+    }
+
+    .tag{
+      display:inline-block;
+      padding:10px 18px;
+      border-radius:999px;
+      background:rgba(255,255,255,0.1);
+      margin-top:22px;
+      font-size:15px;
+      font-weight:600;
+    }
+
+    @media(max-width:768px){
+      .hero{
+        padding:50px 28px;
+      }
+
+      .hero h1{
+        font-size:42px;
+      }
+
+      .hero p{
+        font-size:17px;
+      }
+
+      .footer{
+        font-size:24px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="background"></div>
+
+<div class="container">
+
+  <section class="hero">
+    <div class="hero-content">
+      <small>Experiencia Internacional 2026</small>
+      <h1>🇧🇷 BRASIL NOS ESPERA ⚽</h1>
+
+      <p>
+        Este noviembre no será un viaje cualquiera. Será la oportunidad de representar a Cálidosos Fútbol en una experiencia internacional junto a Cruzeiro, compartiendo fútbol, convivencia, entrenamientos y momentos que quedarán marcados para siempre.
+        
+        Del 14 al 18 de noviembre viviremos días de competencia, unión y crecimiento como equipo en Belo Horizonte, Brasil. Un viaje pensado para quienes sueñan en grande y quieren vivir el fútbol más allá de la cancha.
+      </p>
+
+      <div class="tag">🔥 Cupos limitados • Confirmación por orden de pago</div>
+    </div>
+  </section>
+
+  <div class="grid">
+
+    <div class="card">
+      <h2>📍 Información General</h2>
+
+      <ul>
+        <li><span class="highlight">📅 Fechas:</span><br>14 al 18 de noviembre de 2026</li>
+        <li><span class="highlight">✈️ Destino:</span><br>Belo Horizonte, Brasil</li>
+        <li><span class="highlight">👥 Cupos:</span><br>30 jugadores y 15 acompañantes</li>
+        <li><span class="highlight">🏨 Hospedaje:</span><br>Sede Cruzeiro</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>💰 Inversión</h2>
+
+      <ul>
+        <li><span class="highlight">1.200 USD</span><br>por persona grupo de 3 personas.</li>
+
+        <li><span class="highlight">1.450 USD</span><br>acomodación individual.</li>
+
+        <li>⚠️ El valor no incluye vuelos.</li>
+      </ul>
+
+      <div class="payment-box">
+        El objetivo es construir este viaje entre todos, con cuotas organizadas y pagos progresivos que permitan asegurar el cupo y planificar con tranquilidad.
+      </div>
+    </div>
+
+  </div>
+
+  <div class="card">
+    <h2>📅 Fechas Importantes de Pago</h2>
+
+    <ul>
+      <li>
+        <span class="highlight">✅ 30 de mayo</span><br>
+        Pago inicial / Prereserva de cupo: <strong>50 USD</strong>
+      </li>
+
+      <li>
+        <span class="highlight">✅ 15 de junio</span><br>
+        Segundo pago: <strong>150 USD</strong>
+      </li>
+
+      <li>
+        ⚠️ La reserva oficial y confirmación definitiva del cupo se realizará únicamente con el pago completo de los <strong>200 USD</strong> correspondientes a las dos primeras fechas.
+      </li>
+
+      <li>
+        <span class="highlight">✅ 20 de octubre</span><br>
+        Fecha límite para tener el viaje totalmente pago.
+      </li>
+
+      <li>
+        Después del segundo pago podrán realizarse aportes quincenales o pagos libres según comodidad de cada participante.
+      </li>
+    </ul>
+  </div>
+
+  <div class="grid" style="margin-top:28px;">
+
+    <div class="card">
+      <h2>⚽ Experiencia Cruzeiro</h2>
+
+      <ul>
+        <li>📋 Itinerario definido directamente por Cruzeiro.</li>
+        <li>⚽ Actividades deportivas y recreativas organizadas por Cruzeiro.</li>
+        <li>👕 Inicialmente se manejarán los mismos uniformes de las sedes.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>🔥 Lo Que Viviremos</h2>
+
+      <ul>
+        <li>🌎 Representar a Cálidosos Fútbol internacionalmente.</li>
+        <li>🤝 Fortalecer la unión y convivencia del grupo.</li>
+        <li>⚽ Vivir entrenamientos y actividades de alto nivel.</li>
+        <li>🇧🇷 Conocer la cultura y pasión futbolera de Brasil.</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="quote">
+    “Los recuerdos más grandes del fútbol no siempre nacen en un partido…
+    a veces empiezan con un grupo de amigos tomando la decisión de vivir algo inolvidable juntos.”
+  </div>
+
+  <div class="footer">
+    🇧🇷⚽ VAMOS CON TODA POR BRASIL ⚽🇧🇷
+  </div>
+
+</div>
+
+</body>
+</html>
